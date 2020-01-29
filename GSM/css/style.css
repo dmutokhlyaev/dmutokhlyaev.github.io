@@ -22,6 +22,9 @@ img{
 	max-width: 100%;
 	height: auto;
 }
+strong{
+	color: #F6DB35;
+}
 
 body{
 	font-family: 'Roboto', sans-serif;
@@ -98,10 +101,88 @@ body{
 .section{
 	padding: 80px 0;
 }
+.section_dark{
+	background: #9146FF;
+	color: #fff;
+}
 .section-title{
+	font-family: 'Roboto', sans-serif;
 	font-size: 32px;
+	font-weight: 700;
+	margin-top: 0;
 	margin-bottom: 20px;
-	margin-top: 60px;
+}
+.feedback{
+	background: #9146FF url(../img/bg-home-feedback.jpg) center / cover
+}
+.feedback-form{
+	margin-top: 40px;
+}
+.feedback-form .input{
+	display: block;
+	width: 360px;
+	margin-bottom: 20px;
+	padding: 10px 20px;
+	border-radius: 0;
+	border: none;
+}
+.feedback-form .selectize-control{
+	margin-bottom: 15px;
+}
+.feedback-form .selectize-input{
+	width: 360px;
+	padding: 10px 20px;
+	border-radius: 0;
+	border: none;
+}
+.selectize-dropdown,
+.selectize-input,
+.selectize-input input{
+	font-size: 16px;
+}
+.feedback-form .button{
+	width: 192px;
+	margin-bottom: 30px;
+}
+
+.feedback-form .checkbox{
+	padding-left: 0;
+	margin-bottom: 20px;
+}
+.feedback-form input[type="checkbox"] {
+	display: none;
+}
+.feedback-form .checkbox label{
+	display: block;
+	position: relative;
+	padding-left: 40px;
+	font-weight: 400;
+}
+.feedback-form .checkbox label::before{
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -13px;
+	width: 26px;
+	height: 26px;
+	display: block;
+	background: #fff;
+}
+.feedback-form input[type="checkbox"]:checked + label::before{
+	background: #fff url(../img/icons/icon-checkmark.svg) no-repeat center / 20px 20px;
+}
+.feedback-form .privacy-policy{
+	font-size: 12px;
+	margin-top: 20px;
+}
+.feedback-form .additional-fields{
+	height: 0;
+	overflow: hidden;
+	transition: height 0.3s;
+}
+.feedback-form .additional-fields.open{
+	height: 460px;
 }
 
 /* Header */
@@ -282,6 +363,9 @@ body{
 	background: #9146FF;
 	box-shadow: 0px 3px 0px #791EFF;
 }
+.service-center .section-title{
+	margin-top: 80px;
+}
 
 .service-center .card:hover .icon::before{
 	background: #9146FF;
@@ -308,6 +392,9 @@ body{
 	.offer .button{
 		left: 60px;
 	}
+	.feedback{
+		background: #9146FF;
+	}
 }
 @media only screen and (max-width: 768px){
 	.second-line .logo{
@@ -332,9 +419,10 @@ body{
 	}
 }
 @media only screen and (max-width: 480px) {
-	.button{
+	body{
 		font-size: 14px;
 	}
+
 	.second-line .phone{
 		margin-top: 3px;
 		text-align: right;
@@ -349,14 +437,33 @@ body{
 		margin-left: -87px;
 	}
 
+	.section{
+		padding: 40px 0;
+	}
 	.section-title{
 		font-size: 18px;
-	}
-	.section p{
-		font-size: 14px;
 	}
 
 	.service-center .card{
 		padding: 20px 25px;
+	}
+	.service-center .section-title{
+		margin-top: 40px;
+	}
+
+	.feedback-form .input{
+		width: 100%;
+	}
+	.feedback-form .selectize-input{
+		width: 100%;
+	}
+	.feedback-form .button{
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.selectize-dropdown,
+	.selectize-input,
+	.selectize-input input{
+		font-size: 14px;
 	}
 }
