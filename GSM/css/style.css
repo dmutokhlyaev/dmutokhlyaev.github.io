@@ -28,6 +28,23 @@ body{
 	font-size: 16px;
 	line-height: 1.25;
 	min-width: 320px;
+	overflow-x: hidden;
+}
+
+.section{
+	padding: 80px 0;
+}
+.section_dark{
+	background: #9146FF;
+	color: #fff;
+}
+.section-title{
+	position: relative;
+	font-family: 'Roboto', sans-serif;
+	font-size: 32px;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 20px;
 }
 
 .link{
@@ -94,21 +111,6 @@ body{
 	width: auto;
 }
 
-.section{
-	padding: 80px 0;
-}
-.section_dark{
-	background: #9146FF;
-	color: #fff;
-}
-.section-title{
-	position: relative;
-	font-family: 'Roboto', sans-serif;
-	font-size: 32px;
-	font-weight: 700;
-	margin-top: 0;
-	margin-bottom: 20px;
-}
 .feedback{
 	background: #9146FF url(../img/bg-home-feedback.jpg) center / cover
 }
@@ -368,7 +370,6 @@ body{
 	background: #9146FF;
 }
 
-
 .catalog-intro{
 	font-size: 24px;
 	margin-bottom: 80px
@@ -377,45 +378,46 @@ body{
 	margin-bottom: 80px;
 	min-height: 350px;
 }
+.category:last-child{
+	margin-bottom: 0;
+}
 .category .section-title{
 	margin-bottom: 50px;
 }
 .category .button{
 	margin-bottom: 40px;
 }
+.category .section-title{
+	display: flex;
+	justify-content: flex-start;
+}
 .category .section-title:after{
 	content: '';
 	position: absolute;
 	bottom: 5px;
-	left: 0;
 	font-weight: bold;
 	font-size: 96px;
 	color: rgba(145, 70, 255, 0.1);
 }
 
-.category-apple{
-	background: url(../img/catalog/apple.png) no-repeat right -80px bottom;
-}
 .category-apple .section-title:after{
 	content: 'Apple';
-}
-.category-phone{
-	background: url(../img/catalog/phone.png) no-repeat right -120px bottom;
 }
 .category-phone .section-title:after{
 	content: 'Телефоны';
 }
-.category-tablet{
-	background: url(../img/catalog/lenovo.png) no-repeat right -60px bottom;
-}
 .category-tablet .section-title:after{
 	content: 'Планшеты';
 }
-.category-laptop{
-	background: url(../img/catalog/asus.png) no-repeat right -80px bottom;
-}
 .category-laptop .section-title:after{
 	content: 'Ноутбуки';
+}
+.category-image{
+	display: flex;
+	justify-content: center;
+}
+.category-image img{
+	position: absolute;
 }
 
 .filter{
@@ -469,6 +471,10 @@ body{
 	.feedback{
 		background: #9146FF;
 	}
+
+	.category-image{
+		display: block;
+	}
 }
 @media only screen and (max-width: 768px){
 	.second-line .logo{
@@ -490,6 +496,20 @@ body{
 		max-width: 350px;
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	.category{
+		min-height: 0;
+	}
+	.catalog-intro{
+		text-align: center;
+	}
+	.category .section-title{
+		justify-content: center;
+	}
+	.category .section-title:after{
+		bottom: 5px;
+		font-size: 72px;
 	}
 }
 @media only screen and (max-width: 480px) {
@@ -539,5 +559,16 @@ body{
 	.selectize-input,
 	.selectize-input input{
 		font-size: 14px;
+	}
+
+	.category{
+		margin-bottom: 40px;
+	}
+	.catalog-intro{
+		font-size: 18px;
+	}
+	.category .section-title:after{
+		bottom: 0px;
+		font-size: 60px;
 	}
 }

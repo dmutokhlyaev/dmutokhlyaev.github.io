@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="libs/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css">
 	<link rel="stylesheet" href="libs/selectize/selectize.css">
+	<link rel="stylesheet" href="libs/slick/slick.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body class="is-home">
@@ -183,24 +184,24 @@
 		<div class="container">
 			<p class="catalog-intro">Выберите устройство, которое хотите отремонтировать и узнайте стоимость ремонта</p>
 
-			<div class="category category-apple">
+			<div class="category category-apple category-iphone">
 				<h3 class="section-title">Ремонт техники Apple</h3>
 
 				<div class="row">
-					<div class="col-md-2">
-						<div class="filter active">
+					<div class="col-md-2 col-sm-3 col-xs-4">
+						<div class="filter filter-iphone active">
 							<div class="icon"><img src="img/icons/iPhone.png"></div>
 							iPhone
 						</div>
 					</div>
-					<div class="col-md-2">
-						<div class="filter ">
+					<div class="col-md-2 col-sm-3 col-xs-4">
+						<div class="filter filter-ipod">
 							<div class="icon"><img src="img/icons/iPod.png"></div>
 							iPad
 						</div>
 					</div>
-					<div class="col-md-2">
-						<div class="filter">
+					<div class="col-md-2 col-sm-3 col-xs-4">
+						<div class="filter filter-mac">
 							<div class="icon"><img src="img/icons/mac.png"></div>
 							Mac
 						</div>
@@ -208,69 +209,119 @@
 				</div>
 
 				<div class="row">
-					<div class="col-md-8">
+					<div class="col-sm-8">
 						<div class="row">
-							<div class="col-md-3">
-								<a href="#" class="button button_transparent">iPhone 11</a>
-							</div>
-							<div class="col-md-3">
-								<a href="#" class="button button_transparent">iPhone 11 max</a>
-							</div>
-							<div class="col-md-3">
-								<a href="#" class="button button_transparent">iPhone X</a>
-							</div>
-							<div class="col-md-3">
-								<a href="#" class="button button_transparent">iPhone XS max</a>
-							</div>
-							<div class="col-md-3">
-								<a href="#" class="button button_transparent">iPhone XS</a>
-							</div>
-							<div class="col-md-3">
-								<a href="#" class="button button_transparent">iPhone XR</a>
-							</div>
-							<div class="col-md-3">
-								<a href="#" class="button button_transparent">iPhone 8+</a>
-							</div>
-							<div class="col-md-3">
-								<a href="#" class="button button_transparent">iPhone 8</a>
-							</div>
-							<div class="col-md-3">
-								<a href="#" class="button button_transparent">iPhone 7+</a>
-							</div>
-							<div class="col-md-3">
-								<a href="#" class="button button_transparent">iPhone 7</a>
-							</div>
-							<div class="col-md-3">
-								<a href="#" class="button button_transparent">iPhone SE</a>
-							</div>
-							<div class="col-md-3">
-								<a href="#" class="button button_transparent">iPhone 6S+</a>
-							</div>
-							<div class="col-md-3">
-								<a href="#" class="button button_transparent">iPhone 6S</a>
-							</div>
-							<div class="col-md-3">
-								<a href="#" class="button button_transparent">iPhone 6+</a>
-							</div>
-							<div class="col-md-3">
-								<a href="#" class="button button_transparent">iPhone 6</a>
-							</div>
-							<div class="col-md-3">
-								<a href="#" class="button button_transparent">iPhone 5S</a>
-							</div>
-							<div class="col-md-3">
-								<a href="#" class="button button_transparent">iPhone 5</a>
-							</div>
-							<div class="col-md-3">
-								<a href="#" class="button button_transparent">iPhone 5C</a>
-							</div>
-							<div class="col-md-3">
-								<a href="#" class="button button_transparent">iPhone 4S</a>
-							</div>
-							<div class="col-md-3">
-								<a href="#" class="button button_transparent">iPhone 4</a>
+							<div class="slick-slider">
+								<div class="category-item">
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPhone 11</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPhone 11 max</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPhone X</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPhone XS max</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPhone XS</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPhone XR</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPhone 8+</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPhone 8</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPhone 7+</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPhone 7</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPhone SE</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPhone 6S+</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPhone 6S</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPhone 6+</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPhone 6</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPhone 5S</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPhone 5</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPhone 5C</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPhone 4S</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPhone 4</a>
+									</div>
+								</div>
+								<div class="category-item">
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPad</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPad</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPad</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPad</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPad</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPad</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">iPad</a>
+									</div>
+								</div>
+								<div class="category-item">
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">Mac</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">Mac</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">Mac</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">Mac</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">Mac</a>
+									</div>
+									<div class="col-md-3 col-sm-4 col-xs-6">
+										<a href="#" class="button button_transparent">Mac</a>
+									</div>
+								</div>
 							</div>
 						</div>
+					</div>
+					<div class="col-sm-4 hidden-xs category-image">
+						<img src="img/catalog/apple.png" alt="">
 					</div>
 				</div>
 			</div>
@@ -279,27 +330,30 @@
 				<h3 class="section-title">Ремонт телефонов</h3>
 
 				<div class="row">
-					<div class="col-md-8">
+					<div class="col-sm-8">
 						<div class="row">
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<a href="#" class="button button_transparent">Samsung</a>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<a href="#" class="button button_transparent">Honor</a>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<a href="#" class="button button_transparent">Meizu</a>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<a href="#" class="button button_transparent">Phillips</a>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<a href="#" class="button button_transparent">HTC</a>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<a href="#" class="button button_transparent">Lenovo</a>
 							</div>
 						</div>
+					</div>
+					<div class="col-sm-4 hidden-xs category-image">
+						<img src="img/catalog/phone.png" alt="">
 					</div>
 				</div>
 			</div>
@@ -308,36 +362,39 @@
 				<h3 class="section-title">Ремонт планшетов</h3>
 
 				<div class="row">
-					<div class="col-md-8">
+					<div class="col-sm-8">
 						<div class="row">
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<a href="#" class="button button_transparent">Название</a>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<a href="#" class="button button_transparent">Название</a>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<a href="#" class="button button_transparent">Название</a>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<a href="#" class="button button_transparent">Название</a>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<a href="#" class="button button_transparent">Название</a>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<a href="#" class="button button_transparent">Название</a>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<a href="#" class="button button_transparent">Название</a>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<a href="#" class="button button_transparent">Название</a>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<a href="#" class="button button_transparent">Название</a>
 							</div>
 						</div>
+					</div>
+					<div class="col-sm-4 hidden-xs category-image">
+						<img src="img/catalog/lenovo.png" alt="">
 					</div>
 				</div>
 			</div>
@@ -346,36 +403,39 @@
 				<h3 class="section-title">Ремонт ноутбуков</h3>
 
 				<div class="row">
-					<div class="col-md-8">
+					<div class="col-sm-8">
 						<div class="row">
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<a href="#" class="button button_transparent">Название</a>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<a href="#" class="button button_transparent">Название</a>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<a href="#" class="button button_transparent">Название</a>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<a href="#" class="button button_transparent">Название</a>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<a href="#" class="button button_transparent">Название</a>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<a href="#" class="button button_transparent">Название</a>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<a href="#" class="button button_transparent">Название</a>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<a href="#" class="button button_transparent">Название</a>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<a href="#" class="button button_transparent">Название</a>
 							</div>
 						</div>
+					</div>
+					<div class="col-sm-4 hidden-xs category-image">
+						<img src="img/catalog/asus.png" alt="">
 					</div>
 				</div>
 			</div>
@@ -385,6 +445,7 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="libs/bootstrap/bootstrap.min.js"></script>
 	<script src="libs/selectize/selectize.min.js"></script>
+	<script src="libs/slick/slick.min.js"></script>
 	<script src="js/common.js"></script>
 </body>
 </html>
