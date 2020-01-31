@@ -18,10 +18,31 @@ $(function(){
 		});
 	}
 
-	$('.slick-slider').slick({
+	$('.category .slider').slick({
 		accessibility: false,
 		arrows: false,
 		draggable: false,
 		fade: true,
 	});
+
+	$('.reviews .slider').slick({
+		slidesToShow: 3,
+		infinite: false,
+		prevArrow: '<button class="slick-prev"><i class="fa fa-angle-left"></i></button>',
+		nextArrow: '<button class="slick-next"><i class="fa fa-angle-right"></i></button>',
+		responsive: [
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 2,
+				}
+			},
+			{
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 1,
+				}
+			}
+		]
+	})
 });

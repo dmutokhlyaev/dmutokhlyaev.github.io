@@ -263,7 +263,7 @@ strong{
 	margin-top: 0;
 	margin-bottom: 50px;
 }
-.section .section-intro{
+.section-intro{
 	font-size: 24px;
 	margin-bottom: 80px
 }
@@ -389,9 +389,6 @@ strong{
 .category:last-child{
 	margin-bottom: 0;
 }
-.category .section-title{
-	margin-bottom: 50px;
-}
 .category .button_transparent{
 	margin-bottom: 40px;
 }
@@ -461,10 +458,10 @@ strong{
 .reviews{
 	padding-bottom: 0;
 }
-.reviews-bg{
+.reviews .slider{
 	position: relative;
 }
-.reviews-bg::before{
+.reviews .slider::before{
 	position: absolute;
 	content: '';
 	width: 200%;
@@ -491,6 +488,27 @@ strong{
 .reviews .button{
 	margin-top: 40px;
 }
+.reviews-image{
+	margin: 0 auto;
+}
+.reviews .slick-arrow{
+	position: absolute;
+	top: 50%;
+	z-index: 2;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background: rgba(255, 255, 255, 0.8);
+	border-radius: 50%;
+	border: none;
+	font-size: 32px;
+}
+.reviews .slick-prev{
+	left: 0;
+}
+.reviews .slick-next{
+	right: 0;
+}
 
 .post-preview{
 	box-shadow: 0px 4px 15px rgba(26, 26, 26, 0.08);
@@ -510,7 +528,36 @@ strong{
 	font-weight: bold;
 	font-size: 18px;
 }
+.post-preview .link{
+	display: block;
+	opacity: 0;
+	transition: all 0.2s;
+}
+.post-preview:hover .link{
+	opacity: 1;
+}
 
+
+@media only screen and (max-width: 1200px){
+	.reviews{
+		background: url(../img/Wats_back.png);
+		padding-bottom: 80px;
+	}
+	.reviews .slider::before{
+		background: none;
+	}
+	.reviews-image{
+
+		max-width: 80%;
+	}
+	.reviews .card{
+		padding: 20px;
+		margin: 0 10px 40px;
+	}
+	.reviews .card:last-child{
+		margin-bottom: 0;
+	}
+}
 @media only screen and (max-width: 992px){
 	.second-line .logo{
 		width: 115px;
@@ -535,9 +582,11 @@ strong{
 	.feedback{
 		background: #9146FF;
 	}
-
 	.category-image{
 		display: block;
+	}
+	.delivery{
+		background: #9146FF;
 	}
 }
 @media only screen and (max-width: 768px){
@@ -550,7 +599,6 @@ strong{
 	.offer{
 		background: url('../img/bg-home.jpg') center right -420px / cover;
 	}
-
 	.section-title{
 		text-align: center;
 		font-size: 24px;
@@ -579,7 +627,10 @@ strong{
 	body{
 		font-size: 14px;
 	}
-
+	.button{
+		margin-left: auto;
+		margin-right: auto;
+	}
 	.second-line .phone{
 		margin-top: 3px;
 		text-align: right;
@@ -593,15 +644,16 @@ strong{
 		left: 50%;
 		margin-left: -87px;
 	}
-
 	.section{
 		padding: 40px 0;
 	}
 	.section-title{
 		font-size: 18px;
+		margin-bottom: 20px;
 	}
 	.section-intro{
 		font-size: 18px;
+		margin-bottom: 40px;
 	}
 
 	.service-center .card{
@@ -616,10 +668,6 @@ strong{
 	}
 	.feedback-form .selectize-input{
 		width: 100%;
-	}
-	.feedback-form .button{
-		margin-left: auto;
-		margin-right: auto;
 	}
 	.selectize-dropdown,
 	.selectize-input,
