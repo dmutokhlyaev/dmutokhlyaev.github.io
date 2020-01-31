@@ -15,6 +15,9 @@ a:focus{
 	color: inherit;
 	text-decoration: none;
 }
+*{
+	outline: none !important;
+}
 
 body{
 	font-family: 'Roboto', sans-serif;
@@ -76,7 +79,6 @@ strong{
 	border: 1px solid #F6DB35;
 }
 
-
 .icon{
 	display: inline-block;
 	position: relative;
@@ -118,9 +120,6 @@ strong{
 }
 .first-line .check{
 	float: right;
-}
-.first-line .check .link{
-	color: #fff;
 }
 .first-line .check::before{
 	font-size: 13px;
@@ -240,16 +239,7 @@ strong{
 	margin-left: 5px;
 }
 
-/* Главная */
-
-.is-home .first-line{
-	background: #9146FF;
-	color: #fff;
-}
-.is-home .third-line{
-	background: #F2EAFF;
-	color: #1A1A1A;
-}
+/* Конец Header */
 
 .section{
 	padding: 80px 0;
@@ -273,43 +263,8 @@ strong{
 .section p{
 	margin-bottom: 20px;
 }
-
-
-.offer{
-	height: 600px;
-	background: url('../img/bg-home.jpg') center / cover;
-}
-.offer .container{
-	position: relative;
-	height: 100%;
-}
-.offer .button{
-	position: absolute;
-	bottom: 40px;
-	left: 120px;
-}
-
-.service-center .card{
-	display: block;
-	padding: 50px 40px;
-	box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-	cursor: pointer;
-	text-align: center;
-	margin-bottom: 20px;
-}
-.service-center .icon{
-	margin-bottom: 30px;
-}
-.service-center .card:hover .button_transparent{
-	border: 1px solid #9146FF;
+.section_dark .link{
 	color: #fff;
-	background: #9146FF;
-}
-.service-center .section-title{
-	margin-top: 80px;
-}
-.service-center .card:hover .icon::before{
-	background: #9146FF;
 }
 
 .feedback{
@@ -386,8 +341,9 @@ strong{
 }
 
 .category{
+	position: relative;
 	margin-bottom: 80px;
-	min-height: 350px;
+	min-height: 300px;
 }
 .category:last-child{
 	margin-bottom: 0;
@@ -395,122 +351,11 @@ strong{
 .category .button_transparent{
 	margin-bottom: 40px;
 }
-.category .section-title{
-	display: flex;
-	justify-content: flex-start;
-}
-.category .section-title:after{
-	content: '';
-	position: absolute;
-	bottom: 5px;
-	font-weight: bold;
-	font-size: 96px;
-	color: rgba(145, 70, 255, 0.1);
-}
-.category-apple .section-title:after{
-	content: 'Apple';
-}
-.category-phone .section-title:after{
-	content: 'Телефоны';
-}
-.category-tablet .section-title:after{
-	content: 'Планшеты';
-}
-.category-laptop .section-title:after{
-	content: 'Ноутбуки';
-}
 .category-image{
-	display: flex;
-	justify-content: center;
-}
-.category-image img{
-	flex-shrink: 0;
-}
-
-.filter{
-	font-size: 24px;
-	font-weight: 700;
-	margin-bottom: 40px;
-	padding-bottom: 30px;
-	text-align: center;
-	cursor: pointer;
-}
-.filter .icon img{
-	height: 50px;
-}
-.filter .icon::before{
-	width: 28px;
-	height: 58px;
-	left: -6px;
-	top: -3px;
-}
-.filter:hover .icon::before{
-	background: #9146FF;
-}
-.filter.active{
-	background: url(../img/catalog/bottom.png) no-repeat bottom / contain;
-}
-.filter.active .icon::before{
-	background: #9146FF;
-}
-
-.delivery{
-	background: url(../img/delivery.jpg) center / cover;
-}
-
-.reviews{
-	padding-bottom: 0;
-}
-.reviews .slider{
-	position: relative;
-}
-.reviews .slider::before{
 	position: absolute;
-	content: '';
-	width: 200%;
-	right: 200px;
-	height: 100%;
-	background: url(../img/Wats_back.png);
-}
-.reviews .card{
-	position: relative;
-	background-color: #fff;
-	padding: 20px 30px;
-	border-radius: 0 6px 6px 6px;
-	margin: 40px 20px;
-}
-.reviews .card::before{
-	content: '';
-	display: block;
-	position: absolute;
-	top: 0;
-	left: -12px;
-	border-top: 12px solid #fff;
-	border-left: 12px solid transparent;
-}
-.reviews .button{
-	margin-top: 40px;
-}
-.reviews-image{
-	margin: 0 auto;
-}
-.reviews .slick-arrow{
-	position: absolute;
-	top: 50%;
-	z-index: 2;
-	display: inline-block;
-	width: 40px;
-	height: 40px;
-	background: rgba(255, 255, 255, 0.8);
-	border-radius: 50%;
-	border: none;
-	font-size: 32px;
-}
-.reviews .slick-prev{
-	left: 0;
-}
-.reviews .slick-next{
+	bottom: 0;
 	right: 0;
+	z-index: -1;
 }
 
 .post-preview{
@@ -596,10 +441,175 @@ strong{
 	padding: 5px 0;
 }
 
+/* Только для главной */
+
+.is-home .first-line .check .link{
+	color: #fff;
+}
+.is-home .first-line{
+	background: #9146FF;
+	color: #fff;
+}
+.is-home .third-line{
+	background: #F2EAFF;
+	color: #1A1A1A;
+}
+
+.offer{
+	height: 600px;
+	background: url('../img/bg-home.jpg') center / cover;
+}
+.offer .container{
+	position: relative;
+	height: 100%;
+}
+.offer .button{
+	position: absolute;
+	bottom: 40px;
+	left: 120px;
+}
+
+.is-home .category .section-title{
+	display: flex;
+	justify-content: flex-start;
+}
+.is-home .category .section-title:after{
+	content: '';
+	position: absolute;
+	bottom: 5px;
+	font-weight: bold;
+	font-size: 96px;
+	color: rgba(145, 70, 255, 0.1);
+}
+.is-home .category-apple .section-title:after{
+	content: 'Apple';
+}
+.is-home .category-phone .section-title:after{
+	content: 'Телефоны';
+}
+.is-home .category-tablet .section-title:after{
+	content: 'Планшеты';
+}
+.is-home .category-laptop .section-title:after{
+	content: 'Ноутбуки';
+}
+.category-item .more{
+	text-align: center;
+	display: none;
+}
+
+.filter{
+	font-size: 24px;
+	font-weight: 700;
+	margin-bottom: 40px;
+	padding-bottom: 30px;
+	text-align: center;
+	cursor: pointer;
+}
+.filter .icon img{
+	height: 50px;
+}
+.filter .icon::before{
+	width: 28px;
+	height: 58px;
+	left: -6px;
+	top: -3px;
+}
+.filter:hover .icon::before{
+	background: #9146FF;
+}
+.filter.active{
+	background: url(../img/catalog/bottom.png) no-repeat bottom / contain;
+}
+.filter.active .icon::before{
+	background: #9146FF;
+}
+
+.service-center .card{
+	display: block;
+	padding: 50px 40px;
+	box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+	cursor: pointer;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.service-center .icon{
+	margin-bottom: 30px;
+}
+.service-center .card:hover .button_transparent{
+	border: 1px solid #9146FF;
+	color: #fff;
+	background: #9146FF;
+}
+.service-center .section-title{
+	margin-top: 80px;
+}
+.service-center .card:hover .icon::before{
+	background: #9146FF;
+}
+
+.delivery{
+	background: url(../img/delivery.jpg) center / cover;
+}
+
+.reviews{
+	padding-bottom: 0;
+}
+.reviews .slider{
+	position: relative;
+}
+.reviews .slider::before{
+	position: absolute;
+	content: '';
+	width: 200%;
+	right: 200px;
+	height: 100%;
+	background: url(../img/Wats_back.jpg);
+}
+.reviews .card{
+	position: relative;
+	background-color: #fff;
+	padding: 20px 30px;
+	border-radius: 0 6px 6px 6px;
+	margin: 40px 20px;
+}
+.reviews .card::before{
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	border-top: 12px solid #fff;
+	border-left: 12px solid transparent;
+}
+.reviews .button{
+	margin-top: 40px;
+}
+.reviews-image{
+	margin: 0 auto;
+}
+.reviews .slick-arrow{
+	position: absolute;
+	top: 50%;
+	z-index: 2;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background: rgba(255, 255, 255, 0.8);
+	border-radius: 50%;
+	border: none;
+	font-size: 32px;
+}
+.reviews .slick-prev{
+	left: 0;
+}
+.reviews .slick-next{
+	right: 0;
+}
 
 @media only screen and (max-width: 1200px){
 	.reviews{
-		background: url(../img/Wats_back.png);
+		background: url(../img/Wats_back.jpg);
 		padding-bottom: 80px;
 	}
 	.reviews .slider::before{
@@ -641,7 +651,7 @@ strong{
 		background: #9146FF;
 	}
 	.category-image{
-		display: block;
+		right: -100px;
 	}
 	.delivery{
 		background: #9146FF;
@@ -680,11 +690,19 @@ strong{
 	.category{
 		min-height: 0;
 	}
-	
-	.category .section-title{
+	.category-image{
+		display: none;
+	}
+	.category-item>div:nth-child(n + 7){
+		display: none;
+	}
+	.category-item>div:last-child{
+		display: block;
+	}
+	.is-home .category .section-title{
 		justify-content: center;
 	}
-	.category .section-title:after{
+	.is-home .category .section-title:after{
 		bottom: 5px;
 		font-size: 72px;
 	}
@@ -741,7 +759,7 @@ strong{
 	.category{
 		margin-bottom: 40px;
 	}
-	.category .section-title:after{
+	.is-home .category .section-title:after{
 		bottom: -5px;
 		font-size: 60px;
 	}
