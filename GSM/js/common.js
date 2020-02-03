@@ -45,4 +45,17 @@ $(function(){
 			}
 		]
 	})
+
+	for (let i = 0; i < $('.question').length; i++) {
+		$('.question').eq(i).click(function() {
+
+			if ( $(this).hasClass('question_open') ) {
+				$(this).removeAttr('style');
+			} else {
+				$(this).height( $(this).height() + $(this).find('.question-answer').innerHeight() );
+			}
+
+			$(this).toggleClass('question_open');
+		});
+	}
 });
