@@ -311,6 +311,8 @@ p{
 	justify-content: center;
 	align-items: flex-end;
 	height: 80px;
+	position: relative;
+	z-index: 2;
 }
 
 .products__item:hover .products__preview{
@@ -420,8 +422,20 @@ p{
 		margin-left: auto;
 		margin-right: auto;
 	}
+	.benefits{
+		width: 100%;
+	}
 
 	.products__item{
 		width: 100%;
+	}
+	.products__preview .products__price{
+		display: none;
+	}
+	.products__img{
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		height: 100px;
 	}
 }
