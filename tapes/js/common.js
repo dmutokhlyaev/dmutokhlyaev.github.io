@@ -38,4 +38,11 @@ $(function(){
 	$('.popup__close').click(function() {
 		$('.popup').removeClass('popup_active');
 	});
+
+	/* Больше продуктов на мобильном */
+
+	$('.products__more').click(function() {
+		$('.products__item').addClass('products__item_open');
+		$('.products__more').addClass('products__more_hidden')
+	});
 });

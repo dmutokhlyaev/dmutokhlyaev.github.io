@@ -340,6 +340,15 @@ p{
 	visibility: visible;
 	opacity: 1;
 }
+.products__more{
+	display: none;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	text-decoration: underline;
+	color: #3767CA;
+	cursor: pointer;
+}
 
 .advantages{
 	background: url(../img/advantages.jpg) center / cover;
@@ -874,11 +883,24 @@ p{
 	.products__preview .products__price{
 		display: none;
 	}
-	.products__img{
-		display: flex;
-		justify-content: center;
-		align-items: flex-end;
-		height: 100px;
+	.products__item:nth-child(n + 5){
+		height: 0px;
+		overflow: hidden;
+		padding: 0;
+		opacity: 0;
+		transition: opacity 0.2s;
+	}
+	.products__more{
+		display: block;
+	}
+	.products__more_hidden{
+		display: none;
+	}
+	.products__item_open:nth-child(n + 5){
+		height: auto;
+		overflow: visible;
+		padding: 15px;
+		opacity: 1;
 	}
 
 	.advantages{
