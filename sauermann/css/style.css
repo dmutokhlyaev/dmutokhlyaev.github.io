@@ -585,7 +585,7 @@ body{
 	margin-top: 0;
 	margin-bottom: 50px;
 }
-.application__form h3{
+.application__form label{
 	font-size: 22px;
 	font-weight: 500;
 }
@@ -596,6 +596,7 @@ body{
 	font-size: 22px;
 	border-bottom: 1px solid #1E1D1D;
 	width: 100%;
+	margin-top: 20px;
 }
 .application__form button{
 	display: block;
