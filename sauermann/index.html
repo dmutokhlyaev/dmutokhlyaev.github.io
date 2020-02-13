@@ -16,10 +16,19 @@
 	<header class="header">
 		<div class="container">
 			<div class="row align-items-center">
-				<div class="col-4">
-					<a href="#" class="logo"><img src="img/logo-1.png" alt="Sauermann - Насосы всех видов"></a>
+				<div class="col-md-4 col">
+					<a href="" class="logo"><img src="img/logo-1.png" alt="Sauermann - Насосы всех видов"></a>
 				</div>
-				<div class="col-8">
+
+				<div class="d-lg-none col">
+					<button class="hamburger hamburger--spin" type="button">
+					  <span class="hamburger-box">
+					    <span class="hamburger-inner"></span>
+					  </span>
+					</button>
+				</div>
+
+				<div class="col-lg-8">
 					<nav class="main-menu">
 						<ul>
 							<li class="active"><a href="#">Главная</a></li>
@@ -32,39 +41,35 @@
 					</nav>
 				</div>
 			</div>
+		</div>
+	</header>
 
-			<div class="row align-items-center">
-				<div class="col-6">
-					<div class="header__slider">
-						<div class="header__product">
+	<section class="first-screen">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 d-none d-md-block">
+					<div class="first-screen__slider">
+						<div class="first-screen__product">
 							<h3>BPS25-6S-180 Solar</h3>
 							
-							<div class="header__image">
+							<div class="first-screen__image">
 								<img src="img/slider/slider-1.png" alt="">
 							</div>
 						</div>
 
-						<div class="header__product">
+						<div class="first-screen__product">
 							<h3>HD25-12S-234 Sol</h3>
 
-							<div class="header__image">
+							<div class="first-screen__image">
 								<img src="img/slider/slider-2.png" alt="">
-							</div>
-						</div>
-
-						<div class="header__product">
-							<h3>BPS25-6S-180 Solar</h3>
-
-							<div class="header__image">
-								<img src="img/slider/slider-1.png" alt="">
 							</div>
 						</div>
 					</div>
 
-					<div class="header__dots"></div>
+					<div class="first-screen__dots"></div>
 				</div>
 
-				<div class="col-6">
+				<div class="col-md-6">
 					<div class="offer">
 						<h1>
 							Насосы всех видов<br>
@@ -80,68 +85,68 @@
 				</div>
 			</div>
 
-			<div class="call">
+			<div class="call d-none d-lg-block">
 				<p class="phone">+7 (499) 406-00-53</p>
 				<button class="button">Связаться с нами</button>
 			</div>
 
-			<button class="button-skroll"></button>
+			<button class="button-skroll d-none d-lg-block"></button>
 		</div>
-	</header>
+	</section>
 
 	<section class="category">
 		<div class="container">
 			<div class="row">
-				<div class="col-8">
+				<div class="col-lg-8">
 					<div class="row">
-						<div class="col-12">
-							<div class="category__card">
+						<div class="col-lg-12">
+							<a href="#" class="category__card">
 								<h3>Перистальтические<br>насосы</h3>
 
 								<p class="category__price">Цена от <strong class="category__price">14800 ₽</strong></p>
 
-								<a href="#" class="category__more">Смотреть все товары</a>
+								<p class="category__more">Смотреть все товары</p>
 
 								<img class="category__image_1" src="img/category/category-1.png" alt="">
-							</div>
+							</a>
 						</div>
 
-						<div class="col-6">
-							<div class="category__card">
+						<div class="col-lg-6">
+							<a href="#" class="category__card">
 								<h3 class="category__card-title">Встраиваемые<br>насосы</h3>
 
 								<p class="category__price">Цена от <strong>10500 ₽</strong></p>
 
-								<a href="#" class="category__more">Смотреть все товары</a>
+								<p class="category__more">Смотреть все товары</p>
 
 								<img class="category__image_2" src="img/category/category-2.png" alt="">
-							</div>
+							</a>
 						</div>
 
-						<div class="col-6">
-							<div class="category__card">
+						<div class="col-lg-6">
+							<a href="#" class="category__card">
 								<h3 class="category__card-title">Поршневые<br>насосы</h3>
 
 								<p class="category__price">Цена от <strong>3800 ₽</strong></p>
 
-								<a href="#" class="category__more">Смотреть все товары</a>
+								<p class="category__more">Смотреть все товары</p>
 
 								<img class="category__image_3" src="img/category/category-3.png" alt="">
-							</div>
+							</a>
 						</div>
 					</div>
 				</div>
 
-				<div class="col-4">
-					<div class="category__card">
+				<div class="col-lg-4">
+					<a href="#" class="category__card">
 						<h3 class="category__card-title">Центробежные<br>насосы</h3>
 
 						<p class="category__price">Цена от <strong>3800 ₽</strong></p>
 
-						<a href="#" class="category__more">Смотреть все товары</a>
+						<p class="category__more">Смотреть все товары</p>
 
 						<img class="category__image_4" src="img/category/category-4.png" alt="">
-					</div>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -152,16 +157,22 @@
 			<h2>Немного о компании</h2>
 
 			<div class="row">
-				<div class="col-8">
+				<div class="col-xl-8">
 					<div class="about-us__card">
-						<h3>Почему специалисты уверены<br>в насосах Sauermann?</h3>
+						<div class="about-us__image">
+							
+						</div>
 
-						<p>Во-первых, конденсатные насосы компании на мировом рынке с 1989 года. Собственно, благодаря дренажным помпам, марка Sauermann, основанная в 1976 году во Франции,   снискала себе мировую славу. За них же компания получила премию Interclima в номинации «Инновация» в 1993 году.</p>
+						<div class="about-us__text">
+							<h3>Почему специалисты уверены<br>в насосах Sauermann?</h3>
 
-						<p>С тех пор инновация стала основным подходом к разработке новых моделей дренажных помп. Например, в том же 1993 Sauermann приступает к выпуску малогабаритных конденсатных насосов для систем кондиционирования, а в 2004 совершенствует модельный ряд, разработав новое поколение мини-насосов SI 3080, SI 3100 и SI 3200. А с  линии центробежных насосов SI 1820 и SI 1805 началось стремительное расширение Saurmann, переходившей на принципиально новый уровень.</p>
+							<p>Во-первых, конденсатные насосы компании на мировом рынке с 1989 года. Собственно, благодаря дренажным помпам, марка Sauermann, основанная в 1976 году во Франции,   снискала себе мировую славу. За них же компания получила премию Interclima в номинации «Инновация» в 1993 году.</p>
+
+							<p>С тех пор инновация стала основным подходом к разработке новых моделей дренажных помп. Например, в том же 1993 Sauermann приступает к выпуску малогабаритных конденсатных насосов для систем кондиционирования, а в 2004 совершенствует модельный ряд, разработав новое поколение мини-насосов SI 3080, SI 3100 и SI 3200. А с  линии центробежных насосов SI 1820 и SI 1805 началось стремительное расширение Saurmann, переходившей на принципиально новый уровень.</p>
+						</div>
 					</div>
 				</div>
-				<div class="col-4">
+				<div class="col-xl-4">
 					<div class="about-us__items">
 						<a href="#" class="about-us__link_1">
 							<h3>Новое поколение мини-насосов</h3>
@@ -177,9 +188,7 @@
 
 	<section class="novelty">
 		<div class="container novelty__container">
-			<h2>Новинки<br>продукции</h2>
-
-			<div class="novelty__nav"></div>
+			<h2>Новинки продукции</h2>
 
 			<div class="novelty__slider">
 				<div class="product-card">
@@ -256,6 +265,8 @@
 				</div>
 			</div>
 
+			<div class="novelty__nav"></div>
+
 			<a class="novelty__more" href="#">Больше новинок</a>
 		</div>
 	</section>
@@ -266,25 +277,25 @@
 
 			<form class="application__form" action="">
 				<div class="row align-items-end">
-					<div class="col-3">
+					<div class="col-lg-3 col-md-4">
 						<label>
 							Имя
 							<input type="text" placeholder="Иван">
 						</label>
 					</div>
-					<div class="col-3">
+					<div class="col-lg-3 col-md-4">
 						<label>
 							Телефон
 							<input type="text" placeholder="+7(***) *** ** **">
 						</label>
 					</div>
-					<div class="col-3">
+					<div class="col-lg-3 col-md-4">
 						<label>
 							E-mail
 							<input type="email" placeholder="Электронный адрес">
 						</label>
 					</div>
-					<div class="col-3">
+					<div class="col-lg-3 col-md-12">
 						<button>Отправить</button>
 					</div>
 				</div>
@@ -295,20 +306,20 @@
 	<footer class="footer">
 		<div class="container">
 			<div class="row">
-				<div class="col-3">
+				<div class="col-md-3 col-6">
 					<h3>©2020 Все права защищены</h3>
 
 					<p>Материалы, документы и фотографии данного сайта являются собственностью компании SAUERMANN GROUP.</p>
 				</div>
-				<div class="col-3">
+				<div class="col-md-3 col-6">
 					<h3>Информация</h3>
 					<ul>
 						<li><a href="#">Доставка</a></li>
 						<li><a href="#">О компании</a></li>
-						<li><a href="#">Вопро ответ</a></li>
+						<li><a href="#">Вопрос ответ</a></li>
 					</ul>
 				</div>
-				<div class="col-3">
+				<div class="col-md-3 col-6">
 					<h3>Каталог насосов</h3>
 					<ul>
 						<li><a href="#">Перестальтические</a></li>
@@ -317,7 +328,7 @@
 						<li><a href="#">Центробежные</a></li>
 					</ul>
 				</div>
-				<div class="col-3">
+				<div class="col-md-3 col-6">
 					<h3>Контакты</h3>
 					
 					<p>г. Екатеринбург, ул. Дружба д.100/а</p>

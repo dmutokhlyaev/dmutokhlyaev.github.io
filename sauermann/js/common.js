@@ -1,9 +1,9 @@
 $(function(){
-	$('.header__slider').slick({
+	$('.first-screen__slider').slick({
 		infinite: true,
 		arrows: false,
 		dots: true,
-		appendDots: $('.header__dots'),
+		appendDots: $('.first-screen__dots'),
 		fade: true,
 		draggable: false,
 		autoplay: true,
@@ -13,17 +13,17 @@ $(function(){
 
 	/* Устанавливает одинаковую высоту для слайдов на первом экране */
 	
-	let slidMaxHeight = $('.header__slider .header__product').eq(0).innerHeight();
+	let slidMaxHeight = $('.first-screen__slider .first-screen__product').eq(0).innerHeight();
 	
 
-	for (let i = 0; i < $('.header__slider .header__product').length; i++) {
+	for (let i = 0; i < $('.first-screen__slider .first-screen__product').length; i++) {
 
-		if ( $('.header__slider .header__product').eq(i).innerHeight() > slidMaxHeight ) {
-			slidMaxHeight = $('.header__slider .header__product').eq(i).innerHeight();
+		if ( $('.first-screen__slider .first-screen__product').eq(i).innerHeight() > slidMaxHeight ) {
+			slidMaxHeight = $('.first-screen__slider .first-screen__product').eq(i).innerHeight();
 		}
 	}
 
-	$('.header__slider .header__product').innerHeight(slidMaxHeight);
+	$('.first-screen__slider .first-screen__product').innerHeight(slidMaxHeight);
 
 	$('.novelty__slider').slick({
 		infinite: false,
@@ -34,6 +34,33 @@ $(function(){
 		prevArrow: '<button type = "button" class = "slick-prev"></ button>',
 		nextArrow: '<button type = "button" class = "slick-next"></ button>',
 		appendDots: $('.novelty__nav'),
+		responsive: [
+	        {
+	          breakpoint: 1200,
+	          settings: {
+	            slidesToShow: 3,
+	            slidesToScroll: 2,
+	          }
+	        },
+	        {
+	          breakpoint: 992,
+	          settings: {
+	            slidesToShow: 2,
+	            slidesToScroll: 2,
+	            arrows: false,
+	            rows: 2,
+	          }
+	        },
+	        {
+	          breakpoint: 768,
+	          settings: {
+	            slidesToShow: 1,
+	            slidesToScroll: 1,
+	            arrows: false,
+	            rows: 3,
+	          }
+	        },
+	    ],
 	});
 
 	/* Устанавливает одинаковую высоту для слайдов Новинок */
@@ -47,6 +74,20 @@ $(function(){
 		}
 	}
 
-	$('.novelty__container').innerHeight(slidMaxHeight);
+	$('.novelty__container').css('min-height', slidMaxHeight);
 	$('.novelty__slider .product-card').innerHeight(slidMaxHeight);
+
+	/* Главное меню на мобильных */
+
+	$('.hamburger').click(function() {
+		if ( $('.hamburger').hasClass('is-active') ) {
+
+			$('.hamburger').removeClass('is-active');
+			$('.main-menu').removeAttr('style');
+
+		} else {
+			$('.hamburger').addClass('is-active');
+			$('.main-menu').height( $('.main-menu ul').innerHeight() );
+		}
+	});
 });
