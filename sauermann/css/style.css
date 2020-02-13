@@ -154,8 +154,6 @@ body{
     transform: rotate(-90deg);
     transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
 
-
-
 /* Header */
 
 .header{
@@ -471,7 +469,8 @@ body{
 }
 .about-us__image{
 	position: relative;
-	width: 320px;
+	width: 300px;
+	height: 450px;
 	flex-shrink: 0;
 	background: url('../img/about-us/about-us-1.jpg') no-repeat right / auto 100%;
 }
@@ -523,10 +522,10 @@ body{
 }
 .about-us__link_1{
 	margin-bottom: 30px;
-	background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), url(../img/about-us/about-us-2.jpg) bottom right / 120%;
+	background: url(../img/about-us/about-us-2.jpg) bottom right / cover;
 }
 .about-us__link_2{
-	background: linear-gradient(0deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), url(../img/about-us/about-us-3.jpg) top center / cover;
+	background: url(../img/about-us/about-us-3.jpg) top center / cover;
 }
 
 /* Новинки */
@@ -845,7 +844,6 @@ body{
 	.main-menu li.active{
 		border-bottom: 1px solid #0086C8;
 	}
-
 	
 	.first-screen{
 		background: #0086C8 url(../img/first-linework.png) no-repeat top right;
@@ -889,6 +887,20 @@ body{
 		right: 0px;
 	}
 
+	.about-us__card{
+		background: none;
+		box-shadow: none;
+		margin-bottom:60px;
+	}
+	.about-us__image{
+		border-radius: 10px;
+		overflow: hidden;
+	}
+	.about-us__text{
+		padding: 0;
+		margin-left: 30px;
+	}
+
 	.novelty{
 		background: #0086C8 url(../img/first-linework.png) no-repeat top right;
 	}
@@ -928,20 +940,33 @@ body{
 		margin-top: 60px;
 		margin-bottom: 60px;
 	}
-	.about-us__image{
-		height: 450px;
-		align-self: center;
-		border-radius: 10px;
-		overflow: hidden;
+	.about-us h2{
+		text-align: center;
 	}
 	.about-us__card{
 		flex-direction: column;
-		background: none;
-		box-shadow: none;
+		margin-bottom: 30px;
+	}
+	.about-us__image{
+		margin: 0 auto 30px;
+	}
+	.about-us__text{
+		margin-left: 0;
+	}
+	.about-us h2{
+		margin-bottom: 20px;
 	}
 	.novelty{
 		padding-top: 60px;
 		padding-bottom: 60px;
+	}
+
+	.footer{
+		padding-bottom: 14px;
+	}
+	.footer .row>div:nth-child(1),
+	.footer .row>div:nth-child(2){
+		margin-bottom: 20px;
 	}
 
 	.hamburger-box {
@@ -990,8 +1015,46 @@ body{
 	.about-us__link_1{
 		margin-bottom: 30px;
 	}
+
+	.footer{
+		padding-bottom: 0px;
+	}
+	.footer .row>div{
+		margin-bottom: 20px;
+	}
 }
 @media only screen and (max-width: 450px){
+	.offer{
+		padding-bottom: 0;
+	}
+	.offer h1{
+		font-size: 18px;
+	}
+	.offer h1 strong{
+		font-size: 30px;
+	}
+	.offer .button{
+		display: block;
+		width: 235px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.category__card h3{
+		font-size: 18px;
+	}
+	.category__price{
+		font-size: 16px;
+	}
+	.category__price strong{
+		font-size: 14px;
+		padding: 6px 12px;
+	}
+	.category__more{
+		font-size: 16px;
+		margin-top: 30px;
+	}
+
 	.category__image_1,
 	.category__image_2,
 	.category__image_3,
@@ -1003,5 +1066,9 @@ body{
 
 	.application h2{
 		font-size: 25px;
+		margin-bottom: 30px;
+	}
+	.application input{
+		margin-top: 10px;
 	}
 }
