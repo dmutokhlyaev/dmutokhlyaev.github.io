@@ -1,9 +1,12 @@
 $(function(){
-	$('.first-screen__slider').slick({
+
+	/* Слайдер на главной */
+
+	$('.first-slider').slick({
 		infinite: true,
 		arrows: false,
 		dots: true,
-		appendDots: $('.first-screen__dots'),
+		appendDots: $('.first-slider__nav'),
 		fade: true,
 		draggable: false,
 		autoplay: true,
@@ -11,19 +14,9 @@ $(function(){
 		pauseOnHover: false,
 	});
 
-	/* Устанавливает одинаковую высоту для слайдов на первом экране */
-	
-	let slidMaxHeight = $('.first-screen__slider .first-screen__product').eq(0).innerHeight();
-	
+	$('.first-slider__item').height( $('.offer').innerHeight() )
 
-	for (let i = 0; i < $('.first-screen__slider .first-screen__product').length; i++) {
-
-		if ( $('.first-screen__slider .first-screen__product').eq(i).innerHeight() > slidMaxHeight ) {
-			slidMaxHeight = $('.first-screen__slider .first-screen__product').eq(i).innerHeight();
-		}
-	}
-
-	$('.first-screen__slider .first-screen__product').innerHeight(slidMaxHeight);
+	/* Слайдер с новинками */
 
 	$('.novelty__slider').slick({
 		infinite: false,
@@ -65,7 +58,7 @@ $(function(){
 
 	/* Устанавливает одинаковую высоту для слайдов Новинок */
 
-	slidMaxHeight = $('.novelty__slider .product-card').eq(0).innerHeight();
+	var slidMaxHeight = $('.novelty__slider .product-card').eq(0).innerHeight();
 
 	for (let i = 0; i < $('.novelty__slider .product-card').length; i++) {
 
@@ -89,5 +82,37 @@ $(function(){
 			$('.hamburger').addClass('is-active');
 			$('.main-menu').height( $('.main-menu ul').innerHeight() );
 		}
+	});
+
+
+	$(window).on('resize', function(){
+	    $('.first-slider__item').height( $('.offer').innerHeight() );
+
+	    var slidMaxHeight = $('.novelty__slider .product-card').eq(0).innerHeight();
+
+		for (let i = 0; i < $('.novelty__slider .product-card').length; i++) {
+
+			if ( $('.novelty__slider .product-card').eq(i).innerHeight() > slidMaxHeight ) {
+				slidMaxHeight = $('.novelty__slider .product-card').eq(i).innerHeight();
+			}
+		}
+
+		$('.novelty__container').css('min-height', slidMaxHeight);
+		$('.novelty__slider .product-card').innerHeight(slidMaxHeight);
+	});
+
+	$('.discount-slider').slick({
+		prevArrow: '<button type = "button" class = "slick-prev"></ button>',
+		nextArrow: '<button type = "button" class = "slick-next"></ button>',
+	})
+
+	/* Всплывающее окно*/
+
+	$('#button__popup').click(function() {
+		$('.popup').removeClass('popup_hidden');
+	});
+
+	$('.button-close').click(function() {
+		$('.popup').addClass('popup_hidden');
 	});
 });
