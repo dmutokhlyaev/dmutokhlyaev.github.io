@@ -14,7 +14,11 @@ $(function(){
 		pauseOnHover: false,
 	});
 
-	$('.first-slider__item').height( $('.offer').innerHeight() )
+	$('.first-slider').on('setPosition', function() {
+
+		$('.first-slider__item').height( $('.offer').innerHeight() )
+	
+	});
 
 	/* Слайдер с новинками */
 
@@ -58,17 +62,20 @@ $(function(){
 
 	/* Устанавливает одинаковую высоту для слайдов Новинок */
 
-	var slidMaxHeight = $('.novelty__slider .product-card').eq(0).innerHeight();
+	$('.novelty__slider').on('setPosition', function() {
 
-	for (let i = 0; i < $('.novelty__slider .product-card').length; i++) {
+		var slidMaxHeight = $('.novelty__slider .product-card').eq(0).innerHeight();
 
-		if ( $('.novelty__slider .product-card').eq(i).innerHeight() > slidMaxHeight ) {
-			slidMaxHeight = $('.novelty__slider .product-card').eq(i).innerHeight();
+		for (let i = 0; i < $('.novelty__slider .product-card').length; i++) {
+
+			if ( $('.novelty__slider .product-card').eq(i).innerHeight() > slidMaxHeight ) {
+				slidMaxHeight = $('.novelty__slider .product-card').eq(i).innerHeight();
+			}
 		}
-	}
 
-	$('.novelty__container').css('min-height', slidMaxHeight);
-	$('.novelty__slider .product-card').innerHeight(slidMaxHeight);
+		$('.novelty__container').css('min-height', slidMaxHeight);
+		$('.novelty__slider .product-card').innerHeight(slidMaxHeight);
+	});
 
 	/* Главное меню на мобильных */
 
@@ -84,22 +91,6 @@ $(function(){
 		}
 	});
 
-
-	$(window).on('resize', function(){
-	    $('.first-slider__item').height( $('.offer').innerHeight() );
-
-	    var slidMaxHeight = $('.novelty__slider .product-card').eq(0).innerHeight();
-
-		for (let i = 0; i < $('.novelty__slider .product-card').length; i++) {
-
-			if ( $('.novelty__slider .product-card').eq(i).innerHeight() > slidMaxHeight ) {
-				slidMaxHeight = $('.novelty__slider .product-card').eq(i).innerHeight();
-			}
-		}
-
-		$('.novelty__container').css('min-height', slidMaxHeight);
-		$('.novelty__slider .product-card').innerHeight(slidMaxHeight);
-	});
 
 	$('.discount-slider').slick({
 		prevArrow: '<button type = "button" class = "slick-prev"></ button>',

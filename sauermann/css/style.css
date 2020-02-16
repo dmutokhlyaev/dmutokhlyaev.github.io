@@ -689,6 +689,9 @@ body{
 	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
 	padding: 60px 30px 30px;
 	overflow: hidden;
+	height: 100%;
+	display: flex !important;
+	flex-direction: column;
 }
 .product-card_new::before{
 	content: 'Новинка';
@@ -741,12 +744,14 @@ body{
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 40px;
+	font-style: 0;
 }
 .product-card__price{
 	display: flex;
 	align-items: center;
 	font-size: 18px;
 	margin-bottom: 0;
+	margin-top: auto;
 }
 .product-card__price::before{
 	content: '';
