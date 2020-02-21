@@ -3,6 +3,10 @@ $(function(){
 	$('.home-slider').slick({
 		prevArrow: $('.home-slider__prev'),
 		nextArrow: $('.home-slider__next'),
+		autoplay: true,
+		autoplaySpeed: 10000,
+		fade: true,
+		draggable: false,
 	});
 
 	$('.home-slider').on('beforeChange', function(event, slick, currentSlide, nextSlider) {

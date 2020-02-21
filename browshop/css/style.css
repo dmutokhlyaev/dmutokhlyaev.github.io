@@ -115,10 +115,16 @@ body{
 	width: 100%;
 	height: 42px;
 	background: #43433F;
+	border: 1px solid #43433F;
 	font-family: Optima Cyr;
 	font-size: 14px;
 	text-transform: uppercase;
 	color: #fff;
+	transition: all 0.3s;
+}
+.button:hover{
+	background: #fff;
+	color: #43433F;
 }
 .button_bigger{
 	width: 240px;
@@ -130,6 +136,10 @@ body{
 	background: transparent;
 	border: 1px solid #43433F;
 	color: #43433F;
+}
+.button_transparent:hover{
+	background: #43433F;
+	color: #fff;
 }
 
 .bg-color-1{
@@ -412,6 +422,7 @@ body{
 	font-weight: 500;
 	font-size: 20px;
 	text-transform: uppercase;
+	transition: background 0.3s;
 }
 .home-slider__to-catalog::after{
 	content: '';
@@ -420,6 +431,9 @@ body{
 	height: 20px;
 	background: url(../img/icons/right.png) center / cover;
 	margin-left: 15px;
+}
+.home-slider__to-catalog:hover{
+	background-color: #d65e1f;
 }
 .home-slider__nav{
 	display: flex;
@@ -476,9 +490,13 @@ body{
 	border-radius: 50%;
 	background-position: center center;
 	background-repeat: no-repeat;
+	transition: background-color 0.3s;
 }
 .home__social .social-link{
 	background-color: #E4A3A3;
+}
+.social-link .social-link:hover{
+	background-color: #d65e1f;
 }
 .instagram{
 	background-image: url('../img/icons/instagram.png');
@@ -494,6 +512,7 @@ body{
 /* Категории */
 
 .categories__item{
+	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -501,34 +520,44 @@ body{
 	background: center / cover;
 	margin-bottom: 30px;
 }
+.categories__item::before{
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.3);
+	transition: background 0.3s;
+}
+.categories__item:hover::before{
+	background: rgba(0, 0, 0, 0);
+}
 .categories .row{
 	margin-bottom: -30px;
 }
 .row>div:nth-child(1) .categories__item{
-	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-	                  url('../img/categories/category-1.jpg');
+	background-image: url('../img/categories/category-1.jpg');
 }
 .row>div:nth-child(2) .categories__item{
-	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-	                  url('../img/categories/category-2.jpg');
+	background-image: url('../img/categories/category-2.jpg');
 }
 .row>div:nth-child(3) .categories__item{
-	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-	                  url('../img/categories/category-3.jpg');
+	background-image: url('../img/categories/category-3.jpg');
 }
 .row>div:nth-child(4) .categories__item{
-	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-	                  url('../img/categories/category-4.jpg');
+	background-image: url('../img/categories/category-4.jpg');
 }
 .row>div:nth-child(5) .categories__item{
-	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-	                  url('../img/categories/category-5.jpg');
+	background-image: url('../img/categories/category-5.jpg');
 }
 .row>div:nth-child(6) .categories__item{
-	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-	                  url('../img/categories/category-6.jpg');
+	background-image: url('../img/categories/category-6.jpg');
 }
 .categories__title{
+	position: relative;
+	z-index: 1;
 	font-size: 27px;
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
@@ -599,11 +628,11 @@ body{
 .best-seller__image{
 	text-align: center;
 	background: rgba(214, 94, 31, 0.2);
-	height: 100%;
+	padding: 0 50px;
 }
 .best-seller__image img{
 	position: relative;
-	top: 50px;
+	top: 50px
 }
 
 .product__title{
@@ -740,6 +769,12 @@ body{
 .footer-menu li{
 	margin-bottom: 10px;
 }
+.footer-menu a{
+	transition: color 0.3s;
+}
+.footer-menu a:hover{
+	color: #d65e1f;
+}
 
 .footer__social{
 	margin-bottom: 25px;
@@ -756,6 +791,9 @@ body{
 	width: 32px;
 	height: 32px;
 	background-size: 18px;
+}
+.footer__social .social-link:hover{
+	background-color: #d65e1f;
 }
 .footer__social .facebook{
 	background-image: url('../img/icons/facebook.png');
@@ -850,14 +888,6 @@ body{
 		font-size: 24px;
 	}
 
-	.best-seller__image{
-		height: auto;
-	}
-	.best-seller__image img{
-		top: 0;
-		display: block;
-	}
-
 	.partners{
 		height: auto;
 	}
@@ -901,14 +931,8 @@ body{
 	.product__card::before {
 		font-size: 29px;
 	}
-
 	.best-seller__image{
-		background: transparent;
-		margin-bottom: 40px;
-	}
-	.best-seller__image img{
-		margin-left: auto;
-		margin-right: auto;
+		margin-bottom: 80px;
 	}
 
 	.subscription__intro{
