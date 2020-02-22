@@ -40,7 +40,7 @@ $(function(){
 		} else {
 
 			$('.hamburger').addClass('is-active');
-			$('.main-menu').height( $('.main-menu ul').height() );
+			$('.main-menu').height( $('.main-menu ul').innerHeight() );
 
 		}
 	})
