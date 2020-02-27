@@ -43,5 +43,28 @@ $(function(){
 			$('.main-menu').height( $('.main-menu ul').innerHeight() );
 
 		}
-	})
+	});
+
+	for (let i = 0; i < $('.filter-item').length; i++) {
+
+		$('.filter-item__title').eq(i).click(function() {
+
+			$('.filter-item').eq(i).toggleClass('close');
+
+		});
+	}
+
+	for (let i = 0; i < $('.product__menu-item').length; i++) {
+		
+		$('.product__menu-item').eq(i).click( function() {
+
+			$('.product__menu-item.active').removeClass('active');
+			$('.product__menu-item').eq(i).addClass('active');
+
+			$('.product__item.open').removeClass('open');
+			$('.product__item').eq(i).addClass('open');
+		});
+	};
+
+	$('.nice-input').niceNumber();
 });
