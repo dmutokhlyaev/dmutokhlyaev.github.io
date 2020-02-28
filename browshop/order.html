@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Browshop | Оформление заказа</title>
+
+	<link rel="stylesheet" href="libs/bootstrap-4.4.1/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="libs/slick-slider/slick.css">
+	<link rel="stylesheet" href="libs/nice-number/jquery.nice-number.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header class="header">
+		<div class="container header__container">
+			<a href="" class="logo"><img src="img/logo.png" alt="Browshop 24"></a>
+
+			<div class="hamburger hamburger--spin">
+			  <div class="hamburger-box">
+			    <div class="hamburger-inner"></div>
+			  </div>
+			</div>
+
+			<nav class="main-menu">
+				<ul>
+					<li><a href="#">Каталог</a></li>
+					<li><a href="#">Бренды</a></li>
+					<li><a href="#">Курсы</a></li>
+					<li><a href="#">О нас</a></li>
+					<li><a href="#">Контакты</a></li>
+				</ul>
+			</nav>
+
+			<div class="header__buttons">
+				<form class="search close" action="">
+					<input class="search__input" class="" type="text" placeholder="Поиск...">
+
+					<button class="button_search"></button>
+				</form>
+
+				<button class="button_shop"><span class="button_shop__count">0</span></button>
+
+				<button class="button_heart"></button>
+			</div>
+		</div>
+	</header>
+
+	<section class="first-screen first-screen_order">
+		<h1 class="first-screen__title">Оформление заказа</h1>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<h2 class="section__title">Оформление заказа</h2>
+
+			<div class="bread-crumbs">
+					<ul>
+						<li><a href="#">Главная</a></li>
+						<li class="bread-crumbs__separator"></li>
+						<li>Оформление заказа</li>
+					</ul>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-6 offset-lg-3">
+					<form class="order">
+						<h3 class="order__title">Заполните данные</h3>
+
+						<div class="order__menu">
+							<h4 class="order__menu-item active">Получатель</h4>
+							<h4 class="order__menu-item">Адрес</h4>
+							<h4 class="order__menu-item">Способ оплаты</h4>
+						</div>
+
+						<div class="order__list">
+							<div class="order__item active">
+								<input class="order__input" type="text" placeholder="ФИО">
+								<input class="order__input" type="text" placeholder="Ваш E-mail">
+								<input class="order__input" type="text" placeholder="Телефон">
+							</div>
+							<div class="order__item">
+								<input class="order__input" type="text" placeholder="Адрес">
+							</div>
+							<div class="order__item">
+								<input class="order__input" type="text" placeholder="Способ оплаты">
+							</div>
+						</div>
+
+						<div class="text-center">
+							ИТОГО: <span class="total__price">1500</span>
+						</div>
+
+						<button class="button button_bigger order__button">Заказать</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section subscription">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2">
+					<p class="subscription__intro">Подписывайтесь на нашу полезную<br>рассылку и узнавайте обо всем первыми!</p>
+
+					<form class="subscription__form" action="">
+						<input class="subscription__input" type="email" placeholder="Ваш E-mail">
+
+						<button class="button button_bigger">Подписаться</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-sm-6 order-lg-0 order-sm-1">
+					<a href="" class="logo"><img src="img/logo.png" alt="Browshop 24"></a>
+
+					<p class="footer__intro">BROWshop - это особое пространство, где собраны только лучшие экземпляры высщего качества проверенные многолетним опытом</p>
+				</div>
+				<div class="col-lg-2 col-sm-4 col-6">
+					<h3 class="footer-menu__title">Brownshop</h3>
+
+					<ul class="footer-menu">
+						<li><a href="#">Главная</a></li>
+						<li><a href="#">О нас</a></li>
+						<li><a href="#">Курсы</a></li>
+						<li><a href="#">Политика конфиденциальности</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-2 col-sm-4 col-6">
+					<h3 class="footer-menu__title">Каталог</h3>
+
+					<ul class="footer-menu">
+						<li><a href="#">Наборы</a></li>
+						<li><a href="#">Лицо</a></li>
+						<li><a href="#">Волосы</a></li>
+						<li><a href="#">Тело</a></li>
+						<li><a href="#">Аксессуары</a></li>
+						<li><a href="#">Макияж</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-2 col-4">
+					<h3 class="footer-menu__title">Помощь</h3>
+
+					<ul class="footer-menu">
+						<li><a href="#">Полезная информация</a></li>
+						<li><a href="#">Контакты</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-sm-6 text-right order-lg-0 order-sm-1">
+					<nav class="footer__social">
+						<ul>
+							<li><a class="social-link instagram" href="#"></a></li>
+							<li><a class="social-link facebook" href="#"></a></li>
+							<li><a  class="social-link twitter" href="#"></a></li>
+						</ul>
+					</nav>
+
+					<h3 class="footer-menu__title">Контактный телефон</h3>
+
+					<p>+7 (903) 111-11-11</p>
+
+					<h3 class="footer-menu__title">E-mail</h3>
+
+					<p>your@mail.ru</p>
+
+					<p class="copyright">© BROWshop 2020, Все права защищены</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="libs/slick-slider/slick.min.js"></script>
+	<script src="libs/nice-number/jquery.nice-number.min.js"></script>
+	<script src="js/common.js"></script>
+</body>
+</html>

@@ -67,4 +67,16 @@ $(function(){
 	};
 
 	$('.nice-input').niceNumber();
+
+	for (let i = 0; i < $('.order__menu-item').length; i++) {
+		
+		$('.order__menu-item').eq(i).click( function() {
+
+			$('.order__menu-item.active').removeClass('active');
+			$('.order__menu-item').eq(i).addClass('active');
+
+			$('.order__item.active').removeClass('active');
+			$('.order__item').eq(i).addClass('active');
+		});
+	};
 });

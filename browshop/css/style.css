@@ -959,7 +959,7 @@ body{
 	background: rgba(0,0,0, 0.4);
 }
 .first-screen::after{
-	content: 'all goods professional cosmetics brow shop24 cosmetics all goods professional cosmetics ods professional cosmetics brow shop24 cosmetics';
+	content: 'professional cosmetics brow shop24 cosmetics professional cosmetics professional cosmetics brow shop24 cosmetics';
 	position: absolute;
 	bottom: -28px;
 	left: 0;
@@ -969,28 +969,50 @@ body{
 	opacity: 0.25;
 }
 .first-screen_makeup{
-	background: url(../img/makeup.jpg) center / cover;
+	background: url(../img/first-screen/makeup.jpg) center / cover;
+}
+.first-screen_makeup::after{
+	content: 'all goods professional cosmetics brow shop24 cosmetics all goods professional cosmetics all goods professional cosmetics brow shop24 cosmetics';
 }
 .first-screen_about-us{
-	background: url(../img/about-us.jpg) top -100px center / cover;
+	background: url(../img/first-screen/about-us.jpg) center / cover;
+}
+.first-screen_about-us::after{
+	content: 'about us professional cosmetics brow shop24 cosmetics about us professional cosmetics';
 }
 .first-screen_contacts{
-	background: url(../img/contacts.jpg) center center / cover;
+	background: url(../img/first-screen/contacts.jpg) center center / cover;
+}
+.first-screen_contacts::after{
+	content: 'contact us professional cosmetics brow shop24 cosmetics contact us professional cosmetics';
 }
 .first-screen_inform{
-	background: url(../img/inform.jpg) center center / cover;
+	background: url(../img/first-screen/inform.jpg) center center / cover;
+}
+.first-screen_inform::after{
+	content: 'information professional cosmetics brow shop24 cosmetics information professional cosmetics brow shop24 cosmetics';
 }
 .first-screen_shop{
-	background: url(../img/shop.jpg) center center / cover;
+	background: url(../img/first-screen/shop.jpg) center center / cover;
+}
+.first-screen_shop::after{
+	content: 'shopping professional cosmetics brow shop24 cosmetics shopping professional cosmetics brow shop24 cosmetics';
+}
+.first-screen_order{
+	background: url(../img/first-screen/order.jpg) center center / cover;
+}
+.first-screen_order::after{
+	content: 'shopping professional cosmetics brow shop24 cosmetics shopping professional cosmetics brow shop24 cosmetics';
 }
 .first-screen__title{
 	color: #fff;
 	position: relative;
 	z-index: 1;
 	font-weight: 400;
-	font-size: 40px;
+	font-size: 38px;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
+	text-align: center;
 }
 
 /* Категория */
@@ -1213,6 +1235,7 @@ body{
 	flex-direction: column;
 	justify-content: center;
 	overflow: hidden;
+	object-fit: cover;
 }
 .about-us__item_left .about-us__image img{
 	height: auto;
@@ -1239,6 +1262,7 @@ body{
 	flex-direction: column;
 	justify-content: center;
 	overflow: hidden;
+	object-fit: cover;
 }
 .about-us__item_right .about-us__image img{
 	height: auto;
@@ -1350,6 +1374,65 @@ body{
 	height: 45px;
 	background: url(../img/icons/remove.png) no-repeat top center / contain;
 	margin-left: 20px;
+}
+
+.order__title{
+	text-align: center;
+	font-weight: normal;
+	font-size: 30px;
+}
+.order__menu{
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid rgba(53, 27, 19, 0.2);
+	margin-bottom: 30px;
+}
+.order__menu-item{
+	position: relative;
+	font-weight: normal;
+	font-size: 16px;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+.order__menu-item::after{
+	content: '';
+	display: block;
+	width: 100%;
+	height: 5px;
+	background: transparent;
+	position: absolute;
+	left: 0;
+	bottom: 5px;
+	z-index: -1;
+	transition: background 0.3s;
+}
+.order__menu-item:hover::after,
+.order__menu-item.active::after{
+	background: #E4A3A3;
+}
+.order__input{
+	border: 1px solid #43433F;
+	font-size: 16px;
+	padding: 16px 20px;
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.order__list{
+	margin-bottom: 30px;
+}
+.order__item{
+	padding: 0 20px;
+	height: 0;
+	overflow: hidden;
+}
+.order__item.active{
+	height: auto;
+}
+.order__button{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
 }
 
 @media only screen and (max-width: 1200px){
@@ -1676,5 +1759,13 @@ body{
 	.about-us__item_left .about-us__image,
 	.about-us__item_right .about-us__image{
 		height: 300px;
+	}
+	.order__menu{
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.order__menu-item{
+		margin-top: 0;
+		margin-bottom: 10px;
 	}
 }
