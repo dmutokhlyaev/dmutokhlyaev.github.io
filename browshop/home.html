@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Browshop | Профессиональная косметика</title>
+
+	<link rel="stylesheet" href="libs/bootstrap-4.4.1/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="libs/slick-slider/slick.css">
+	<link rel="stylesheet" href="libs/nice-number/jquery.nice-number.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header class="header">
+		<div class="container header__container">
+			<a href="" class="logo"><img src="img/logo.png" alt="Browshop 24"></a>
+
+			<div class="hamburger hamburger--spin">
+			  <div class="hamburger-box">
+			    <div class="hamburger-inner"></div>
+			  </div>
+			</div>
+
+			<nav class="main-menu">
+				<ul>
+					<li><a href="#">Каталог</a></li>
+					<li><a href="#">Бренды</a></li>
+					<li><a href="#">Курсы</a></li>
+					<li><a href="#">О нас</a></li>
+					<li><a href="#">Контакты</a></li>
+				</ul>
+			</nav>
+
+			<div class="header__buttons">
+				<form class="search search_close" action="">
+					<input type="text" placeholder="Поиск...">
+
+					<button type="submit" class="button_search"></button>
+				</form>
+
+				<button class="button_shop"><span class="button_shop__count">0</span></button>
+
+				<button class="button_heart"></button>
+			</div>
+		</div>
+	</header>
+
+	<section class="home">
+		<div class="container">
+			<div class="offer">
+				<p class="offer__title"><strong>Более 1000</strong> женщин<br>
+				доверяют нам</p>
+
+				<p class="offer__intro">Профессиональная косметика</p>
+			</div>
+
+			<nav class="home__social">
+				<a class="social-link instagram" href="#">
+					<img src="img/icons/instagram.png" alt="">
+				</a>
+				<a class="social-link facebook" href="#">
+					<img src="img/icons/facebook.png" alt="">
+				</a>
+				<a  class="social-link twitter" href="#">
+					<img src="img/icons/twitter.png" alt="">
+				</a>
+			</nav>
+		</div>
+
+		<div class="home-slider__wrapper">
+			<div class="home-slider">
+				<div class="home-slider__item">
+					<img src="img/home-slider/home-slider-1.jpg" alt="">
+				</div>
+				<div class="home-slider__item">
+					<img src="img/home-slider/home-slider-2.jpg" alt="">
+				</div>
+				<div class="home-slider__item">
+					<img src="img/home-slider/home-slider-3.jpg" alt="">
+				</div>
+			</div>
+
+			<div class="home-slider__buttons">
+				<a href="#" class="home-slider__to-catalog">Перейти в каталог</a>
+				
+				<div class="home-slider__nav">
+					<button class="home-slider__prev"></button>
+					<div class="home-slider__count">01/03</div>
+					<button class="home-slider__next"></button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section categories">
+		<div class="container-md">
+			<div class="row">
+				<div class="col-sm-4">
+					<a href="#" class="categories__item">
+						<h3>Наборы</h3>
+
+						<div class="categories__img">
+							<img src="img/categories/category-1.jpg" alt="">
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-4">
+					<a href="#" class="categories__item">
+						<h3>Лицо</h3>
+
+						<div class="categories__img">
+							<img src="img/categories/category-2.jpg" alt="">
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-4">
+					<a href="#" class="categories__item">
+						<h3>Волосы</h3>
+
+						<div class="categories__img">
+							<img src="img/categories/category-3.jpg" alt="">
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-4">
+					<a href="#" class="categories__item">
+						<h3>Тело</h3>
+
+						<div class="categories__img">
+							<img src="img/categories/category-4.jpg" alt="">
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-4">
+					<a href="#" class="categories__item">
+						<h3>Аксессуары</h3>
+
+						<div class="categories__img">
+							<img src="img/categories/category-5.jpg" alt="">
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-4">
+					<a href="#" class="categories__item">
+						<h3>Макияж</h3>
+
+						<div class="categories__img">
+							<img src="img/categories/category-6.jpg" alt="">
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section novelty">
+		<div class="container">
+			<h2 class="section__title">Новинки</h2>
+
+			<div class="row">
+				<div class="col-xl-3 col-sm-6">
+					<div class="card bg-color-1 novelty__card">
+						<div class="card__img">
+							<img src="img/products/product-1.png" alt="">
+						</div>
+
+						<p class="card__producer">Brow Bar</p>
+
+						<p>Очищающий концентрат</p>
+
+						<p class="card__price">490</p>
+
+						<button class="button">Добавить в корзину</button>
+					</div>
+				</div>
+				<div class="col-xl-3 col-sm-6">
+					<div class="card bg-color-2 novelty__card">
+						<div class="card__img">
+							<img src="img/products/product-2.png" alt="">
+						</div>
+
+						<p class="card__producer">Thuya</p>
+
+						<p>Окислитель для окрашивания бровей и ресниц</p>
+
+						<p class="card__price">670</p>
+
+						<button class="button">Добавить в корзину</button>
+					</div>
+				</div>
+				<div class="col-xl-3 col-sm-6">
+					<div class="card bg-color-3 novelty__card">
+						<div class="card__img">
+							<img src="img/products/product-3.png" alt="">
+						</div>
+
+						<p class="card__producer">EKKOBEAUTY</p>
+
+						<p>Хна для бровей в оттенке Brown</p>
+
+						<p class="card__price">950</p>
+
+						<button class="button">Добавить в корзину</button>
+					</div>
+				</div>
+				<div class="col-xl-3 col-sm-6">
+					<div class="card bg-color-4 novelty__card">
+						<div class="card__img">
+							<img src="img/products/product-4.png" alt="">
+						</div>
+
+						<p class="card__producer">PRO BROW WAX</p>
+
+						<p>Воск для бровей 125 гр</p>
+
+						<p class="card__price">360</p>
+
+						<button class="button">Добавить в корзину</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section best-seller">
+		<div class="container">
+			<h2 class="section__title">Бестселлер</h2>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="best-seller__image bg-color-2">
+						<img src="img/best-seller.jpg" alt="">
+					</div>
+				</div>
+
+				<div class="col-xl-4 offset-lg-1 col-lg-5 col-md-6">
+					<p class="best-seller__producer">Brow Bar</p>
+
+					<h3>
+						Cleansing concentrate<br>
+						Очищающий концентрат
+					</h3>
+
+					<div class="best-seller__item">
+						<h4>Страна производитель</h4>
+
+						<p>Российская Федерация</p>
+					</div>
+
+					<div class="best-seller__item">
+						<h4>Обьем</h4>
+
+						<p>100 мл</p>
+					</div>
+
+					<p class="best-seller__price">490</p>
+
+					<button class="button button_bigger">Добавить в корзину</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section partners">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 align-self-center">
+					<h2 class="section__title">Наши партнеры</h2>
+
+					<p>Мы всегда очень трепетно подходим к выбору партнеров и сотрудничаем лишь с проверенными компаниями, которым мы доверяем. Все наши партнеры это известные бренды с качественной и пофессиональной продукцией, которые помогают и заботятся о вашей красоте и здоровье. В нашем интернет магазине Вы сможете приобрести продукцию популярных и востребованных брендов косметики по очень заманчивым, конкурентным на рынке ценам.</p>
+
+					<button class="button button_bigger button_transparent">Еще бренды</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="partners__list">
+			<div class="parters__item">
+				<img src="img/parters/partner-1.png" alt="">
+			</div>
+			<div class="parters__item">
+				<img src="img/parters/partner-2.png" alt="">
+			</div>
+			<div class="parters__item">
+				<img src="img/parters/partner-3.png" alt="">
+			</div>
+			<div class="parters__item">
+				<img src="img/parters/partner-4.png" alt="">
+			</div>
+			<div class="parters__item">
+				<img src="img/parters/partner-5.png" alt="">
+			</div>
+			<div class="parters__item">
+				<img src="img/parters/partner-6.png" alt="">
+			</div>
+			<div class="parters__item">
+				<img src="img/parters/partner-7.png" alt="">
+			</div>
+			<div class="parters__item">
+				<img src="img/parters/partner-8.png" alt="">
+			</div>
+			<div class="parters__item">
+				<img src="img/parters/partner-9.png" alt="">
+			</div>
+		</div>
+	</section>
+
+	<section class="section subscription">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2">
+					<p class="subscription__intro">Подписывайтесь на нашу полезную<br>рассылку и узнавайте обо всем первыми!</p>
+
+					<form action="">
+						<input class="subscription__input" type="email" placeholder="Ваш E-mail">
+
+						<button class="button button_bigger">Подписаться</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-sm-6 order-lg-0 order-sm-1">
+					<a href="" class="logo"><img src="img/logo.png" alt="Browshop 24"></a>
+
+					<p class="footer__intro">BROWshop - это особое пространство, где собраны только лучшие экземпляры высщего качества проверенные многолетним опытом</p>
+				</div>
+				<div class="col-lg-2 col-sm-4 col-6">
+					<h3 class="footer-menu__title">Brownshop</h3>
+
+					<ul class="footer-menu">
+						<li><a href="#">Главная</a></li>
+						<li><a href="#">О нас</a></li>
+						<li><a href="#">Курсы</a></li>
+						<li><a href="#">Политика конфиденциальности</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-2 col-sm-4 col-6">
+					<h3 class="footer-menu__title">Каталог</h3>
+
+					<ul class="footer-menu">
+						<li><a href="#">Наборы</a></li>
+						<li><a href="#">Лицо</a></li>
+						<li><a href="#">Волосы</a></li>
+						<li><a href="#">Тело</a></li>
+						<li><a href="#">Аксессуары</a></li>
+						<li><a href="#">Макияж</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-2 col-4">
+					<h3 class="footer-menu__title">Помощь</h3>
+
+					<ul class="footer-menu">
+						<li><a href="#">Полезная информация</a></li>
+						<li><a href="#">Контакты</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-sm-6 text-right order-lg-0 order-sm-1">
+					<nav class="footer__social">
+						<a class="social-link instagram" href="#">
+							<img src="img/icons/instagram.png" alt="">
+						</a>
+						<a class="social-link facebook" href="#">
+							<img src="img/icons/facebook.png" alt="">
+						</a>
+						<a  class="social-link twitter" href="#">
+							<img src="img/icons/twitter.png" alt="">
+						</a>
+					</nav>
+
+					<h3 class="footer-menu__title">Контактный телефон</h3>
+
+					<p>+7 (903) 111-11-11</p>
+
+					<h3 class="footer-menu__title">E-mail</h3>
+
+					<p>your@mail.ru</p>
+
+					<p class="copyright">© BROWshop 2020, Все права защищены</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="libs/nice-number/jquery.nice-number.min.js"></script>
+	<script src="libs/slick-slider/slick.min.js"></script>
+	<script src="js/common.js"></script>
+</body>
+</html>

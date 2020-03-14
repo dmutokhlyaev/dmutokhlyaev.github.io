@@ -81,6 +81,7 @@ body{
 }
 
 .section{
+	position: relative;
 	margin: 100px 0;
 }
 
@@ -119,6 +120,19 @@ body{
 .border-bottom{
 	border-bottom: 1px solid rgba(53, 27, 19, 0.2);
 	padding-bottom: 30px;
+}
+
+.bg-color-1{
+	background: rgba(225, 241, 199, 0.9);
+}
+.bg-color-2{
+	background: rgba(254, 223, 209, 0.9);
+}
+.bg-color-3{
+	background: #D1E4E3;
+}
+.bg-color-4{
+	background: rgba(224, 210, 205, 0.9);
 }
 
 .button{
@@ -224,7 +238,6 @@ body{
     transform: rotate(-90deg);
     transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
 
-
 /* Header */
 
 .header{
@@ -252,7 +265,7 @@ body{
 	width: 465px;
 	transition: all 0.3s;
 }
-.main-menu.close{
+.main-menu_close{
 	width: 0;
 }
 .main-menu ul{
@@ -326,7 +339,7 @@ body{
 .search{
 	display: flex;
 }
-.search__input{
+.search input{
 	display: block;
 	border: none;
 	width: 320px;
@@ -335,7 +348,7 @@ body{
 	font-size: 16px;
 	transition: width 0.3s;
 }
-.search.close .search__input{
+.search_close input{
 	width: 0;
 }
 
@@ -396,14 +409,11 @@ body{
 .home-slider__item{
 	opacity: 0.8;
 }
-.home-slider__item_1{
-	background: url(../img/home-slider/home-slider-1.jpg) top center / cover;
-}
-.home-slider__item_2{
-	background: url(../img/home-slider/home-slider-2.jpg) top center / cover;
-}
-.home-slider__item_3{
-	background: url(../img/home-slider/home-slider-3.jpg) top center / cover;
+.home-slider__item img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center top;
 }
 
 .home-slider__buttons{
@@ -481,17 +491,16 @@ body{
 	position: absolute;
 	bottom: 0;
 }
-.home__social li{
-	margin-bottom: 15px;
-}
 .social-link{
 	display: block;
 	width: 44px;
 	height: 44px;
 	border-radius: 50%;
-	background-position: center center;
-	background-repeat: no-repeat;
 	transition: background-color 0.3s;
+	margin-bottom: 15px;
+}
+.social-link img{
+	width: 100%;
 }
 .home__social .social-link{
 	background-color: #E4A3A3;
@@ -499,19 +508,12 @@ body{
 .home__social .social-link:hover{
 	background-color: #d65e1f;
 }
-.instagram{
-	background-image: url('../img/icons/instagram.png');
-}
-.facebook{
-	background-image: url('../img/icons/facebook.png');
-	background-position: right 2px bottom -2px;
-}
-.twitter{
-	background-image: url('../img/icons/twitter.png');
-}
 
 /* Категории */
 
+.categories .row{
+	margin-bottom: -30px;
+}
 .categories__item{
 	position: relative;
 	display: flex;
@@ -521,42 +523,7 @@ body{
 	background: center / cover;
 	margin-bottom: 30px;
 }
-.categories__item::before{
-	content: '';
-	display: block;
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: rgba(0, 0, 0, 0.3);
-	transition: background 0.3s;
-}
-.categories__item:hover::before{
-	background: rgba(0, 0, 0, 0);
-}
-.categories .row{
-	margin-bottom: -30px;
-}
-.categories__item_1{
-	background-image: url('../img/categories/category-1.jpg');
-}
-.categories__item_2{
-	background-image: url('../img/categories/category-2.jpg');
-}
-.categories__item_3{
-	background-image: url('../img/categories/category-3.jpg');
-}
-.categories__item_4{
-	background-image: url('../img/categories/category-4.jpg');
-}
-.categories__item_5{
-	background-image: url('../img/categories/category-5.jpg');
-}
-.categories__item_6{
-	background-image: url('../img/categories/category-6.jpg');
-}
-.categories__title{
+.categories__item h3{
 	position: relative;
 	z-index: 1;
 	font-size: 27px;
@@ -564,6 +531,24 @@ body{
 	text-transform: uppercase;
 	font-weight: 400;
 	color: #FFFFFF;
+}
+.categories__img{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: #000;
+}
+.categories__img img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0.7;
+	transition: opacity 0.3s;
+}
+.categories__item:hover .categories__img img{
+	opacity: 0.9;
 }
 
 /* Карточки товаров */
@@ -574,28 +559,21 @@ body{
 	flex-direction: column;
 	padding: 30px;
 	height: 100%;
-	background: #fff;
 	box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
 	transition: background 0.3s;
 }
-.bg-color-1:hover{
-	background: rgba(225, 241, 199, 0.9);
-}
-.bg-color-2:hover{
-	background: rgba(254, 223, 209, 0.9);
-}
-.bg-color-3:hover{
-	background: #D1E4E3;
-}
-.bg-color-4:hover{
-	background: rgba(224, 210, 205, 0.9);
+.card:not(:hover){
+	background-color: #fff;
 }
 .card__img{
-	display: block;
 	height: 145px;
-	margin-left: auto;
-	margin-right: auto;
+	width: 100%;
 	margin-bottom: 30px;
+}
+.card img{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 }
 .card__producer{
 	font-family: Cormorant, serif;
@@ -616,6 +594,7 @@ body{
 .card__price::after{
 	content: ' ₽';
 }
+
 
 /* Новинки */
 
@@ -707,14 +686,13 @@ body{
 
 .best-seller__image{
 	text-align: center;
-	background: rgba(214, 94, 31, 0.2);
 	padding: 0 50px;
 }
 .best-seller__image img{
 	position: relative;
 	top: 50px
 }
-.best-seller__title{
+.best-seller h3{
 	font-size: 30px;
 	line-height: 1;
 	font-weight: 400;
@@ -735,7 +713,7 @@ body{
 	font-size: 16px;
 	text-transform: uppercase;
 }
-.best-seller__item-title{
+.best-seller__item h4{
 	opacity: 0.5;
 	font-weight: 400;
 	margin-top: 0;
@@ -762,7 +740,7 @@ body{
 .partners .container{
 	height: 100%;
 }
-.partners .container>.row{
+.partners .row{
 	height: 100%;
 }
 .partners .button{
@@ -807,10 +785,10 @@ body{
 	margin-bottom: 50px;
 }
 
-.subscription__form{
+.subscription form{
 	display: flex;
 }
-.subscription__input{
+.subscription input{
 	display: block;
 	width: 100%;
 	height: 54px;
@@ -856,12 +834,13 @@ body{
 .footer__social{
 	margin-bottom: 25px;
 }
-.footer__social ul{
+.footer__social{
 	display: flex;
 	justify-content: flex-end;
 }
-.footer__social li{
+.footer__social .social-link{
 	margin-left: 18px;
+	margin-bottom: 0;
 }
 .footer__social .social-link{
 	background-color: #43433F;
@@ -872,10 +851,7 @@ body{
 .footer__social .social-link:hover{
 	background-color: #d65e1f;
 }
-.footer__social .facebook{
-	background-image: url('../img/icons/facebook.png');
-	background-position: right 2px bottom;
-}
+
 .copyright{
 	font-size: 13px;
 }
@@ -948,31 +924,39 @@ body{
 	align-items: center;
 	height: 500px;
 }
-.first-screen::before{
-	content: '';
-	display: block;
+.first-screen h1{
+	color: #fff;
+	position: relative;
+	z-index: 1;
+	font-weight: 400;
+	font-size: 38px;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	text-align: center;
+}
+.first-screen__img{
 	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background: rgba(0,0,0, 0.4);
+	background: #000;
 }
-.first-screen::after{
-	content: 'professional cosmetics brow shop24 cosmetics professional cosmetics professional cosmetics brow shop24 cosmetics';
+.first-screen__img img{
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	opacity: 0.6;
+}
+.first-screen__after{
 	position: absolute;
 	bottom: -28px;
 	left: 0;
+	margin-bottom: 0;
 	font-size: 28px;
 	white-space: nowrap;
 	text-transform: uppercase;
 	opacity: 0.25;
-}
-.first-screen_makeup{
-	background: url(../img/first-screen/makeup.jpg) center / cover;
-}
-.first-screen_makeup::after{
-	content: 'all goods professional cosmetics brow shop24 cosmetics all goods professional cosmetics all goods professional cosmetics brow shop24 cosmetics';
 }
 .first-screen_about-us{
 	background: url(../img/first-screen/about-us.jpg) center / cover;
@@ -1003,16 +987,6 @@ body{
 }
 .first-screen_order::after{
 	content: 'shopping professional cosmetics brow shop24 cosmetics shopping professional cosmetics brow shop24 cosmetics';
-}
-.first-screen__title{
-	color: #fff;
-	position: relative;
-	z-index: 1;
-	font-weight: 400;
-	font-size: 38px;
-	text-transform: uppercase;
-	letter-spacing: 0.1em;
-	text-align: center;
 }
 
 /* Категория */
@@ -1435,6 +1409,24 @@ body{
 	margin-top: 50px;
 }
 
+.img-left{
+	position: absolute;
+	top: 0;
+	right: 50%;
+	bottom: 0;
+	left: 0;
+}
+.img-left img{
+	height: 100%;
+	width: 100%;
+  object-fit: cover;
+}
+.img-left-text{
+	margin-left: calc( 50% + 30px);
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
 @media only screen and (max-width: 1200px){
 	.home-slider__wrapper{
 		margin-left: 0;
@@ -1487,7 +1479,7 @@ body{
 		width: 100%;
 		height: 0;
 	}
-	.main-menu.close{
+	.main-menu_close{
 		width: 100%;
 	}
 	.main-menu ul{
@@ -1609,7 +1601,6 @@ body{
 		font-size: 24px;
 	}
 
-
 	.best-seller__image{
 		margin-bottom: 80px;
 	}
@@ -1695,7 +1686,7 @@ body{
 	.categories__item{
 		height: 320px;
 	}
-	.categories__title{
+	.categories h3{
 		font-size: 27px;
 	}
 
@@ -1713,10 +1704,10 @@ body{
 		width: 50%;
 	}
 
-	.subscription__form{
+	.subscription form{
 		flex-direction: column;
 	}
-	.subscription__input{
+	.subscription input{
 		margin-bottom: 30px;
 	}
 

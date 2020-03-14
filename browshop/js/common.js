@@ -1,5 +1,7 @@
 $(function(){
 
+	/* Слайдер на Главной */
+
 	$('.home-slider').slick({
 		prevArrow: $('.home-slider__prev'),
 		nextArrow: $('.home-slider__next'),
@@ -10,11 +12,11 @@ $(function(){
 	});
 
 	$('.home-slider').on('beforeChange', function(event, slick, currentSlide, nextSlider) {
+		
 		var sliderCount = '0' + (nextSlider + 1) + '/03'
-
 		$('.home-slider__count').text(sliderCount);
-	});
 
+	});
 
 	$('.home-slider').on('setPosition', function() {
 
@@ -22,13 +24,17 @@ $(function(){
 	
 	});
 
+	/* Форма поиска */
+
 	$('.button_search').click( function() {
 
-		$('.main-menu').toggleClass('close');
-		$('.search').toggleClass('close');
-
+		$('.main-menu').toggleClass('main-menu_close');
+		$('.search').toggleClass('search_close');
 		return false;
+
 	});
+
+	/* Главное меню */
 
 	$('.hamburger').click( function() {
 
