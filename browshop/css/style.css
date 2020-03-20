@@ -1,38 +1,32 @@
 @font-face {
     font-family: 'Optima Cyr';
-    src: url('../fonts/Optima.eot');
-    src: url('../fonts/Optima.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Optima.woff2') format('woff2'),
-        url('../fonts/Optima.woff') format('woff'),
-        url('../fonts/Optima.ttf') format('truetype');
+    src: url('../fonts/Optima.woff2') format('woff2'),
+         url('../fonts/Optima.woff') format('woff'),
+         url('../fonts/Optima.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'Cormorant';
-    src: url('../fonts/Cormorant-Bold.eot');
-    src: url('../fonts/Cormorant-Bold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Cormorant-Bold.woff2') format('woff2'),
-        url('../fonts/Cormorant-Bold.woff') format('woff'),
-        url('../fonts/Cormorant-Bold.ttf') format('truetype');
+    src: url('../fonts/Cormorant-Bold.woff2') format('woff2'),
+         url('../fonts/Cormorant-Bold.woff') format('woff'),
+         url('../fonts/Cormorant-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
 @font-face {
     font-family: 'Cormorant';
-    src: url('../fonts/Cormorant-SemiBold.eot');
-    src: url('../fonts/Cormorant-SemiBold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Cormorant-SemiBold.woff2') format('woff2'),
-        url('../fonts/Cormorant-SemiBold.woff') format('woff'),
-        url('../fonts/Cormorant-SemiBold.ttf') format('truetype');
+    src: url('../fonts/Cormorant-SemiBold.woff2') format('woff2'),
+         url('../fonts/Cormorant-SemiBold.woff') format('woff'),
+         url('../fonts/Cormorant-SemiBold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
 }
 @font-face {
     font-family: 'Cormorant';
     src: url('../fonts/Cormorant-Book.woff2') format('woff2'),
-        url('../fonts/Cormorant-Book.woff') format('woff'),
-        url('../fonts/Cormorant-Book.ttf') format('truetype');
+         url('../fonts/Cormorant-Book.woff') format('woff'),
+         url('../fonts/Cormorant-Book.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
@@ -80,6 +74,12 @@ body{
 	line-height: 1.22;
 }
 
+hr{
+	border: none;
+	border-top: 1px solid #d7d1d0;
+	margin: 50px 0;
+}
+
 .section{
 	position: relative;
 	margin: 100px 0;
@@ -112,27 +112,8 @@ body{
 .text-center{
 	text-align: center;
 }
-.border-top{
-	border-top: 1px solid rgba(53, 27, 19, 0.2);
-	padding-top: 50px;
-	margin-top: 50px;
-}
-.border-bottom{
-	border-bottom: 1px solid rgba(53, 27, 19, 0.2);
-	padding-bottom: 30px;
-}
-
-.bg-color-1{
-	background: rgba(225, 241, 199, 0.9);
-}
-.bg-color-2{
-	background: rgba(254, 223, 209, 0.9);
-}
-.bg-color-3{
-	background: #D1E4E3;
-}
-.bg-color-4{
-	background: rgba(224, 210, 205, 0.9);
+.text-uppercase{
+	text-transform: uppercase;
 }
 
 .button{
@@ -511,8 +492,11 @@ body{
 
 /* Категории */
 
-.categories .row{
-	margin-bottom: -30px;
+.categories__container{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
 }
 .categories__item{
 	position: relative;
@@ -521,7 +505,6 @@ body{
 	align-items: center;
 	height: 300px;
 	background: center / cover;
-	margin-bottom: 30px;
 }
 .categories__item h3{
 	position: relative;
@@ -558,12 +541,20 @@ body{
 	display: flex;
 	flex-direction: column;
 	padding: 30px;
-	height: 100%;
 	box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-	transition: background 0.3s;
 }
-.card:not(:hover){
-	background-color: #fff;
+.card__bg{
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+.card:hover .card__bg{
+	opacity: 1;
 }
 .card__img{
 	height: 145px;
@@ -598,27 +589,22 @@ body{
 
 /* Новинки */
 
-.novelty .row>div{
-	padding-top: 20px;
-	padding-bottom: 20px;
+.novelty__grid{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
 }
-.novelty__card{
+.novelty .card{
 	box-shadow: none;
+	margin-top: 25px;
+	margin-bottom: 25px;
 }
-.novelty__card.bg-color-1{
-	background: rgba(225, 241, 199, 0.9);
+.novelty .card__bg{
+	opacity: 1;
 }
-.novelty__card.bg-color-2{
-	background: rgba(254, 223, 209, 0.9);
-}
-.novelty__card.bg-color-3{
-	background: #D1E4E3;
-}
-.novelty__card.bg-color-4{
-	background: rgba(224, 210, 205, 0.9);
-}
-.novelty__card::before,
-.novelty__card::after{
+.novelty .card::before,
+.novelty .card::after{
 	content: 'new products';
 	position: absolute;
 	z-index: -1;
@@ -632,36 +618,31 @@ body{
 	text-transform: uppercase;
 	opacity: 0.2;
 }
-.novelty__card::before{
-	top: -25px;
+.novelty .card::before{
+	top: -26px;
 }
-.novelty__card::after{
-	bottom: -25px;
+.novelty .card::after{
+	bottom: -30px;
 }
 
 /* Похожие товары */
 
-.similar .row>div{
-	padding-top: 20px;
-	padding-bottom: 20px;
+.similar__grid{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
 }
-.similar__card{
+.similar .card{
 	box-shadow: none;
+	margin-top: 25px;
+	margin-bottom: 25px;
 }
-.similar__card.bg-color-1{
-	background: rgba(225, 241, 199, 0.9);
+.similar .card__bg{
+	opacity: 1;
 }
-.similar__card.bg-color-2{
-	background: rgba(254, 223, 209, 0.9);
-}
-.similar__card.bg-color-3{
-	background: #D1E4E3;
-}
-.similar__card.bg-color-4{
-	background: rgba(224, 210, 205, 0.9);
-}
-.similar__card::before,
-.similar__card::after{
+.similar .card::before,
+.similar .card::after{
 	content: 'similar products';
 	position: absolute;
 	z-index: -1;
@@ -675,11 +656,11 @@ body{
 	text-transform: uppercase;
 	opacity: 0.2;
 }
-.similar__card::before{
-	top: -21px;
+.similar .card::before{
+	top: -22px;
 }
-.similar__card::after{
-	bottom: -25px;
+.similar .card::after{
+	bottom: -26px;
 }
 
 /* Бестселлер */
@@ -859,8 +840,8 @@ body{
 /* Хлебные крошки */
 
 .bread-crumbs{
-	margin-top: 30px;
-	margin-bottom: 30px;
+	padding-top: 30px;
+	padding-bottom: 30px;
 }
 .bread-crumbs ul{
 	display: flex;
@@ -886,39 +867,12 @@ body{
 	opacity: 0.8;
 }
 
-/* Страница: Каталог */
-
-.catalog__categories .bread-crumbs{
-	margin-bottom: 60px;
-	margin-top: 0;
-}
-
-.catalog__categories .row{
-	position: relative;
-}
-.catalog__categories .row::before,
-.catalog__categories .row::after{
-	content: 'professional cosmetics brow shop24 professional cosmetics brow shop24';
-	position: absolute;
-	left: 0;
-	display: block;
-	width: 100%;
-	text-align: center;
-	font-size: 27.5px;
-	text-transform: uppercase;
-	opacity: 0.25;
-}
-.catalog__categories .row::before{
-	top: -25px;
-}
-.catalog__categories .row::after{
-	bottom: 0px;
-}
-
 /* Первый экран на страницах */
 
 .first-screen{
 	position: relative;
+}
+.first-screen .container{
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -950,43 +904,13 @@ body{
 }
 .first-screen__after{
 	position: absolute;
-	bottom: -28px;
+	bottom: -29px;
 	left: 0;
 	margin-bottom: 0;
 	font-size: 28px;
 	white-space: nowrap;
 	text-transform: uppercase;
 	opacity: 0.25;
-}
-.first-screen_about-us{
-	background: url(../img/first-screen/about-us.jpg) center / cover;
-}
-.first-screen_about-us::after{
-	content: 'about us professional cosmetics brow shop24 cosmetics about us professional cosmetics';
-}
-.first-screen_contacts{
-	background: url(../img/first-screen/contacts.jpg) center center / cover;
-}
-.first-screen_contacts::after{
-	content: 'contact us professional cosmetics brow shop24 cosmetics contact us professional cosmetics';
-}
-.first-screen_inform{
-	background: url(../img/first-screen/inform.jpg) center center / cover;
-}
-.first-screen_inform::after{
-	content: 'information professional cosmetics brow shop24 cosmetics information professional cosmetics brow shop24 cosmetics';
-}
-.first-screen_shop{
-	background: url(../img/first-screen/shop.jpg) center center / cover;
-}
-.first-screen_shop::after{
-	content: 'shopping professional cosmetics brow shop24 cosmetics shopping professional cosmetics brow shop24 cosmetics';
-}
-.first-screen_order{
-	background: url(../img/first-screen/order.jpg) center center / cover;
-}
-.first-screen_order::after{
-	content: 'shopping professional cosmetics brow shop24 cosmetics shopping professional cosmetics brow shop24 cosmetics';
 }
 
 /* Категория */
@@ -1043,8 +967,11 @@ body{
 	content: '+';
 }
 
-.category__row>div{
-	margin-bottom: 30px;
+.category-cards{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
 }
 
 .pagination{
@@ -1183,100 +1110,45 @@ body{
 	right: 50%;
 	bottom: 0;
 	left: 0;
-	background: rgba(224, 210, 205, 0.9);
 	box-shadow: 0px 4px 20px rgba(224, 210, 204, 0.8);
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding: 80px;
 }
-
-/* О нас */
-
-.about-us__item_left{
-	position: relative;
-	padding: 100px 0;
-}
-.about-us__item_left{
-	background: #E3D7D2;
-}
-.about-us__item_left .about-us__image{
-	position: absolute;
-	top: 0;
-	right: 50%;
-	bottom: 0;
-	left: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	overflow: hidden;
-	object-fit: cover;
-}
-.about-us__item_left .about-us__image img{
-	height: auto;
+.product__image img{
+	object-fit: contain;
 	width: 100%;
-}
-.about-us__item_left .col-md-6{
-	padding-left: 70px;
+	height: 100%;
 }
 
-.about-us__item_right{
-	position: relative;
-	padding: 100px 0;
-}
-.about-us__item_right{
-	background: #CDDAC7;
-}
-.about-us__item_right .about-us__image{
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 50%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	overflow: hidden;
-	object-fit: cover;
-}
-.about-us__item_right .about-us__image img{
-	height: auto;
-	width: 100%;
-}
-.about-us__item_right .col-md-6{
-	padding-right: 70px;
-}
-
-.contacts__social ul{
+.contacts__social{
 	display: flex;
 	justify-content: center;
-}
-.contacts__social li{
-	margin: 15px;
+	margin-top: 30px;
 }
 .contacts__social .social-link{
 	background-color: #E4A3A3;
+	margin: 0 15px;
 }
 .contacts__social .social-link:hover{
 	background-color: #d65e1f;
 }
 
-.inform{
-	background: rgba(227, 215, 210, 0.6);
-	padding: 40px 0 80px;
-}
-
 /* Корзина */
 
-.table__head{
-	border-bottom: 1px solid rgba(53, 27, 19, 0.2);
+.table__item{
+	display: flex;
 }
-.table__title{
+.table__col{
+	flex-grow: 1;
+}
+.table h3{
+	border-bottom: 1px solid rgba(53, 27, 19, 0.2);
 	font-weight: 400;
 	text-transform: uppercase;
 	font-size: 18px;
-	margin-bottom: 0;
 }
-
 .table__product{
 	position: relative;
 	padding-left: 120px;
@@ -1285,41 +1157,22 @@ body{
 	flex-direction: column;
 	justify-content: center;
 }
-.table__product p{
-	margin-bottom: 0;
-}
 .table__image{
-	text-align: center;
-	width: 100px;
-	height: 100px;
-	padding: 10px;
-	position: absolute;
-	left: 0;
-	top: 50%;
-	margin-top: -50px;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -50px;
 }
 .table__image img{
+	width: 100%;
 	height: 100%;
-	width: auto;
+	object-fit: contain;
 }
-.table__image.bg-color-1{
-	background: rgba(225, 241, 199, 0.9);
-}
-.table__image.bg-color-2{
-	background: rgba(254, 223, 209, 0.9);
-}
-.table__image.bg-color-3{
-	background: #D1E4E3;
-}
-.table__image.bg-color-4{
-	background: rgba(224, 210, 205, 0.9);
-}
-.table .nice-number{
-	margin-right: 0;
-}
-.table .row:last-child{
-	border-bottom: 1px solid rgba(53, 27, 19, 0.2);
-}
+
 .total__price{
 	font-family: Cormorant, serif;
 	font-weight: bold;
@@ -1409,22 +1262,253 @@ body{
 	margin-top: 50px;
 }
 
-.img-left{
+/* Текстовые блоки с изображением */
+
+.text-two-thirds{
+	position: relative;
+	padding: 50px 0 20px;
+}
+.text-two-thirds__img{
 	position: absolute;
 	top: 0;
-	right: 50%;
+	right: calc(50% + 200px);
 	bottom: 0;
 	left: 0;
 }
-.img-left img{
-	height: 100%;
+.text-two-thirds__img img{
+	object-fit: cover;
 	width: 100%;
-  object-fit: cover;
+	height: 100%;
 }
-.img-left-text{
-	margin-left: calc( 50% + 30px);
-	padding-top: 100px;
-	padding-bottom: 100px;
+.text-two-thirds .container{
+	padding-left: 400px;
+	text-align: center;
+}
+.text-two-thirds h3{
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	font-weight: 400;
+	font-size: 30px;
+	text-transform: uppercase;
+	margin-top: 0;
+}
+.text-two-thirds h3:after{
+	content: '';
+	position: absolute;
+	z-index: -1;
+	right: -15px;
+	bottom: 6px;
+	left: -15px;
+	height: 8px;
+	background: #E28E62;
+}
+
+.text-list{
+	display: flex;
+	flex-wrap: wrap;
+}
+.text-list__item{
+	text-align: left;
+	width: 40%;
+	flex-grow: 1;
+	margin-left: 30px;
+	margin-bottom: 30px;
+}
+.text-list__item h4{
+	font-weight: 400;
+	font-size: 22px;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+.text-list__item ul{
+	list-style-type: disc;
+	padding-left: 17px;
+}
+.text-list__item li{
+	line-height: 1;
+	margin-bottom: 15px;
+}
+.lesson-duration{
+	position: absolute;
+	top: 0;
+	padding: 10px 25px;
+	border: 1px solid #351B13;
+	font-family: Cormorant;
+	font-weight: bold;
+	font-size: 30px;
+	line-height: 1;
+}
+.text-two-thirds .lesson-duration{
+	left: calc(50% - 200px);
+}
+
+.text-one-thirds{
+	position: relative;
+	padding: 80px 0 50px;
+}
+.text-one-thirds__img{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: calc(50% - 200px);
+}
+.text-one-thirds__img img{
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+.text-one-thirds .container{
+	padding-right: 820px;
+	text-align: center;
+}
+.text-one-thirds h3{
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	font-weight: 400;
+	font-size: 30px;
+	text-transform: uppercase;
+	margin-top: 0;
+	margin-bottom: 40px;
+}
+.text-one-thirds h3:after{
+	content: '';
+	position: absolute;
+	z-index: -1;
+	right: -15px;
+	bottom: 6px;
+	left: -15px;
+	height: 8px;
+	background: rgba(6, 150, 173, 0.75);
+}
+
+.text-half{
+	position: relative;
+	padding: 100px 0 80px;
+}
+.text-half__img{
+	position: absolute;
+	top: 0;
+	right: calc(50%);
+	bottom: 0;
+	left: 0;
+}
+.text-half__img img{
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+.text-half .container{
+	padding-left: 620px;
+}
+
+.text-half-left{
+	position: relative;
+	padding: 100px 0 80px;
+}
+.text-half-left__img{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: calc(50%);
+}
+.text-half-left__img img{
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+.text-half-left .container{
+	padding-right: 620px;
+}
+
+.inform{
+	position: relative;
+	background: rgba(227, 215, 210, 0.6);
+	margin-top: 21px;
+	padding: 80px 0;
+	margin-bottom: 120px;
+}
+.inform::after{
+	content: 'information professional cosmetics brow shop24 cosmetics information professional cosmetics brow shop24 cosmetics';
+	position: absolute;
+	bottom: -29px;
+	left: 0;
+	margin-bottom: 0;
+	font-size: 28px;
+	white-space: nowrap;
+	text-transform: uppercase;
+	opacity: 0.25;
+}
+.inform::before{
+	content: 'information professional cosmetics brow shop24 cosmetics information professional cosmetics brow shop24 cosmetics';
+	position: absolute;
+	top: -27px;
+	left: 0;
+	margin-bottom: 0;
+	font-size: 28px;
+	white-space: nowrap;
+	text-transform: uppercase;
+	opacity: 0.25;
+}
+.inform__list{
+	list-style-type: disc;
+	padding-left: 17px;
+}
+.inform__list li{
+	line-height: 1;
+	margin-bottom: 15px;
+}
+.inform__offer{
+	font-family: Cormorant;
+	font-weight: bold;
+	font-size: 30px;
+	line-height: 28px;
+	text-align: center;
+}
+
+.courses{
+	display: flex;
+	position: relative;
+	height: 700px;
+}
+.courses__link{
+	position: relative;
+	width: 50%;
+	background: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 60px;
+}
+.courses__img{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	opacity: 0.6;
+	transition: opacity 0.3s;
+}
+.courses__img img{
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+.courses__img:hover{
+	opacity: 0.8;
+}
+.courses h2{
+	color: #fff;
+	position: relative;
+	z-index: 1;
+	font-weight: 400;
+	font-size: 38px;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	text-align: center;
 }
 
 @media only screen and (max-width: 1200px){
@@ -1440,11 +1524,9 @@ body{
 		height: 250px;
 	}
 
-	.novelty__card::after{
-		display: none;
-	}
-	.similar__card::after{
-		display: none;
+	.novelty__grid,
+	.similar__grid{
+		grid-template-columns: 1fr 1fr;
 	}
 
 	.partners{
@@ -1457,17 +1539,36 @@ body{
 		font-size: 25.9px;
 	}
 
-	.catalog__categories .row::before,
-	.catalog__categories .row::after{
-		font-size: 23px;
+	.text-half{
+		padding: 80px 0 60px;
 	}
-	.catalog__categories .row::before{
-		top: -22px;
+	.text-half .container{
+		padding-left: 520px;
 	}
-	.catalog__categories .row::after{
-		bottom: 6px;
+
+	.text-half-left{
+		padding: 80px 0 60px;
 	}
+	.text-half-left .container{
+		padding-right: 520px;
+	}
+
+	.text-two-thirds__img{
+		right: calc(50% + 100px);
+	}
+	.text-two-thirds .lesson-duration{
+		left: calc(50% - 100px);
+	}
+
+	.text-one-thirds__img{
+		left: calc(50% - 100px);
+	}
+	.text-one-thirds .container{
+		padding-right: 720px;
+	}
+
 }
+
 @media only screen and (max-width: 992px){
 	.header__container{
 		flex-wrap: wrap;
@@ -1519,8 +1620,14 @@ body{
 		margin-bottom: 75px;
 	}
 
+	.categories__container{
+		grid-column-gap: 0;
+  	grid-row-gap: 0;
+		padding-right: 0;
+		padding-left: 0;
+	}
 	.categories__item{
-		height: 180px;
+		height: 27vw;
 	}
 	.categories__title{
 		font-size: 24px;
@@ -1535,31 +1642,52 @@ body{
 		margin-top: 50px;
 	}
 
-	.catalog__categories .row::before,
-	.catalog__categories .row::after{
-		font-size: 17px;
-	}
-	.catalog__categories .row::before{
-		top: -18px;
-	}
-	.catalog__categories .row::after{
-		bottom: 12px;
-	}
-
-	.about-us__item_left,
-	.about-us__item_right{
-		padding: 60px 0 40px;
-	}
-	.about-us__item_right .col-md-6{
-		padding-right: 30px;
-	}
-	.about-us__item_left .col-md-6{
-		padding-left: 30px;
-	}
-
 	.product__image{
 		position: relative;
-		padding: 40px 20px;
+		height: 350px;
+		padding: 40px;
+	}
+
+	.category-cards{
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.text-half .container{
+		padding-left: 400px;
+	}
+	.text-half-left .container{
+		padding-right: 400px;
+	}
+
+	.text-two-thirds,
+	.text-one-thirds{
+		padding-top: 0;
+		padding-bottom: 30px;
+	}
+	.text-two-thirds__img,
+	.text-one-thirds__img{
+		position: static;
+		height: 450px;
+	}
+	.text-two-thirds .container,
+	.text-one-thirds .container{
+		padding-top: 40px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.lesson-duration,
+	.text-two-thirds .lesson-duration{
+		left: 0;
+		top: 450px;
+	}
+
+	.courses {
+    display: flex;
+    position: relative;
+    height: 500px;
+	}
+	.courses h2{
+		font-size: 30px;
 	}
 }
 
@@ -1577,27 +1705,13 @@ body{
 	.section__title::after{
 		height: 8px;
 	}
-	.categories .container-md{
-		padding-right: 0;
-		padding-left: 0;
-	}
-	.categories .row{
-		margin-right: 0;
-		margin-left: 0;
-		margin-bottom: 0;
-	}
-	.categories [class*="col-"]{
-	    padding-right: 0;
-	    padding-left: 0;
-	}
-	.categories__item{
-		margin-bottom: 0;
-	}
 
-	.novelty__card::before {
+	.novelty .card::before,
+	.novelty .card::after{
 		font-size: 29px;
 	}
-	.similar__card::before {
+	.similar .card::before,
+	.similar .card::after{
 		font-size: 24px;
 	}
 
@@ -1617,30 +1731,39 @@ body{
 		padding-bottom: 0;
 	}
 
-	.catalog__categories .row::before{
-		font-size: 17px;
-		top: -18px;
+	.text-half{
+		padding-top: 0;
+		padding-bottom: 30px;
 	}
-	.catalog__categories .row::after{
-		display: none;
+	.text-half__img{
+		position: static;
+		height: 450px;
 	}
-
-	.about-us__item_left .about-us__image,
-	.about-us__item_right .about-us__image{
-		position: relative;
-		height: 400px;
-		left: 0;
-		margin-bottom: 40px;
-	}
-	.about-us__item_right .col-md-6{
-		padding-right: 15px;
-	}
-	.about-us__item_left .col-md-6{
+	.text-half .container{
+		padding-top: 40px;
 		padding-left: 15px;
 	}
 
-	.table__head{
-		display: none;
+	.text-half-left{
+		padding-top: 0;
+		padding-bottom: 30px;
+	}
+	.text-half-left__img{
+		position: static;
+		height: 450px;
+	}
+	.text-half-left .container{
+		padding-top: 40px;
+		padding-right: 15px;
+	}
+
+	.courses {
+    display: flex;
+    position: relative;
+    height: 350px;
+	}
+	.courses h2{
+		font-size: 24px;
 	}
 }
 
@@ -1683,8 +1806,11 @@ body{
 		margin-bottom: 50px;
 	}
 
+	.categories__container{
+		grid-template-columns: 1fr 1fr;
+	}
 	.categories__item{
-		height: 320px;
+		height: 35vw;
 	}
 	.categories h3{
 		font-size: 27px;
@@ -1695,6 +1821,11 @@ body{
 	}
 	.section__title::after{
 		bottom: 10px;
+	}
+
+	.novelty__grid,
+	.similar__grid{
+		grid-template-columns: 1fr;
 	}
 
 	.partners__list{
@@ -1723,12 +1854,6 @@ body{
 		margin-bottom: 20px;
 	}
 
-	.catalog__categories .row::before{
-		content: 'professional cosmetics brow shop24';
-		font-size: 24px;
-		top: -23px;
-	}
-
 	.characteristics{
 		flex-direction: column;
 	}
@@ -1742,15 +1867,6 @@ body{
 		margin-bottom: 30px;
 	}
 
-	.about-us__item_right,
-	.about-us__item_left{
-		padding-top: 15px;
-	}
-
-	.about-us__item_left .about-us__image,
-	.about-us__item_right .about-us__image{
-		height: 300px;
-	}
 	.order__menu{
 		flex-direction: column;
 		align-items: flex-start;
@@ -1758,5 +1874,38 @@ body{
 	.order__menu-item{
 		margin-top: 0;
 		margin-bottom: 10px;
+	}
+
+	.text-list__item{
+		width: 100%;
+	}
+	.text-two-thirds .container,
+	.text-one-thirds .container{
+		padding-top: 80px;
+	}
+
+	.courses{
+		height: auto;
+		flex-wrap: wrap;
+	}
+	.courses__link{
+		height: 400px;
+		width: 100%;
+	}
+	.courses h2{
+		font-size: 26px;
+	}
+}
+
+@media only screen and (max-width: 450px){
+	.categories__container{
+		grid-template-columns: 1fr;
+	}
+	.categories__item{
+		height: 65vw;
+	}
+
+	.category-cards{
+		grid-template-columns: 1fr;
 	}
 }
