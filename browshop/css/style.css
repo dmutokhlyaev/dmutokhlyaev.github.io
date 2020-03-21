@@ -1137,12 +1137,43 @@ hr{
 
 /* Корзина */
 
+.table{
+	border-bottom: 1px solid rgba(53, 27, 19, 0.2);
+	padding-bottom: 10px;
+	margin-bottom: 30px;
+}
+
 .table__item{
 	display: flex;
 }
-.table__col{
-	flex-grow: 1;
+.table__item h3{
+	display: none;
 }
+.table__item:first-child h3{
+	display: block;
+}
+.table__col{
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	flex-shrink: 0;
+	text-align: center;
+}
+.table__col:first-child{
+	flex-grow: 0;
+	flex-shrink: 1;
+	text-align: left;
+}
+.table__col:last-child{
+	text-align: right;
+}
+.table__col>div{
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
 .table h3{
 	border-bottom: 1px solid rgba(53, 27, 19, 0.2);
 	font-weight: 400;
@@ -1195,12 +1226,14 @@ hr{
 	margin-left: 40px;
 }
 
+.table .nice-number{
+	margin-right: 20px;
+}
 .remove{
 	display: inline-block;
 	width: 30px;
 	height: 45px;
 	background: url(../img/icons/remove.png) no-repeat top center / contain;
-	margin-left: 20px;
 }
 
 .order__title{
@@ -1765,6 +1798,25 @@ hr{
 	.courses h2{
 		font-size: 24px;
 	}
+
+	.table{
+		border-top: 1px solid rgba(53, 27, 19, 0.2);
+		border-bottom: none;
+	}
+	.table__item{
+		display: flex;
+		flex-wrap: wrap;
+		border-bottom: 1px solid rgba(53, 27, 19, 0.2);
+		padding-bottom: 20px;
+		margin-bottom: 10px;
+	}
+	.table__item h3{
+		display: block;
+		border: none;
+	}
+	.table__col:first-child h3{
+		display: none;
+	}
 }
 
 @media only screen and (max-width: 576px){
@@ -1907,5 +1959,20 @@ hr{
 
 	.category-cards{
 		grid-template-columns: 1fr;
+	}
+
+	.table__col{
+		width: 100%;
+		text-align: left;
+	}
+	.table__col:last-child{
+		text-align: left;
+	}
+	.table__col>div{
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.table__col h3{
+		margin-bottom: 10px;
 	}
 }
