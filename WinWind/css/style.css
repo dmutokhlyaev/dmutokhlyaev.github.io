@@ -1,0 +1,428 @@
+@import url("../fonts/style.css");
+
+*{
+    box-sizing: border-box;
+}
+img{
+	max-width: 100%;
+	height: auto;
+}
+body{
+	font-family: 'Gilroy', sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	color: #2c2c2c;
+	line-height: 1.5;
+	letter-spacing: 0.02em;
+	min-width: 360px;
+}
+button{
+	display: inline-block;
+	border: none;
+	background: none;
+	font: inherit;
+}
+
+.container{
+	max-width: 1140px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 100%;
+}
+
+/* Шапка */
+
+.header{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 40px 0;
+}
+.header .container{
+	display: flex;
+	align-items: center;
+}
+.header__logo{
+	width: 215px;
+	margin-right: 20px;
+}
+.header__description{
+	font-size: 12px;
+	opacity: 0.4;
+}
+.header__phone{
+	font-size: 18px;
+	font-weight: 800;
+	margin-left: auto;
+}
+.btn-call{
+	display: flex;
+	align-items: center;
+	height: 40px;
+	font-size: 12px;
+	color: #428cd1;
+	border: 1px solid #428cd1;
+	border-radius: 20px;
+	padding: 0 25px 0 20px;
+	margin-left: 30px;
+	transition: box-shadow 0.3s;
+}
+.btn-call:before{
+	content: '';
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	background: url('../img/icon/phone.png') center / cover;
+	margin-right: 5px;
+}
+.btn-call:hover{
+	box-shadow: 0 0 5px rgba(41, 112, 176, 0.35) inset;
+}
+.btn-call:active{
+	box-shadow: 0 0 15px rgba(41, 112, 176, 0.6) inset;
+}
+
+/* Главная, Первый экран */
+
+.first-screen{
+	background: url('../img/bg-first.jpg') center bottom / cover;
+	padding: 180px 0 100px;
+}
+.offer h1{
+	font-size: 34px;
+	text-transform: uppercase;
+	font-weight: 800;
+	margin-bottom: 20px;
+}
+.offer p{
+	font-size: 20px;
+	margin-bottom: 50px;
+}
+.offer p strong{
+	font-weight: 700;
+}
+.btn{
+	display: flex;
+	align-items: center;
+	height: 80px;
+	padding: 0 65px;
+	border-radius: 40px;
+	color: #fff;
+	font-weight: 700;
+	text-transform: uppercase;
+	background: linear-gradient(to top, #418cd1 0%, #9dceff 100%);
+	box-shadow: 0 -5px 5px rgba(41, 112, 176, 0.35) inset, 0 5px 15px rgba(65,140,209,0.8);
+}
+.btn:hover{
+	background: linear-gradient(to top, #7bb3e7 0%, #9dceff 100%);
+}
+.btn:active{
+	background: linear-gradient(to top, #9dceff 0%, #418cd1 100%);
+	box-shadow: 0 -5px 5px rgba(41, 112, 176, 0.35) inset, 0 5px 15px rgba(65,140,209,0.5);
+}
+
+/* Для кнопки с подсказкой */
+
+.first-screen .btn-prompt{
+	position: relative;
+}
+.first-screen .btn-prompt p{
+	position: absolute;
+	top: 70px;
+	left: 320px;
+	opacity: 0.6;
+	font-weight: 400;
+	font-style: italic;
+	font-size: 16px;
+}
+.first-screen .btn-prompt p:after{
+	content: '';
+	display: block;
+	width: 123px;
+	height: 41px;
+	background: url('../img/arrows/arrow-left.png') center / cover;
+	position: absolute;
+	top: 40px;
+	left: -100px;
+}
+
+/* Преимущества */
+
+.bulits{
+	display: flex;
+	margin-top: 110px;
+}
+
+.bulits .item{
+	position: relative;
+	z-index: 1;
+	padding: 25px;
+	padding-right: 35px;
+	width: 100%;
+	margin-right: -20px;
+	display: flex;
+}
+.bulits .item:last-child{
+	margin-right: 0;
+	padding-right: 25px;
+}
+.bulits .item:before{
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	background: #fff;
+	box-shadow: 0 5px 15px rgba(41, 112, 176, 0.2);
+	border-radius: 10px;
+	transform: skewX(-10deg);
+}
+.bulits .item img{
+	margin-right: 20px;
+	object-fit: contain;
+}
+
+.section{
+	padding: 100px 0;
+}
+.section__title{
+	font-size: 34px;
+	font-weight: 800;
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 1.4;
+	margin-bottom: 20px;
+}
+.section__intro{
+	font-size: 20px;
+	text-align: center;
+}
+
+/* Знакомая ситуация */
+
+.choice{
+	height: 1100px;
+}
+.choice .container{
+	position: relative;
+}
+.choice__item:before{
+	content: '';
+	display: block;
+	position: absolute;
+	z-index: -1;
+	top: -100px; /* Паддинги секции */
+	right: 0;
+	bottom: -100px;
+	left: 0;
+	background: url(../img/choice/choice-1.jpg) no-repeat center / contain;
+}
+.choice__li{
+	position: absolute;
+	padding-left: 55px;
+}
+.choice__li:before{
+	position: absolute;
+	left: 0;
+	content: '';
+	display: block;
+	width: 40px;
+	height: 40px;
+	background: url(../img/icon/pin.png) center / cover;
+}
+.choice__li:nth-child(1){
+	top: 150px;
+	left: 217px;
+}
+.choice__li:nth-child(2){
+	top: 320px;
+	left: 123px;
+}
+.choice__li:nth-child(3){
+	top: 490px;
+	left: 102px;
+}
+.choice__li:nth-child(4){
+	top: 150px;
+	left: 759px;
+}
+.choice__li:nth-child(5){
+	top: 320px;
+	left: 909px;
+}
+.choice__li:nth-child(6){
+	top: 490px;
+	left: 933px;
+}
+
+.choice__quote{
+	position: absolute;
+	left: 50%;
+	top: 600px;
+	width: 500px;
+	margin-left: -250px;
+	padding: 35px;
+	box-shadow: 0 5px 15px rgba(31, 1, 0, 0.2);
+	background: #fff;
+	border-radius: 10px;
+	font-size: 20px;
+}
+.choice__quote:after{
+	content: '';
+	display: block;
+	width: 77px;
+	height: 53px;
+	background: url('../img/quote.png') center / cover;
+	position: absolute;
+	top: -53px;
+	right: 75px;
+	z-index: 2;
+}
+.choice__author{
+	font-weight: 400;
+	font-style: italic;
+	font-size: 16px;
+	opacity: 0.6;
+	max-width: 300px;
+	margin-left: auto;
+	margin-top: 20px;
+}
+
+/* Для кнопки с подсказкой */
+
+.choice .btn-prompt{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 350px;
+	margin-left: -175px;
+	text-align: center;
+}
+.choice .btn-prompt p{
+	position: absolute;
+	top: -20px;
+	left: -300px;
+	opacity: 0.6;
+	font-weight: 400;
+	font-style: italic;
+	max-width: 350px;
+	font-size: 16px;
+	text-align: left;
+}
+.choice .btn-prompt p:after{
+	content: '';
+	display: block;
+	width: 111px;
+	height: 39px;
+	background: url('../img/arrows/arrow-right.png') center / cover;
+	position: absolute;
+	top: 65px;
+	left: 165px;
+}
+
+/* Преимущества */
+
+.advantages{
+	background: url(../img/bg.jpg);
+	font-size: 20px;
+	text-align: center;
+}
+
+.advantages__list{
+	display: flex;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	font-size: 16px;
+}
+.advantages__list .item{
+	width: 25%;
+	flex-grow: 1;
+	margin-right: 30px;
+	padding: 10px;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 5px 30px rgb(2, 34, 70, 0.15);
+}
+.advantages__list .item:last-child{
+	margin-right: 0;
+}
+.advantages__list .item .inner{
+	border: 1px solid #d8e7e9;
+	border-radius: 10px;
+	padding: 25px;
+	height: 100%;
+}
+.advantages__list .item img{
+	margin-bottom: 40px;
+	height: 300px;
+	width: auto;
+}
+
+/* Дополнительные преимущества */
+
+.additional-advantages{
+	position: relative;
+	height: 780px;
+	padding-top: 100px;
+	background: url('../img/advantages/additional-advantages.png') top center / cover;
+}
+.additional-advantages .item{
+	position: absolute;
+	font-size: 16px;
+}
+.additional-advantages .item:nth-child(1){
+	top: 300px;
+	left: 400px;
+}
+.additional-advantages .item:nth-child(2){
+	top: 250px;
+	left: 750px;
+}
+.additional-advantages .item:nth-child(3){
+	top: 600px;
+	left: 250px;
+}
+.additional-advantages .item:nth-child(4){
+	top: 600px;
+	left: 700px;
+}
+.additional-advantages__button{
+	display: block;
+	width: 70px;
+	height: 70px;
+	background: url(../img/icon/plus.png) center / cover;
+	position: absolute;
+}
+.additional-advantages .card-left{
+	position: absolute;
+	top: -82px;
+	left: -250px;
+	width: 303px;
+	height: 245px;
+	background: url(../img/advantages/card-left.png) center / cover;
+	text-align: left;
+	padding: 40px;
+	padding-left: 50px;
+}
+.additional-advantages .card-right{
+	position: absolute;
+	top: -41px;
+	left: 20px;
+	width: 303px;
+	height: 245px;
+	background: url(../img/advantages/card-right.png) center / cover;
+	text-align: left;
+	padding: 40px;
+	padding-left: 70px;
+}
+.additional-advantages img{
+	margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 1900px){
+	
+}
