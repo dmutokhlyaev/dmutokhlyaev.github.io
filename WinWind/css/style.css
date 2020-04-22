@@ -89,7 +89,7 @@ button{
 	background: url('../img/bg-first.jpg') center bottom / cover;
 	padding: 180px 0 100px;
 }
-.offer h1{
+.offer__title{
 	font-size: 34px;
 	text-transform: uppercase;
 	font-weight: 800;
@@ -105,8 +105,8 @@ button{
 .btn{
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	height: 80px;
-	padding: 0 65px;
 	border-radius: 40px;
 	color: #fff;
 	font-weight: 700;
@@ -120,6 +120,9 @@ button{
 .btn:active{
 	background: linear-gradient(to top, #9dceff 0%, #418cd1 100%);
 	box-shadow: 0 -5px 5px rgba(41, 112, 176, 0.35) inset, 0 5px 15px rgba(65,140,209,0.5);
+}
+.first-screen .btn{
+	width: 280px;
 }
 
 /* Для кнопки с подсказкой */
@@ -210,16 +213,19 @@ button{
 .choice .container{
 	position: relative;
 }
-.choice__item:before{
-	content: '';
-	display: block;
+.choice .section__title{
+	position: relative;
+	z-index: 1;
+}
+.choice__item{
 	position: absolute;
-	z-index: -1;
-	top: -100px; /* Паддинги секции */
+	top: 0;
 	right: 0;
-	bottom: -100px;
+	bottom: 0px;
 	left: 0;
+	padding-top: 60px;
 	background: url(../img/choice/choice-1.jpg) no-repeat center / contain;
+	transition: all 0.5s;
 }
 .choice__li{
 	position: absolute;
@@ -235,28 +241,28 @@ button{
 	background: url(../img/icon/pin.png) center / cover;
 }
 .choice__li:nth-child(1){
-	top: 150px;
-	left: 217px;
+	top: 180px;
+	left: 277px;
 }
 .choice__li:nth-child(2){
 	top: 320px;
-	left: 123px;
+	left: 188px;
 }
 .choice__li:nth-child(3){
 	top: 490px;
-	left: 102px;
+	left: 166px;
 }
 .choice__li:nth-child(4){
-	top: 150px;
-	left: 759px;
+	top: 200px;
+	left: 701px;
 }
 .choice__li:nth-child(5){
-	top: 320px;
-	left: 909px;
+	top: 350px;
+	left: 828px;
 }
 .choice__li:nth-child(6){
-	top: 490px;
-	left: 933px;
+	top: 510px;
+	left: 838px;
 }
 
 .choice__quote{
@@ -276,7 +282,7 @@ button{
 	display: block;
 	width: 77px;
 	height: 53px;
-	background: url('../img/quote.png') center / cover;
+	background: url('../img/triangles/quote.png') center / cover;
 	position: absolute;
 	top: -53px;
 	right: 75px;
@@ -298,9 +304,12 @@ button{
 	position: absolute;
 	bottom: 0;
 	left: 50%;
-	width: 350px;
-	margin-left: -175px;
+	width: 300px;
+	margin-left: -150px;
 	text-align: center;
+}
+.choice .btn{
+	width: 100%;
 }
 .choice .btn-prompt p{
 	position: absolute;
@@ -324,6 +333,35 @@ button{
 	left: 165px;
 }
 
+.choice__item_cold{
+	background: url(../img/choice/choice-2.jpg) no-repeat center / contain;
+}
+.choice__item_cold .choice__li:before{
+	background: url(../img/icon/pin-cold.png) center / cover;
+}
+.choice__item_cold .choice__author{
+	max-width: 400px;
+}
+
+/* Для скриптов */
+
+.choice__item_hidden{
+	visibility: hidden;
+	opacity: 0;
+}
+
+.choice__item_cold .btn{
+	background: linear-gradient(to top, #ff3900 0%, #ff9e5d 100%);
+	box-shadow: 0 -5px 5px rgba(159, 24, 0, 0.35) inset, 0 5px 15px rgba(255,69,0,0.8);
+}
+.choice__item_cold .btn:hover{
+	background: linear-gradient(to top, #ff6b2e 0%, #ff9e5d 100%);
+}
+.choice__item_cold .btn:active{
+	background: linear-gradient(to top, #ff9e5d 0%, #ff3900 100%);
+	box-shadow: 0 -5px 5px rgba(159, 24, 0, 0.35) inset, 0 5px 15px rgba(255,69,0,0.5);
+}
+
 /* Преимущества */
 
 .advantages{
@@ -339,10 +377,11 @@ button{
 	font-size: 16px;
 }
 .advantages__list .item{
+	position: relative;
 	width: 25%;
 	flex-grow: 1;
 	margin-right: 30px;
-	padding: 10px;
+	padding: 35px;
 	background-color: #fff;
 	border-radius: 10px;
 	box-shadow: 0 5px 30px rgb(2, 34, 70, 0.15);
@@ -350,11 +389,15 @@ button{
 .advantages__list .item:last-child{
 	margin-right: 0;
 }
-.advantages__list .item .inner{
+.advantages__list .item:before{
+	content: '';
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	bottom: 10px;
+	left: 10px;
 	border: 1px solid #d8e7e9;
 	border-radius: 10px;
-	padding: 25px;
-	height: 100%;
 }
 .advantages__list .item img{
 	margin-bottom: 40px;
@@ -364,63 +407,95 @@ button{
 
 /* Дополнительные преимущества */
 
-.additional-advantages{
+.moreover{
 	position: relative;
 	height: 780px;
 	padding-top: 100px;
 	background: url('../img/advantages/additional-advantages.png') top center / cover;
 }
-.additional-advantages .item{
+.moreover .item{
 	position: absolute;
 	font-size: 16px;
 }
-.additional-advantages .item:nth-child(1){
+.moreover .item:nth-child(1){
 	top: 300px;
 	left: 400px;
 }
-.additional-advantages .item:nth-child(2){
+.moreover .item:nth-child(2){
 	top: 250px;
 	left: 750px;
 }
-.additional-advantages .item:nth-child(3){
+.moreover .item:nth-child(3){
 	top: 600px;
 	left: 250px;
 }
-.additional-advantages .item:nth-child(4){
+.moreover .item:nth-child(4){
 	top: 600px;
 	left: 700px;
 }
-.additional-advantages__button{
+.moreover__button{
 	display: block;
 	width: 70px;
 	height: 70px;
 	background: url(../img/icon/plus.png) center / cover;
 	position: absolute;
 }
-.additional-advantages .card-left{
+.moreover .card{
 	position: absolute;
-	top: -82px;
+	background: #fff;
+	box-shadow: 0 5px 30px rgba(2, 34, 70, 0.15);
+	padding: 20px;
+	border-radius: 10px;
+	text-align: left;
+	width: 250px;
+	transition: all 0.3s;
+}
+.moreover .card_left{
 	left: -250px;
-	width: 303px;
-	height: 245px;
-	background: url(../img/advantages/card-left.png) center / cover;
-	text-align: left;
-	padding: 40px;
-	padding-left: 50px;
+	top: -65px;
 }
-.additional-advantages .card-right{
+.moreover .card_left:after{
+	content: '';
+	display: block;
+	width: 30px;
+	height: 37px;
+	background: url('../img/triangles/card-left.png') center / cover;
 	position: absolute;
-	top: -41px;
-	left: 20px;
-	width: 303px;
-	height: 245px;
-	background: url(../img/advantages/card-right.png) center / cover;
-	text-align: left;
-	padding: 40px;
-	padding-left: 70px;
+	right: -30px;
+	top: 100px;
 }
-.additional-advantages img{
-	margin-bottom: 10px;
+.moreover .card_right{
+	left: 70px;
+	top: -5px;
+}
+.moreover .card_right:after{
+	content: '';
+	display: block;
+	width: 30px;
+	height: 37px;
+	background: url('../img/triangles/card-right.png') center / cover;
+	position: absolute;
+	left: -30px;
+	top: 40px;
+}
+.moreover .card img{
+	margin-bottom: 20px;
+}
+
+.item_hidden .card{
+	visibility: hidden;
+	opacity: 0;
+}
+.moreover .card .close{
+	content: '';
+	display: block;
+	width: 40px;
+	height: 40px;
+	background: url('../img/icon/cross.png') no-repeat center;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	cursor: pointer;
 }
 
 @media only screen and (max-width: 1900px){
