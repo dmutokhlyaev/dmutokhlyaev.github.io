@@ -498,6 +498,52 @@ button{
 	cursor: pointer;
 }
 
+/* Главная, Категории*/
+
+.categories__list{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  margin-top: 80px;
+}
+
+.categories__item{
+	background: #fff;
+	box-shadow: 0 5px 30px rgba(2, 34, 70, 0.15);
+	border-radius: 10px;
+	padding: 35px;
+	overflow: hidden;
+	text-decoration: none;
+}
+.categories__img{
+	position: relative;
+	top: -30px;
+	right: -30px;
+	margin: -30px -30px 0 -30px;
+	height: 180px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+}
+.categories__title{
+	font-size: 20px;
+	color: #2c2c2c;
+	max-width: 275px;
+	margin-bottom: 15px;
+}
+.categories__more{
+	color: #418ed1;
+}
+.categories__more:after{
+	content: '';
+	display: inline-block;
+	width: 12px;
+	height: 9px;
+	background: url(../img/icon/arrow.png) center / cover;
+	margin-left: 10px;
+}
+
 @media only screen and (max-width: 1900px){
 	
 }
