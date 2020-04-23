@@ -208,6 +208,7 @@ button{
 	font-size: 34px;
 	font-weight: 800;
 	text-align: center;
+	line-height: 1.4;
 }
 
 /* Знакомая ситуация */
@@ -371,7 +372,6 @@ button{
 
 .advantages{
 	background: url(../img/bg.jpg);
-	font-size: 20px;
 	text-align: center;
 }
 
@@ -555,6 +555,378 @@ button{
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 30px;
+}
+
+/* Тест */
+
+.test{
+	position: relative;
+	background: url(../img/bg.jpg);
+}
+
+.test__card{
+	position: relative;
+	padding: 10px;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 5px 30px rgb(2, 34, 70, 0.15);
+	margin-top: 60px;
+	display: flex;
+}
+
+.test__form{
+	position: relative;
+	border: 1px solid #d8e7e9;
+	border-radius: 10px;
+	width: 750px;
+	height: 720px;
+	flex-shrink: 0;
+	margin-right: 50px;
+}
+
+.btn-next{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: -140px;
+	width: 280px;
+}
+
+.test__step-title{
+	font-size: 20px;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 30px;
+}
+.test__step{
+	position: absolute;
+	top: 100px;
+	right: 30px;
+	bottom: 30px;
+	left: 30px;
+}
+.test__step_hidden{
+	visibility: hidden;
+}
+
+.test input[type="radio"]{
+	display: none;
+}
+
+/* Первый вопрос */
+
+.test__step-1 .list{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  font-size: 14px;
+}
+.test__step-1 label{
+	border: 1px solid #d8e7e9;
+	border-radius: 5px;
+	padding: 20px;
+	text-align: center;
+	cursor: pointer;
+	color: #939393;
+}
+.test__step-1 img{
+	width: 100%;
+	height: 73px;
+	object-fit: contain;
+	object-position: top center;
+	margin-bottom: 10px;
+}
+.test__step-1 label:hover{
+	color: #303030;
+}
+.test__step-1 input:checked + label{
+	border: 1px solid #9dceff;
+	box-shadow: 0 5px 20px rgba(65, 142, 209, 0.6);
+	color: #303030;
+}
+
+/* Второй вопрос */
+
+.test__step-2 label{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	height: 100px;
+	background: #fff;
+	border: 1px solid #d8e7e9;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	cursor: pointer;
+	color: #939393;
+}
+.test__step-2 label:before{
+	content: '';
+	display: block;
+	width: 22px;
+	height: 22px;
+	background: url(../img/icon/check-off.png) center / cover;
+	position: absolute;
+	left: 100px;
+}
+.test__step-2 label:hover{
+	color: #303030;
+}
+.test__step-2 input:checked + label{
+	border: 1px solid #9dceff;
+	box-shadow: 0 5px 20px rgba(65, 142, 209, 0.6);
+	color: #303030;
+}
+.test__step-2 input:checked + label:before{
+	background: url(../img/icon/check-on.png) center / cover;
+}
+.test__step-2 input[type="text"]{
+	padding: 25px;
+	background: #f9f9f9;
+	border: 1px solid #d8e7e9;
+	border-radius: 5px;
+	width: 380px;
+	box-shadow: inset 0 5px 10px rgba(0,0,0,0.15);
+}
+
+/* Третий вопрос */
+
+.test__step-3 .list{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  font-size: 14px;
+}
+.test__step-3 label{
+	border: 1px solid #d8e7e9;
+	border-radius: 5px;
+	padding: 25px;
+	cursor: pointer;
+	text-align: center;
+	color: #939393;
+}
+.test__step-3 img{
+	width: 100%;
+	height: 110px;
+	object-fit: contain;
+	object-position: top center;
+	margin-bottom: 10px;
+}
+.test__step-3 input:checked + label{
+	border: 1px solid #9dceff;
+	box-shadow: 0 5px 20px rgba(65, 142, 209, 0.6);
+	color: #303030;
+}
+
+/* Четвёртый вопрос */
+
+.test__step-4 label{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	height: 60px;
+	background: #fff;
+	border: 1px solid #d8e7e9;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+.test__step-4 label:before{
+	content: '';
+	display: block;
+	width: 22px;
+	height: 22px;
+	background: url(../img/icon/check-off.png) center / cover;
+	position: absolute;
+	left: 100px;
+}
+.test__step-4 input:checked + label{
+	border: 1px solid #9dceff;
+	box-shadow: 0 5px 20px rgba(65, 142, 209, 0.6);
+}
+.test__step-4 input:checked + label:before{
+	background: url(../img/icon/check-on.png) center / cover;
+}
+
+/* Пятый вопрос */
+
+.test__step-5 input[type="text"]{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+	height: 80px;
+	border-radius: 40px;
+	background: #f9f9f9;
+	box-shadow: inset 0 5px 10px rgba(0,0,0, 0.15);
+	border: 1px solid #d8e7e9;
+	padding: 0 40px;
+	margin-bottom: 20px;
+}
+
+.btn-submit{
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.progress{
+	margin: 30px;
+	font-size: 12px;
+	color: #b2b2b2;
+	text-align: center;
+}
+.progress__line{
+	height: 20px;
+	border-radius: 10px;
+	background: #fafafa;
+	box-shadow: inset 0 5px 10px rgba(0,0,0, 0.15);
+	margin-bottom: 10px;
+}
+.progress__performed{
+	height: 100%;
+	background: url(../img/test/progress__performed.png);
+	border-radius: 10px;
+	width: 20%;
+	box-shadow: inset 0 3px 7px #c8e3ff, inset 0 -5px 10px rgba(2, 76, 177, 0.3);
+}
+
+.test__right{
+	position: relative;
+	padding-right: 30px;
+}
+.test__quote{
+	position: relative;
+	margin-top: -60px;
+	z-index: 1;
+	padding: 20px 10px 20px 30px;
+}
+.test__quote:before{
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	background: #fff;
+	box-shadow: 0 5px 15px rgba(41, 112, 176, 0.2);
+	border-radius: 10px;
+	transform: skewX(-10deg);
+}
+
+.test__man{
+	position: relative;
+	z-index: 1;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 60px;
+	width: 200px;
+	color: #fff;
+	font-size: 12px;
+	margin-top: -20px;
+	margin-left: auto;
+}
+.test__name{
+	font-size: 16px;
+	font-weight: 700;
+}
+.test__man:after{
+	content: '';
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: linear-gradient(to top, #418cd1 0%, #9dceff 100%);
+	border-radius: 5px;
+	transform: skewX(-10deg);
+}
+
+/* О нас */
+
+.about-us{
+	display: flex;
+}
+.about-us .section__subtitle{
+	text-align: left;
+	margin-bottom: 50px;
+}
+.about-us__text{
+	margin-top: 50px;
+}
+.about-us__text p{
+	margin: 0 85px;
+	font-size: 20px;
+}
+.about-us__img{
+	position: relative;
+	flex-shrink: 0;
+}
+.about-us__man{
+	position: absolute;
+	z-index: 1;
+	bottom: 20px;
+	left: 100px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 84px;
+	width: 250px;
+	color: #fff;
+}
+.about-us__name{
+	font-size: 20px;
+	font-weight: 700;
+}
+.about-us__man:after{
+	content: '';
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: linear-gradient(to top, #418cd1 0%, #9dceff 100%);
+	border-radius: 10px;
+	transform: skewX(-10deg);
+}
+
+/* Наши дефлекторы */
+
+.our-deflectors{
+	margin-top: 30px;
+}
+.our-deflectors__title{
+	font-size: 20px;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 50px;
+}
+.our-deflectors__list{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-column-gap: 30px;
+  grid-row-gap: 30px;
+	text-align: center;
+}
+
+.our-deflectors__img{
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	height: 150px;
+	margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 1900px){
