@@ -59,5 +59,17 @@ $(function(){
 
   $('.test__step-2 input[type="text"]').click(function() {
     $('.test__step-2 input[type="text"]').parent().trigger('click');
-  })
+  });
+
+  /* Слайдер */
+
+  $('.reviews__list').slick({
+    centerMode: true,
+    centerPadding: 0,
+    slidesToShow: 3,
+    prevArrow: $('.slick-prev'),
+    nextArrow: $('.slick-next'),
+    appendDots: $('.reviews__dots'),
+    dots: true,
+  });
 });
