@@ -1037,6 +1037,52 @@ button{
 	font-weight: 700;
 }
 
+/* Контакты */
+
+.contacts__map{
+	box-shadow: 0 5px 30px rgb(2, 34, 70, 0.15);
+	border-radius: 5px;
+	overflow: hidden;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.contacts__list{
+	display: flex;
+	justify-content: space-between;
+}
+.contacts__item{
+	position: relative;
+	padding-left: 35px;
+}
+.contacts__item:before{
+	content: '';
+	display: block;
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	top: 5px;
+	left: 0;
+}
+.contacts__item.address:before{
+	background: url(../img/icon/adress.png) no-repeat center / contain;
+}
+.contacts__item.phone:before{
+	background: url(../img/icon/phone2.png) no-repeat center / contain;
+}
+.contacts__item.email:before{
+	background: url(../img/icon/mail.png) no-repeat center / contain;
+}
+.contacts .btn{
+	width: 270px;
+}
+
+.contacts__title{
+	font-weight: 700;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
 @media only screen and (max-width: 1900px){
 	
 }
