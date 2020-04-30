@@ -20,39 +20,39 @@ $(function(){
 
   /* Тест */
 
-  /* Следующий вопрос, есле есть ответ*/
+  $('.test__slider').slick({
+    infinite: false,
+    prevArrow: false,
+    nextArrow: $('.test .btn-next'),
+    draggable: false,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          adaptiveHeight: true,
+        }
+      },
+    ],
+  });
 
-  for (let i = 0; i < $('.test .btn-next').length; i++) {
+  /* Активация кнопки далее */
 
-    $('.test .btn-next').eq(i).click(function() {
+  $('.test__item').each(function() {
 
-      for (let j = 0; j < $('.test__step-'+ (i + 1) +' input').length; j++) {
+    $(this).find('label').click(function() {
 
-        if( $('.test__step-'+ (i + 1) +' input').eq(j).prop("checked") ) {
+      $(this).parents('.test__item').find('.btn-next').addClass('btn-next_visible');
 
-          $('.test__step-' + (i + 1) ).addClass('test__step_hidden');
-          $('.test__step-' + (i + 2) ).removeClass('test__step_hidden');
-
-          $('.progress__performed').width( (i + 2) * 20 + '%');
-
-          $('.progress__count').text(i + 2);
-          break
-        };
-      };
     });
-  };
+  });
 
-  $('.test__step-1 button').click(function() {
+  /* Счётчик и полоса прогресса */
 
-    for (var i = 0; i < $('.test__step-1 input').length; i++) {
-      
-      if( $('.test__step-1 input').eq(i).prop("checked") ) {
+  $('.test__slider').on('afterChange', function(event, slick, currentSlide){
 
-        $('.test__step-1').addClass('test__step_hidden');
-        $('.test__step-2').removeClass('test__step_hidden');
-        break
-      };
-    };
+    $('.progress__count').text(currentSlide + 1);
+    $('.progress__performed').width( 20 * (currentSlide + 1) + '%' );
+
   });
 
   /* При нажатии на текстовое поле подсвечивается карточка */
