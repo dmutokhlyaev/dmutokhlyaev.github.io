@@ -2,23 +2,30 @@
 <html lang="ru">
 <head>
 	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<title>WinWind</title>
 
 	<link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="libs/slick-slider/slick.css">
+  <link rel="stylesheet" href="libs/Magnific-Popup/magnific-popup.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body class="home">
   <header class="header">
     <div class="container">
-      <a href="" class="header__logo"><img src="img/logo.png" alt="WinWind"></a>
+      <div class="header__logo">
+        <a href=""><img src="img/logo.png" alt="WinWind"></a>
 
-      <p class="header__description">Изготавливаем дефлекторы для<br>кондиционеров и вентиляций с 2018 г.</p>
+        <p>Изготавливаем дефлекторы для кондиционеров и вентиляций с 2018 г.</p>
+      </div>
+      
 
-      <p class="header__phone">8 800 511 92 80</p>
+      <div class="header__phone">
+        <p>8 800 511 92 80</p>
 
-      <button class="btn-call" type="button">Перезвоните мне</button>
+        <a href="#popup-form" class="btn-call popup-link">Перезвоните мне</a>
+      </div>
     </div>
   </header>
 
@@ -31,7 +38,7 @@
       </div>
 
       <div class="btn-prompt">
-        <button class="btn" type="button">Подобрать экран</button>
+        <a href="#test" class="btn">Подобрать экран</a>
 
         <p>Пройдите короткий тест, чтобы узнать,<br>какой дефлектор подойдет именно вам</p>
       </div>
@@ -64,12 +71,12 @@
         <p class="section__intro">Когда кондиционер выключен:</p>
 
         <ul>
-          <li class="choice__li">Жарко, усиливается<br>потоотделени</li>
-          <li class="choice__li">Понижается<br>продуктивность</li>
-          <li class="choice__li">Душно,<br>нечем дышать</li>
-          <li class="choice__li">Повышается<br>раздражительность</li>
-          <li class="choice__li">Кружится<br>голова</li>
-          <li class="choice__li">Конфликты<br>из-за включения<br>кондиционера</li>
+          <li class="choice__li">Жарко, усиливается потоотделени</li>
+          <li class="choice__li">Понижается продуктивность</li>
+          <li class="choice__li">Душно, нечем дышать</li>
+          <li class="choice__li">Повышается раздражительность</li>
+          <li class="choice__li">Кружится голова</li>
+          <li class="choice__li">Конфликты из-за включения кондиционера</li>
         </ul>
 
         <div class="choice__quote">
@@ -89,18 +96,18 @@
         <p class="section__intro">Когда кондиционер включен:</p>
 
         <ul>
-          <li class="choice__li">Постоянный<br>насморк</li>
-          <li class="choice__li">Понижается<br>продуктивность</li>
-          <li class="choice__li">Продувает<br>уши и шею</li>
-          <li class="choice__li">Учащаются<br>случаи простуды</li>
-          <li class="choice__li">Болит<br>голова</li>
-          <li class="choice__li">Конфликты<br>из-за включения<br>кондиционера</li>
+          <li class="choice__li">Постоянный насморк</li>
+          <li class="choice__li">Понижается продуктивность</li>
+          <li class="choice__li">Продувает уши и шею</li>
+          <li class="choice__li">Учащаются случаи простуды</li>
+          <li class="choice__li">Болит голова</li>
+          <li class="choice__li">Конфликты из-за включения кондиционера</li>
         </ul>
 
         <div class="choice__quote">
           <p>Давайте выключим кондиционер!</p>
 
-          <p class="choice__author">Марина, которая снова простудилась, потому что<br>кондиционер дует прямо на ее рабочее место</p>
+          <p class="choice__author">Марина, которая снова простудилась, потому что кондиционер дует прямо на ее рабочее место</p>
         </div>
 
         <div class="btn-prompt">
@@ -264,11 +271,11 @@
 
       <p class="section__intro">Разработаем и изготовим для Вас дефлектор по индивидуальным размерам</p>
 
-      <button class="btn" type="button">Заказать дефлектор</button>
+      <a href="#popup-form" class="btn popup-link">Заказать дефлектор</a>
     </div>
   </section>
 
-  <section class="section test">
+  <section class="section test" id="test">
     <div class="container">
       <h2 class="section__title">Не знаете, какой дефлектор Вам нужен?</h2>
 
@@ -507,7 +514,7 @@
 
         <div class="about-us__text">
           <h2 class="section__subtitle">При разработке дефлекторов<br>
-          мы опирались на 10ти-летний опыт работы<br>
+          мы опирались на 10-летний опыт работы<br>
           с различными видами кондиционеров</h2>
 
           <p>Имея 10ти-летний опыт в продаже, монтаже и обслуживании кондиционеров, наша компания в 2018 году разработала и запустила линейку универсальных экранов (отражателей) под маркой WINWIND. При разработке дефлекторов мы учли пожелания и отзывы всех наших клиентов, накопленные за годы работы</p>
@@ -669,13 +676,40 @@
           <p>zakaz@exetec.pro</p>
         </div>
 
-        <button class="btn" type="button">Задать вопрос</button>
+        <div class="contacts__btn">
+          <a href="#popup-form" class="btn popup-link">Задать вопрос</a>
+        </div>
       </div>
     </div>
   </section>
 
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__logo">
+        <a href=""><img src="img/logo.png" alt="WinWind"></a>
+
+        <p>Изготавливаем дефлекторы для<br>кондиционеров и вентиляций с 2018 г.</p>
+      </div>
+      
+      <a href="#" class="footer__link">Политика конфеденциальности</a>
+
+      <p class="footer__author">Сайт разработан<br>студией <a class="footer__link" href="#"><strong>WebEkaterinburg</strong></a></p>
+    </div>
+  </footer>
+
+  <div id="popup-form" class="popup-form mfp-hide">
+    <p class="popup-form__intro">Чтобы оставить заявку, пожалуйста, заполните поля ниже:</p>
+
+    <form action="" name="form-2">
+      <input type="text" name="name" placeholder="Введите ваше имя" required>
+      <input type="text" name="phone" placeholder="Введите номер телефона" required>
+      <button class="btn btn-submit" type="submit">Оставить заявку</button>
+    </form>
+  </div>
+
   <script src="js/jquery.min.js"></script>
   <script src="libs/slick-slider/slick.min.js"></script>
+  <script src="libs/Magnific-Popup/magnific-popup.min.js"></script>
 	<script src="js/common.js"></script>
 </body>
 </html>

@@ -71,5 +71,20 @@ $(function(){
     nextArrow: $('.slick-next'),
     appendDots: $('.reviews__dots'),
     dots: true,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 1,
+        }
+      },
+    ],
+  });
+
+  /* Попап окно */
+
+  $('.popup-link').magnificPopup({
+    type: 'inline',
+    removalDelay: '300',
   });
 });
