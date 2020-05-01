@@ -20,7 +20,7 @@ body{
 	min-height: 100vh;
 	background: url(../img/bg.jpg);
 }
-.home{
+body.home{
 	background: none;
 }
 
@@ -1179,6 +1179,7 @@ button{
 .bread-crumbs ul{
 	display: flex;
 	align-items: center;
+	flex-wrap: wrap;
 	margin-top: 40px;
 	margin-bottom: 40px;
 }
@@ -1200,7 +1201,7 @@ button{
 .catalog{
 	margin-bottom: 50px;
 }
-.catalog__list{
+.catalog .list{
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-column-gap: 30px;
@@ -1208,7 +1209,7 @@ button{
   margin-top: 60px;
   margin-bottom: 60px;
 }
-.catalog__item{
+.catalog .card{
 	position: relative;
 	z-index: 1;
 	padding: 35px;
@@ -1220,7 +1221,7 @@ button{
 	align-items: center;
 	text-align: center;
 }
-.catalog__item:before{
+.catalog .card:before{
 	content: '';
 	position: absolute;
 	z-index: -1;
@@ -1231,22 +1232,22 @@ button{
 	border: 1px solid #d8e7e9;
 	border-radius: 10px;
 }
-.catalog__img{
+.catalog .card__img{
 	height: 150px;
 	margin-bottom: 20px;
 }
-.catalog__img img{
+.catalog .card__img img{
 	height: 100%;
 	width: 100%;
 	object-fit: contain;
 	object-position: center top;
 }
-.catalog__item h3{
+.catalog .card h3{
 	font-size: 20px;
 	font-weight: 700;
 	margin-bottom: 20px;
 }
-.catalog__price{
+.catalog .card__price{
 	font-size: 34px;
 	font-weight: 800;
 	margin-bottom: 30px;
@@ -1255,6 +1256,137 @@ button{
 .catalog .btn{
 	width: 100%;
 	max-width: 280px;
+}
+
+/* Страница товара */
+
+.product__gallery{
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 5px 30px rgb(2, 34, 70, 0.15);
+	width: 485px;
+	height: 420px;
+	margin-bottom: 120px;
+	flex-shrink: 0;
+	margin-right: 65px;
+}
+.fotorama{
+	overflow: visible;
+}
+.fotorama__nav-wrap{
+	position: absolute;
+	z-index: 1;
+	bottom: -120px;
+}
+
+.fotorama__stage__frame{
+	padding: 35px;
+}
+.fotorama__img{
+	position: static;
+	object-fit: contain;
+	width: 100% !important;
+	height: 100% !important;
+}
+
+.product{
+	display: flex;
+	margin-bottom: 100px;
+}
+.product .section__subtitle{
+	text-align: left;
+	margin-bottom: 30px;
+}
+.product p{
+	margin-bottom: 20px;
+}
+.product__link{
+	color: #418ed1;
+}
+.product__link:hover{
+	text-decoration: none;
+}
+.product__characteristic{
+	font-size: 18px;
+	display: flex;
+}
+.product__characteristic span{
+	display: inline-block;
+	width: 250px;
+	font-weight: 700;
+}
+.product__price{
+	font-size: 34px;
+	font-weight: 800;
+}
+.product__price span{
+	display: inline-block;
+	font-weight: 700;
+	font-size: 20px;
+	margin-right: 20px;
+}
+.product .btn{
+	margin-bottom: 20px;
+}
+
+.similar .list{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.similar .card{
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 5px 30px rgb(2, 34, 70, 0.15);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+.similar .card__img{
+	height: 150px;
+	margin-bottom: 20px;
+}
+.similar .card__img img{
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+	object-position: center top;
+}
+.similar .card h3{
+	font-size: 20px;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+.similar .card__price{
+	font-size: 24px;
+	font-weight: 800;
+	margin-bottom: 30px;
+	margin-top: auto;
+}
+.similar .btn{
+	background: none;
+	box-shadow: none;
+	color: #418ed1;
+	text-transform: none;
+	font-weight: 400;
+	height: auto;
+	width: auto;
+}
+.similar .btn:hover{
+	text-decoration: underline;
+}
+.similar .btn:after{
+	content: '';
+	display: inline-block;
+	width: 12px;
+	height: 9px;
+	background: url(../img/icon/arrow.png) center / cover;
+	margin-left: 10px;
 }
 
 @media only screen and (max-width: 1200px){
@@ -1532,8 +1664,20 @@ button{
     height: 70px;
 	}
 
-	.catalog__list{
+	.catalog .list{
 		grid-template-columns: 1fr 1fr;
+	}
+	.similar .list{
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.product{
+		flex-direction: column;
+		align-items: center;
+	}
+	.product__gallery{
+		margin-bottom: 160px;
+		margin-right: 0;
 	}
 }
 
@@ -1679,7 +1823,10 @@ button{
 		margin-bottom: 20px;
 	}
 
-	.catalog__list{
+	.catalog .list{
+		grid-template-columns: 1fr;
+	}
+	.similar .list{
 		grid-template-columns: 1fr;
 	}
 }
@@ -1735,6 +1882,17 @@ button{
 	.about-us__text p {
     margin-left: 0;
     min-height: 0;
+	}
+
+	.product__gallery{
+		width: 100%;
+	}
+	.product__characteristic{
+		flex-direction: column;
+	}
+
+	.bread-crumbs{
+		font-size: 14px;
 	}
 }
 

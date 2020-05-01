@@ -87,4 +87,14 @@ $(function(){
     type: 'inline',
     removalDelay: '300',
   });
+
+  /* Галерея на странице продукта */
+
+  $('.fotorama').fotorama({
+   width: '100%',
+   height: 425,
+   nav: 'thumbs',
+   thumbwidth: 150,
+   thumbheight: 100,
+  }); 
 });
