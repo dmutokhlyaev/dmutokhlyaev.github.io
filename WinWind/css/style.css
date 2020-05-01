@@ -15,6 +15,13 @@ body{
 	color: #2c2c2c;
 	line-height: 1.5;
 	letter-spacing: 0.02em;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background: url(../img/bg.jpg);
+}
+.home{
+	background: none;
 }
 
 button{
@@ -34,11 +41,15 @@ button{
 /* Шапка */
 
 .header{
+	background: #fff;
+	padding: 40px 0;
+}
+.home .header{
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
-	padding: 40px 0;
+	background: transparent;
 }
 .header .container{
 	display: flex;
@@ -1051,6 +1062,7 @@ button{
 	padding: 40px 0;
 	background: url(../img/bg.jpg);
 	font-size: 14px;
+	margin-top: auto;
 }
 .footer .container{
 	display: flex;
@@ -1160,6 +1172,81 @@ button{
 .mfp-content{
 	padding-top: 50px;
 	padding-bottom: 50px;
+}
+
+/* Каталог */
+
+.bread-crumbs ul{
+	display: flex;
+	align-items: center;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.bread-crumbs__separator{
+	display: inline-block;
+	width: 7px;
+	height: 9px;
+	background: url(../img/icon/separator.png) center / cover;
+	margin: 0 15px;
+}
+.bread-crumbs a{
+	text-decoration: none;
+	color: inherit;
+}
+.bread-crumbs a:hovr{
+	text-decoration: underline;
+}
+
+.catalog{
+	margin-bottom: 50px;
+}
+.catalog__list{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.catalog__item{
+	position: relative;
+	z-index: 1;
+	padding: 35px;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 5px 30px rgb(2, 34, 70, 0.15);
+	text-align: center;
+}
+.catalog__item:before{
+	content: '';
+	position: absolute;
+	z-index: -1;
+	top: 10px;
+	right: 10px;
+	bottom: 10px;
+	left: 10px;
+	border: 1px solid #d8e7e9;
+	border-radius: 10px;
+}
+.catalog__img{
+	height: 150px;
+	margin-bottom: 20px;
+}
+.catalog__img img{
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+	object-position: center top;
+}
+.catalog__item h3{
+	font-size: 20px;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+.catalog__price{
+	font-size: 34px;
+	font-weight: 800;
+	margin-bottom: 30px;
 }
 
 @media only screen and (max-width: 1200px){
