@@ -1215,6 +1215,9 @@ button{
 	background-color: #fff;
 	border-radius: 10px;
 	box-shadow: 0 5px 30px rgb(2, 34, 70, 0.15);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	text-align: center;
 }
 .catalog__item:before{
@@ -1247,6 +1250,11 @@ button{
 	font-size: 34px;
 	font-weight: 800;
 	margin-bottom: 30px;
+	margin-top: auto;
+}
+.catalog .btn{
+	width: 100%;
+	max-width: 280px;
 }
 
 @media only screen and (max-width: 1200px){
@@ -1523,6 +1531,10 @@ button{
 	.popup-form input[type="text"] {
     height: 70px;
 	}
+
+	.catalog__list{
+		grid-template-columns: 1fr 1fr;
+	}
 }
 
 @media only screen and (max-width: 768px){
@@ -1665,6 +1677,10 @@ button{
 	}
 	.footer__logo{
 		margin-bottom: 20px;
+	}
+
+	.catalog__list{
+		grid-template-columns: 1fr;
 	}
 }
 
