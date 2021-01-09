@@ -1,3 +1,24 @@
+@font-face {
+  font-family: 'Verdana';
+  src: url('Verdana.eot');
+  src: local('Verdana'),
+    url('Verdana.eot?#iefix') format('embedded-opentype'),
+    url('Verdana.woff') format('woff'),
+    url('Verdana.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Verdana';
+  src: url('Verdana-Bold.eot');
+  src: local('Verdana Bold'), local('Verdana-Bold'),
+    url('Verdana-Bold.eot?#iefix') format('embedded-opentype'),
+    url('Verdana-Bold.woff') format('woff'),
+    url('Verdana-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 *{
   box-sizing: border-box;
 }
@@ -66,6 +87,12 @@ body{
   z-index: 10;
   width: 100%;
 }
+.header_fixed{
+  position: fixed;
+  top: -50px;
+  background-color: #fff;
+  box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.1);
+}
 .h-top{
   background: #1D4282;
   font-size: 16px;
@@ -103,7 +130,6 @@ body{
   margin-right: 7px;
 }
 .language .active{
-  font-weight: 700;
   color: #fff;
 }
 .language a:hover{
@@ -112,6 +138,7 @@ body{
 
 .h-bottom{
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 .h-bottom__container{
   display: flex;
