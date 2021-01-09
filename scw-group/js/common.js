@@ -7,7 +7,9 @@ $(function() {
 
     let $activeSection = $( $(this).attr("href") );
     let sectionTop = $activeSection.offset().top;
-    $('html,body').animate({ scrollTop: sectionTop }, 1000);
+
+    let timeAnimation = Math.abs($(window).scrollTop() - sectionTop) / 1.5;
+    $('html,body').animate({ scrollTop: sectionTop - 100 }, timeAnimation);
   })
 
   /* Функции зависящие от скролла страницы. Вызывает при загрузке страницы и при скролле. */
@@ -41,11 +43,16 @@ $(function() {
     $('.main-menu [href="' + activeSectionId + '"]').addClass('active');
   }
 
-  //checkScroll();
+  checkScroll();
 
   $(window).scroll(function () {
     checkScroll();
   });
+
+  $('.team__list').owlCarousel({
+    items: 4,
+    margin: 30,
+  })
 
   
 })
