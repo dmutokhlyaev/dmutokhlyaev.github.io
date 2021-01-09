@@ -1,13 +1,6 @@
 *{
   box-sizing: border-box;
 }
-body{
-  font-family: Verdana, sans-serif;
-  font-size: 16px;
-  line-height: 1.22;
-  color: #000000;
-  overflow-x: hidden;
-}
 button{
   font-family: inherit;
 }
@@ -16,11 +9,53 @@ img{
   height: auto;
 }
 
+body{
+  font-family: Verdana, sans-serif;
+  font-size: 14px;
+  line-height: 1.22;
+  color: #000;
+  overflow-x: hidden;
+}
 .container{
   width: 100%;
   max-width: 1170px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Кнопка с градиентом */
+
+.button{
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding: 17px 35px;
+  background: linear-gradient(to right, #1D4282, #5AEFED);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.button:hover{
+  color: #1D4282;
+}
+.button::after{
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  border-radius: 7px;
+  background: transparent;
+  transition: all 0.3s;
+}
+.button:hover::after{
+  background: #fff;
 }
 
 /* Шапка */
@@ -33,18 +68,33 @@ img{
 }
 .h-top{
   background: #1D4282;
+  font-size: 16px;
+  color: #fff;
 }
 .h-top__container{
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   height: 50px;
 }
+.share{
+  display: flex;
+}
+.share p{
+  margin-right: 20px;
+}
+.share p img{
+  vertical-align: bottom;
+}
+.share a{
+  margin-right: 8px;
+}
+
 .language{
   display: flex;
 }
 .language a{
-  color: #CCCCCC;
+  color: #ccc;
   text-decoration: none;
   text-transform: uppercase;
   transition: color 0.3s;
@@ -54,10 +104,10 @@ img{
 }
 .language .active{
   font-weight: 700;
-  color: #ffffff;
+  color: #fff;
 }
 .language a:hover{
-  color: #ffffff;
+  color: #fff;
 }
 
 .h-bottom{
@@ -117,24 +167,12 @@ img{
 /* Первый экран */
 
 .first-screen{
-  background: linear-gradient(105.66deg, #F3F7FA 0%, #F0F5F8 100%);
-}
-.first-screen__container{
   padding-top: 270px;
   padding-bottom: 100px;
-  position: relative;
-  z-index: 1;
-}
-.first-screen__container::after{
-  content: '';
-  position: absolute;
-  z-index: -1;
-  top: 116px;
-  right: -150px;
-  display: block;
-  width: 590px;
-  height: 590px;
-  background: url(../img/first-screen/bg.png) no-repeat center / contain;
+  background-color: #F0F5F8;
+  background-image: url(../img/first-screen/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: top 100px left calc(50% + 450px);  /* Изображение расположенно по центру, затем сдвинуто на 450px вправо, чтобы не пересекалось с заголовком */
 }
 .offer{
   font-size: 20px;
@@ -154,45 +192,13 @@ img{
   background: #f2f7fa;
 }
 
-.button{
-  position: relative;
-  z-index: 1;
-  display: inline-block;
-  padding: 17px 35px;
-  background: linear-gradient(to right, #1D4282, #5AEFED);
-  border: none;
-  border-radius: 8px;
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-.button:hover{
-  color: #1D4282;
-}
-.button::after{
-  content: '';
-  position: absolute;
-  z-index: -1;
-  top: 1px;
-  right: 1px;
-  bottom: 1px;
-  left: 1px;
-  border-radius: 7px;
-  background: transparent;
-  transition: all 0.3s;
-}
-.button:hover::after{
-  background: #fff;
-}
-
 .advantages{
   display: flex;
   justify-content: center;
+  font-size: 16px;
 }
 .advantages__item:not(:last-child){
-  margin-right: 100px;
+  margin-right: 60px;
 }
 .advantages__item img{
   margin-bottom: 12px;
@@ -205,8 +211,8 @@ img{
 }
 .services__container{
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  grid-template-columns: 1fr 1fr;  /* Задаёт количество колонок. (1fr 1fr 1fr) даст три колонки, (1fr) одну. */
+  gap: 30px 30px;                  /* Расстояние между ячейками по вертикали, и по горизонтали */
 }
 .services__item{
   padding: 40px;
@@ -223,8 +229,92 @@ img{
   margin-bottom: 20px;
 }
 .services .button{
-  margin-top: 10px;
+  margin-top: 20px;
 }
+
+/* Портфолио */
+
+.section{
+  padding: 80px 0;
+}
+.section__title{
+  font-weight: bold;
+  font-size: 42px;
+  color: #1D4282;
+  margin-bottom: 60px;
+}
+
+.portfolio{
+  background-color: #F0F5F8;
+}
+.portfolio__list{
+  display: grid;
+  grid-template-columns: 7fr 5fr;  /* Создаёт два столбца в пропорции 7 к 5, ширина определяется автоматически */
+  grid-auto-rows: 300px;           /* Создаёт строки по 300px */
+  gap: 15px;                       /* Расстояние между ячейками */
+}
+
+/* Добавьте класс для особого расположения элемента */
+.portfolio__item_right{            
+  grid-column: 2 / 3;              /* Элемент занимает ячейки между 2 и 3 вертикальной линеей (1 линия - левый край контейнера ) */
+  grid-row: 1 / 3;                 /* Элемент занимает ячейки между 1 и 3 горизонтальной линеей (1 линия - верхний край контейнера ) */
+}
+.portfolio__item_bottom{
+  grid-column: 1 / 3;              /* Элемент занимает ячейки между 1 и 3 вертикальной линеей (1 линия - левый край контейнера ) */
+  grid-row: 3 / 4;                 /* Элемент занимает ячейки между 3 и 4 горизонтальной линеей (1 линия - верхний край контейнера ) */
+}
+/* Остальные элементы займут свободные ячейки */
+
+.portfolio__item{
+  position: relative;
+  z-index: 1;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.portfolio__img{
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.3;
+  transition: all 0.5s;
+}
+.portfolio__img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.portfolio__title{
+  margin-bottom: 10px;
+}
+.portfolio__link{
+  align-self: flex-start;
+  padding: 4px 40px 4px 0;
+  margin-top: auto;
+  background: url(../img/portfolio/arrow.png) no-repeat center right / 25px;
+  border-bottom: 1px solid transparent;
+  font-size: 16px;
+  font-weight: 700;
+  transition: border 0.3s;
+}
+.portfolio__item:hover .portfolio__img{
+  opacity: 0.7;
+}
+.portfolio__link:hover{
+  border-color: #fff;
+}
+
+/* Медиазапросы */
 
 @media (max-width: 1200px) {
   .container{
