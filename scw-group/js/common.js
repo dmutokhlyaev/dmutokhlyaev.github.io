@@ -8,8 +8,7 @@ $(function() {
     let $activeSection = $( $(this).attr("href") );
     let sectionTop = $activeSection.offset().top;
 
-    let timeAnimation = Math.abs($(window).scrollTop() - sectionTop) / 1.5;
-    $('html,body').animate({ scrollTop: sectionTop - 100 }, timeAnimation);
+    $('html,body').animate({ scrollTop: sectionTop - 50 }, 1000);
   })
 
   /* Функции зависящие от скролла страницы. Вызывает при загрузке страницы и при скролле. */
@@ -51,7 +50,10 @@ $(function() {
 
   $('.team__list').owlCarousel({
     items: 4,
+    slideBy: 4,
     margin: 30,
+    nav: true,
+    navText: ['', ''],
   })
 
   
