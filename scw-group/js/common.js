@@ -17,10 +17,10 @@ $(function() {
 
     /* Фиксация шапки */
 
-    if($(window).scrollTop() > 50){
-      $('.header').addClass('header_fixed');
+    if($(window).scrollTop() > 0){
+      $('.header').addClass('header_bg');
     } else {
-      $('.header').removeClass('header_fixed');
+      $('.header').removeClass('header_bg');
     }
 
     /* Активный пунк меню */
