@@ -19,8 +19,11 @@
   font-style: normal;
 }
 
-*{
+html {
   box-sizing: border-box;
+}
+*, *:before, *:after{
+  box-sizing: inherit; 
 }
 button{
   font-family: inherit;
@@ -29,12 +32,10 @@ img{
   max-width: 100%;
   height: auto;
 }
-a,button{
-  outline: none !important;
-}
+
 body{
   font-family: Verdana, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.22;
   color: #000;
   overflow-x: hidden;
@@ -46,25 +47,39 @@ body{
   margin-right: auto;
 }
 
-/* Кнопка с градиентом */
+/* Кнопка, базовый стиль */
 
 .button{
-  position: relative;
-  z-index: 1;
   display: inline-block;
   padding: 12px 30px;
-  background: linear-gradient(to right, #1D4282, #5AEFED);
-  border: none;
+  background: transparent;
+  border: 1px solid #1D4282;
   border-radius: 8px;
-  color: #fff;
-  font-size: 18px;
+  color: #1D4282;
+  font-size: 16px;
   text-decoration: none;
   transition: all 0.3s;
 }
 .button:hover{
-  color: #1D4282;
+  background: #1D4282;
+  color: #fff;
 }
-.button::after{
+
+/* Кнопка с градиентом */
+
+.button_gradient{
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(to right, #1D4282, #5AEFED);
+  border: none;
+  color: #fff;
+  font-size: 18px;
+}
+.button_gradient:hover{
+  color: #1D4282;
+  background: linear-gradient(to right, #1D4282, #5AEFED); 
+}
+.button_gradient::before{ /* При наведении ::before перекрывает фон кнопки оставляя 1px со всех сторон, нужен для градиентной границы */
   content: '';
   position: absolute;
   z-index: -1;
@@ -76,7 +91,7 @@ body{
   background: transparent;
   transition: all 0.3s;
 }
-.button:hover::after{
+.button_gradient:hover::before{
   background: #fff;
 }
 
@@ -87,13 +102,17 @@ body{
   top: 0;
   z-index: 10;
   width: 100%;
+  font-size: 16px;
 }
-.header_fixed{
+.header_fixed{ /* Добавляется скриптом */
   position: fixed;
   top: -50px;
   background-color: #fff;
   box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.1);
 }
+
+/* Верхняя часть шапки */
+
 .h-top{
   background: #1D4282;
   color: #fff;
@@ -104,17 +123,25 @@ body{
   align-items: center;
   height: 50px;
 }
+
+/* Поделиться */
+
 .share{
   display: flex;
-}
-.share p{
-  margin-right: 20px;
-}
-.share p img{
-  vertical-align: bottom;
+  align-items: flex-end;
 }
 .share a{
-  margin-right: 8px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.share a:hover{
+  opacity: 1;
+}
+.share a:not(:last-child){
+  margin-right: 10px;
+}
+.share a:first-child{
+  margin-left: 15px;
 }
 
 .language{
@@ -135,6 +162,8 @@ body{
 .language a:hover{
   color: #fff;
 }
+
+/* Нижняя часть шапки */
 
 .h-bottom{
   padding-top: 20px;
@@ -171,22 +200,8 @@ body{
   display: flex;
   margin-left: auto;
 }
-.login a{
-  display: inline-block;
-  padding: 12px 30px;
-  background: transparent;
-  border: 1px solid #1D4282;
-  border-radius: 8px;
-  color: #1D4282;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-.login a:not(:last-child){
+.login .button:not(:last-child){
   margin-right: 30px;
-}
-.login a:hover{
-  background-color: #1D4282;
-  color: #fff;
 }
 
 /* Первый экран */
@@ -217,10 +232,12 @@ body{
   background: #f2f7fa;
 }
 
+/* Преимущества */
+
 .advantages{
   display: flex;
   justify-content: center;
-  font-size: 16px;
+  flex-wrap: wrap;
 }
 .advantages__item:not(:last-child){
   margin-right: 60px;
@@ -244,7 +261,7 @@ body{
   box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
-.services__title{
+.services h3{
   font-size: 20px;
   color: #1D4282;
   margin-bottom: 20px;
@@ -261,11 +278,11 @@ body{
 .section{
   padding: 80px 0;
 }
-.section__title{
+.section h2{
   font-weight: bold;
   font-size: 36px;
   color: #1D4282;
-  margin-bottom: 15px;
+  margin-bottom: 50px;
 }
 
 .portfolio{
@@ -274,9 +291,8 @@ body{
 .portfolio__list{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;  /* Создаёт три столбца, ширина определяется автоматически */
-  grid-auto-rows: 250px;           /* Создаёт строки по 250px */
-  gap: 15px;                       /* Расстояние между ячейками */
-  margin-top: 50px;
+  grid-auto-rows: 250px;               /* Создаёт строки по 250px */
+  gap: 15px;                           /* Расстояние между ячейками */
   margin-bottom: 50px;
 }
 
@@ -329,7 +345,7 @@ body{
   align-self: flex-start;
   padding: 2px 30px 2px 0;
   margin-top: auto;
-  background: url(../img/portfolio/arrow.png) no-repeat center right / 20px;
+  background: url(../img/icons/arrow.png) no-repeat center right / 20px;
   border-bottom: 1px solid transparent;
   font-weight: 700;
   transition: border 0.3s;
@@ -340,9 +356,20 @@ body{
 .portfolio__link:hover{
   border-color: #fff;
 }
+.portfolio .button{
+  background-color: #1D4282;
+  color: #fff;
+}
+.portfolio .button:hover{
+  background: transparent;
+  color: #1D4282;
+}
 
 /* Наша команда */
 
+.team h2{
+  margin-bottom: 20px;
+}
 .team__list{
   margin-top: 30px;
 }
@@ -373,12 +400,12 @@ body{
 .team .owl-nav button.owl-prev{
   width: 25px;
   height: 50px;
-  background: url(../img/team/prev.png) no-repeat center / contain;
+  background: url(../img/icons/prev.png) no-repeat center / contain;
 }
 .team .owl-nav button.owl-next{
   width: 25px;
   height: 50px;
-  background: url(../img/team/next.png) no-repeat center / contain;
+  background: url(../img/icons/next.png) no-repeat center / contain;
 }
 .team .owl-dots{
   display: flex;
@@ -406,6 +433,7 @@ body{
 }
 
 /* Тарифы */
+
 .tariff{
   background-color: #F0F5F8;
 }
@@ -425,6 +453,9 @@ body{
   border-radius: 8px;
   transition: all 0.5s;
 }
+.tariff__item:hover{
+  box-shadow: 4px 4px 10px 5px rgba(160, 206, 232, 0.5);
+}
 .tariff h3{
   font-weight: bold;
   font-size: 16px;
@@ -437,7 +468,7 @@ body{
 .tariff li{
   position: relative;
   padding-left: 25px;
-  font-size: 14px;
+  font-size: 13px;
   margin-bottom: 12px;
 }
 .tariff li::before{
@@ -448,27 +479,15 @@ body{
   display: block;
   width: 15px;
   height: 15px;
-  background: url(../img/tariff/tick.png) no-repeat center / contain;
+  background: url(../img/icons/tick.png) no-repeat center / contain;
 }
-
-.tariff__button{
-  display: inline-block;
-  padding: 12px 30px;
+.tariff .button{
   background: #C31F1F;
   border: none;
-  border-radius: 8px;
   color: #fff;
-  font-size: 18px;
-  text-decoration: none;
   margin-top: auto;
-  transition: all 0.3s;
 }
-
-.tariff__item:hover{
-  box-shadow: 4px 4px 10px 5px rgba(160, 206, 232, 0.5);
-  transform: scale(1.05);
-}
-.tariff__button:hover{
+.tariff .button:hover{
   background: #8C1A1A;
 }
 
@@ -499,13 +518,13 @@ body{
   height: 25px;
 }
 .contacts__address::before{
-  background: url(../img/contacts/address.png) no-repeat center / contain;
+  background: url(../img/icons/address.png) no-repeat center / contain;
 }
 .contacts__phone::before{
-  background: url(../img/contacts/telephone.png) no-repeat center / contain;
+  background: url(../img/icons/telephone.png) no-repeat center / contain;
 }
 .contacts__email::before{
-  background: url(../img/contacts/email.png) no-repeat center / contain;
+  background: url(../img/icons/email.png) no-repeat center / contain;
 }
 
 /* Footer */
@@ -523,6 +542,11 @@ body{
 }
 .footer__social{
   margin-right: 12px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.footer__social:hover{
+  opacity: 1;
 }
 .footer__name{
   margin-left: 30px;
