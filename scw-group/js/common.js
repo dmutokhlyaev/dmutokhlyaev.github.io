@@ -51,8 +51,26 @@ $(function() {
     items: 4,
     slideBy: 4,
     margin: 30,
-    nav: true,
     navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1,
+        slideBy: 1,
+      },
+      576: {
+        items: 2,
+        slideBy: 2,
+      },
+      992: {
+        items: 3,
+        slideBy: 3,
+      },
+      1200: {
+        items: 4,
+        slideBy: 4,
+        nav: true,
+      }
+    },
   })
 
   
