@@ -269,26 +269,27 @@ body{
 /* Первый экран */
 
 .first-screen{
-  padding-top: 300px;
+  padding-top: 240px;
   padding-bottom: 100px;
   background-color: #F0F5F8;
   background-image: url(../img/first-screen/bg.jpg);
   background-repeat: no-repeat;
   background-position: top 100px left calc(50% + 350px);  /* Изображение расположенно по центру, затем сдвинуто на 450px вправо, чтобы не пересекалось с заголовком */
+  background-size: 450px;
 }
 .offer{
   font-size: 18px;
-  max-width: 650px;
-  margin-bottom: 170px;
+  max-width: 700px;
+  margin-bottom: 100px;
 }
 .offer__title{
   font-weight: bold;
-  font-size: 30px;
+  font-size: 36px;
   color: #1D4282;
   margin-bottom: 25px;
 }
 .offer .button{
-  margin-top: 60px;
+  margin-top: 50px;
 }
 .offer .button_gradient:hover::before{
   background: #f2f7fa;
@@ -344,7 +345,8 @@ body{
 /* Портфолио */
 
 .section{
-  padding: 80px 0;
+  padding-top: 60px;
+  padding-bottom: 80px;
 }
 .section h2{
   font-weight: bold;
@@ -356,12 +358,9 @@ body{
 .portfolio{
   background-color: #F0F5F8;
 }
-.portfolio h2{
-  text-align: center;
-}
 .portfolio__list{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;  /* Создаёт три столбца, ширина определяется автоматически */
+  grid-template-columns: 7fr 5fr;  /* Создаёт три столбца, ширина определяется автоматически */
   grid-auto-rows: 250px;               /* Создаёт строки по 250px */
   gap: 15px;                           /* Расстояние между ячейками */
   margin-bottom: 50px;
@@ -369,12 +368,12 @@ body{
 
 /* Добавьте класс для особого расположения элемента */
 .portfolio__item_right{            
-  grid-column: 3 / 4;              /* Элемент занимает ячейки между 2 и 3 вертикальной линеей (1 линия - левый край контейнера ) */
+  grid-column: 2 / 3;              /* Элемент занимает ячейки между 2 и 3 вертикальной линеей (1 линия - левый край контейнера ) */
   grid-row: 1 / 3;                 /* Элемент занимает ячейки между 1 и 3 горизонтальной линеей (1 линия - верхний край контейнера ) */
 }
 .portfolio__item_bottom{
   grid-column: 1 / 3;              /* Элемент занимает ячейки между 1 и 3 вертикальной линеей (1 линия - левый край контейнера ) */
-  grid-row: 2 / 3;                 /* Элемент занимает ячейки между 3 и 4 горизонтальной линеей (1 линия - верхний край контейнера ) */
+  grid-row: 3 / 4;                 /* Элемент занимает ячейки между 3 и 4 горизонтальной линеей (1 линия - верхний край контейнера ) */
 }
 /* Остальные элементы займут свободные ячейки */
 
@@ -403,13 +402,7 @@ body{
 }
 .portfolio__title{
   margin-bottom: 10px;
-  max-width: 70%;
-}
-.portfolio__item_right .portfolio__title{
-  max-width: 100%;
-}
-.portfolio__item_bottom .portfolio__title{
-  max-width: 50%;
+  max-width: 260px;
 }
 .portfolio__link{
   position: relative;
@@ -462,14 +455,14 @@ body{
   margin-bottom: 12px;
 }
 .team h3{
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   color: #1D4282;
   margin-bottom: 8px;
 }
 .team .owl-nav{
   position: absolute;
-  top: 50%;
+  top: 140px;
   left: -60px;
   right: -60px;
   height: 0;
@@ -524,17 +517,10 @@ body{
 .tariff{
   background-color: #F0F5F8;
 }
-.tariff__container{
-  max-width: 1170px;
-}
-.tariff h2{
-  text-align: center;
-}
-
 .tariff__list{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 30px;
+  gap: 15px;
   margin-top: 50px;
 }
 .tariff__item{
@@ -542,7 +528,7 @@ body{
   flex-direction: column;
   align-items: center;
   background-color: #fff;
-  padding: 30px 25px;
+  padding: 30px 20px;
   border-radius: 8px;
   transition: all 0.5s;
 }
