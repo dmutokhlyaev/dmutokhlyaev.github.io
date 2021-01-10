@@ -15,7 +15,7 @@ $(function() {
 
   let checkScroll = function() {
 
-    /* Фиксация шапки */
+    /* Фон для шапки */
 
     if($(window).scrollTop() > 0){
       $('.header').addClass('header_bg');
@@ -43,7 +43,6 @@ $(function() {
   }
 
   checkScroll();
-
   $(window).scroll(function () {
     checkScroll();
   });
