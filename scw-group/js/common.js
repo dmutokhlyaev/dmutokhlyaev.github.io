@@ -80,4 +80,8 @@ $(function() {
     $('.hamburger').toggleClass('is-active');
     $('.main-menu').toggleClass('active');
   })
+
+  $('.user-menu__btn').click(function() {
+    $('.user-menu__box').toggleClass('active');
+  })
 })
