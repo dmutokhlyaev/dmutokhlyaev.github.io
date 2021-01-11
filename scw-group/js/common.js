@@ -9,6 +9,9 @@ $(function() {
     let sectionTop = $activeSection.offset().top;
 
     $('html,body').animate({ scrollTop: sectionTop - 50 }, 1000);
+
+    $('.hamburger').removeClass('is-active');
+    $('.main-menu').removeClass('active');
   })
 
   /* Функции зависящие от скролла страницы. Вызывает при загрузке страницы и при скролле. */
@@ -73,5 +76,8 @@ $(function() {
     },
   })
 
-  
+  $('.hamburger').click(function(){
+    $('.hamburger').toggleClass('is-active');
+    $('.main-menu').toggleClass('active');
+  })
 })
