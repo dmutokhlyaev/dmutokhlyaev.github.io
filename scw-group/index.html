@@ -15,15 +15,14 @@
       <div class="container h-top__container">
         <div class="share">
           Поделиться:
-          <a href="#"><img src="img/icons/instagram.png" alt="Instagram" width="20"></a>
-          <a href="#"><img src="img/icons/vk.png" alt="Вконтакте" width="20"></a>
-          <a href="#"><img src="img/icons/telegram.png" alt="Telegram" width="20"></a>
-          <a href="#"><img src="img/icons/whatsapp.png" alt="Whatsapp" width="20"></a>
-          <a href="#"><img src="img/icons/facebook.png" alt="Facebook" width="20"></a>
-          <a href="#"><img src="img/icons/ok.png" alt="Однокласники" width="20"></a>
+          <a href="#" class="social social_instagram"></a>
+          <a href="#" class="social social_vk"></a>
+          <a href="#" class="social social_telegram"></a>
+          <a href="#" class="social social_whatsapp"></a>
+          <a href="#" class="social social_facebook"></a>
+          <a href="#" class="social social_ok"></a>
         </div>
 
-        <a href="#" class="user-link">Личный кабинет</a>
         <a href="#" class="user-message"><img src="img/icons/message.png" alt="Сообщение" width="20"><span class="user-message__count">10</span></a>
 
         <div class="language">
@@ -36,6 +35,12 @@
       <div class="container h-bottom__container">
         <a href="#" class="header__logo"><img src="img/logo.svg" alt="SCW Group" width="40"></a>
 
+        <div class="hamburger hamburger--collapse">
+          <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+          </div>
+        </div>
+
         <nav class="main-menu">
           <a class="active" href="#first-screen">Главная</a>
           <a href="#services">Сервисы</a>
@@ -45,13 +50,16 @@
           <a href="#contacts">Контакты</a>
         </nav>
 
-        <div class="login">
-          <a href="#" class="button button_exit">Выйти</a>
-        </div>
-
-        <div class="hamburger hamburger--collapse">
-          <div class="hamburger-box">
-            <span class="hamburger-inner"></div>
+        <div class="user-menu">
+          <div class="user-menu__btn">
+            <div class="user-menu__img"><img src="img/icons/user2.png" width="40"></div>
+          </div>
+          <div class="user-menu__box">
+            <a href="#">Личный кабинет</a>
+            <a href="#">Информация о пользователе</a>
+            <a href="#">Настройки профиля</a>
+            <a href="#">Помощь</a>
+            <a href="#">Выйти</a>
           </div>
         </div>
       </div>
@@ -330,7 +338,9 @@
       <h2>Контакты</h2>
 
       <div class="contacts__box">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194473.42999907216!2d49.71487412961585!3d40.394507978399446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d6bd6211cf9%3A0x343f6b5e7ae56c6b!2z0JHQsNC60YMsINCQ0LfQtdGA0LHQsNC50LTQttCw0L0!5e0!3m2!1sru!2s!4v1534884819828" style="border:0" allowfullscreen="" width="100%" height="350" frameborder="0"></iframe>
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194473.42999907216!2d49.71487412961585!3d40.394507978399446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d6bd6211cf9%3A0x343f6b5e7ae56c6b!2z0JHQsNC60YMsINCQ0LfQtdGA0LHQsNC50LTQttCw0L0!5e0!3m2!1sru!2s!4v1534884819828" style="border:0" allowfullscreen="" width="100%" height="350" frameborder="0"></iframe>
+        </div>
 
         <ul class="contacts__list">
           <li class="contacts__address">Баку, Азербайджан</li>
@@ -347,8 +357,8 @@
 
   <footer class="footer">
     <div class="container footer__container">
-      <a class="footer__social" href="#"><img src="img/icons/instagram.png" alt="Instagram" width="25"></a>
-      <a class="footer__social" href="#"><img src="img/icons/facebook.png" alt="Facebook" width="25"></a>
+      <a href="#" class="social social_instagram"></a>
+      <a href="#" class="social social_facebook"></a>
       <span class="footer__name">SCW-GROUP</span>
       <span>2016-2021</span>
     </div>

@@ -41,7 +41,7 @@ body{
   font-family: Verdana, sans-serif;
   font-size: 14px;
   line-height: 1.22;
-  color: #000;
+  color: #444;
   overflow-x: hidden;
 }
 .container{
@@ -125,20 +125,77 @@ body{
 .share{
   display: flex;
   align-items: flex-end;
+  margin-right: auto;
 }
-.share a{
-  opacity: 0.7;
-  transition: opacity 0.3s;
-}
-.share a:hover{
+.social{
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
   opacity: 1;
 }
-.share a:not(:last-child){
-  margin-right: 8px;
-}
-.share a:first-child{
+.share .social:first-child{
   margin-left: 8px;
 }
+/* Нужен для плавного изменения цвета иконки при наведении */
+.social::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.social:hover::after{
+  opacity: 1;
+}
+.social_instagram{
+  background-image: url(../img/icons/instagram1.png); /* Серая иконка */
+}
+.social_instagram::after{
+  background-image: url(../img/icons/instagram.png);  /* Цветная иконка */
+}
+.social_vk{
+  background-image: url(../img/icons/vk1.png);
+}
+.social_vk::after{
+  background-image: url(../img/icons/vk.png);
+}
+.social_telegram{
+  background-image: url(../img/icons/telegram1.png);
+}
+.social_telegram::after{
+  background-image: url(../img/icons/telegram.png);
+}
+.social_whatsapp{
+  background-image: url(../img/icons/whatsapp1.png);
+}
+.social_whatsapp::after{
+  background-image: url(../img/icons/whatsapp.png);
+}
+.social_facebook{
+  background-image: url(../img/icons/facebook1.png);
+}
+.social_facebook::after{
+  background-image: url(../img/icons/facebook.png);
+}
+.social_ok{
+  background-image: url(../img/icons/ok1.png);
+}
+.social_ok::after{
+  background-image: url(../img/icons/ok.png);
+}
+
+/* Выбор языка */
+
 .language{
   display: flex;
   margin-left: 40px;
@@ -236,35 +293,68 @@ body{
 .main-menu a:hover{
   border-color: #1D4282;
 }
-.login{
-  display: flex;
+
+/* Меню пользователя */
+
+.user-menu{
   margin-left: auto;
 }
-.login .button{
-  padding: 10px 20px;
-  font-size: 14px;
+.user-menu__btn{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
-.login .button:not(:last-child){
-  margin-right: 30px;
+.user-menu__btn::after{
+  content: '';
+  display: block;
+  height: 0;
+  width: 0;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-top: 5px solid #000;
+  margin-left: 10px;
 }
-.login .button_exit{
-  position: relative;
-  padding-left: 50px;
+.user-menu__img{
+  border: 1px solid #1D4282;
+  border-radius: 50%;
 }
-.login .button_exit::before{
+.user-menu__box{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: absolute;
+  top: 60px;
+  right: -10px;
+  background: #fff;
+  flex-direction: column;
+  box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 100%);
+  transition: transform 0.5s, opacity 0.5s, visibility 0.5s;
+}
+.user-menu__box.active{
+  transform: translate(0, 0);
+  opacity: 1;
+  visibility: visible;
+}
+.user-menu__box::after{
   content: '';
   position: absolute;
-  left: 20px;
-  top: 50%;
-  margin-top: -10px;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background: url(../img/icons/logout.png) no-repeat center / cover;
-  transition: filter 0.1s;
+  top: -15px;
+  right: 35px;
+  width: 0;
+  height: 0;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-bottom: 15px solid #fff;
 }
-.login .button_exit:hover::before{
-  filter: brightness(10); /* Повышает яркость изображения, при больших значения делае любое изображение белым, а при нуле чёрным  */
+.user-menu a{
+  padding: 10px;
+}
+.user-menu a:hover{
+  background-color: #1D4282;
+  color: #fff;
 }
 
 /* Hamburger */
@@ -297,11 +387,10 @@ body{
 .hamburger.is-active .hamburger-inner::after {
   background-color: #1D4282;
 }
-
 .hamburger-box {
   width: 40px;
   height: 24px;
-  display: inline-block;
+  display: block;
   position: relative;
 }
 .hamburger-inner {
@@ -393,13 +482,9 @@ body{
 
 .advantages{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   text-align: center;
-}
-.advantages__item{
-  margin-right: 30px;
-  margin-left: 30px;
 }
 .advantages__item img{
   margin-bottom: 12px;
@@ -413,7 +498,8 @@ body{
 .services__container{
   display: grid;
   grid-template-columns: 1fr 1fr;  /* Задаёт количество колонок. (1fr 1fr 1fr) даст три колонки, (1fr) одну. */
-  gap: 30px 30px;                  /* Расстояние между ячейками по вертикали, и по горизонтали */
+  grid-auto-rows: 1fr;
+  gap: 30px;                  /* Расстояние между ячейками по вертикали, и по горизонтали */
 }
 .services__item{
   display: flex;
@@ -428,6 +514,8 @@ body{
   font-weight: 700;
   color: #1D4282;
   margin-bottom: 20px;
+  max-width: 250px;
+  min-height: 50px;
 }
 .services h3 a{
   transition: opacity 0.3s;
@@ -680,6 +768,11 @@ body{
   align-items: center;
   margin-top: 50px;
 }
+.map{
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
 .contacts__list{
   padding: 0 60px;
   white-space: nowrap;
@@ -762,41 +855,13 @@ body{
     display: flex;
     margin-left: 30px;
   }
-  .login{
-    display: none;
-  }
-  .first-screen{
-    padding-top: 200px;
-    padding-bottom: 20px;
-    background-position: top 100px left calc(50% + 280px);  /* Изображение расположенно по центру, затем сдвинуто на 450px вправо, чтобы не пересекалось с заголовком */
-    background-size: 450px;
-  }
-  .offer{
-    max-width: 450px;
-    margin-bottom: 100px;
-  }
-  .offer__title{
-    font-size: 30px;
-  }
-  .advantages__item{
-    margin-bottom: 50px;
-  }
-  .tariff__list{
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-  }
-  .tariff__item{
-    padding: 30px;
-  }
-}
-@media (max-width: 768px) {
-  .container{
-    max-width: 540px;
+  .user-menu{
+    margin-left: 30px;
   }
   .main-menu{
     position: absolute;
     top: 50px;
-    right: -15px;
+    right: 67px;
     background: #fff;
     flex-direction: column;
     box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.1);
@@ -814,7 +879,7 @@ body{
     content: '';
     position: absolute;
     top: -15px;
-    right: 20px;
+    right: 30px;
     width: 0;
     height: 0;
     border-right: 15px solid transparent;
@@ -835,16 +900,41 @@ body{
   .hamburger{
     display: inline-block;
   }
-  .share{
-    display: none;
+  .first-screen{
+    padding-top: 200px;
+    padding-bottom: 20px;
+    background-position: top 100px left calc(50% + 280px);  /* Изображение расположенно по центру, затем сдвинуто на 450px вправо, чтобы не пересекалось с заголовком */
+    background-size: 450px;
   }
-  .user-link{
-    margin-left: 0;
+  .offer{
+    max-width: 450px;
+    margin-bottom: 100px;
   }
-  .language{
-    margin-left: auto;
+  .offer__title{
+    font-size: 30px;
   }
-
+  .advantages{
+    justify-content: center;
+  }
+  .advantages__item{
+    width: 33%;
+    margin-bottom: 50px;
+  }
+  .tariff__list{
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  .tariff__item{
+    padding: 30px;
+  }
+  .services__container{
+    grid-auto-rows: auto;
+  }
+}
+@media (max-width: 768px) {
+  .container{
+    max-width: 540px;
+  }
   .first-screen{
     background-position: top 150px left calc(50% + 150px);  /* Изображение расположенно по центру, затем сдвинуто на 450px вправо, чтобы не пересекалось с заголовком */
     background-size: 350px;
@@ -882,6 +972,12 @@ body{
     padding-left: 20px;
     padding-right: 20px;
   }
+  .share{
+    display: none;
+  }
+  .user-message{
+    margin-left: auto;
+  }
   .first-screen{
     padding-top: 400px;
     padding-bottom: 30px;
@@ -905,74 +1001,47 @@ body{
     grid-template-columns: 1fr;
     gap: 30px;
   }
+  .user-menu__box{
+    right: 0;
+  }
   .main-menu{
     top: 50px;
-    right: 5px;
+    right: 87px;
+  }
+  .services__item{
+    align-items: center;
+    text-align: center;
   }
 }
 
-
-.share{
-  margin-right: auto;
-}
-.user-menu{
+/*
+.login{
+  display: flex;
   margin-left: auto;
 }
-.user-menu__btn{
-  cursor: pointer;
-  display: flex;
-  align-items: center;
+.login .button{
+  padding: 10px 20px;
+  font-size: 14px;
 }
-.user-menu__btn::after{
-  content: '';
-  display: block;
-  height: 0;
-  width: 0;
-  border-right: 5px solid transparent;
-  border-left: 5px solid transparent;
-  border-top: 5px solid #000;
-  margin-left: 10px;
+.login .button:not(:last-child){
+  margin-right: 30px;
 }
-.user-menu__img{
-  border: 1px solid #1D4282;
-  border-radius: 50%;
+.login .button_exit{
+  position: relative;
+  padding-left: 50px;
 }
-
-.user-menu__box{
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  position: absolute;
-  top: 55px;
-  right: -15px;
-  background: #fff;
-  flex-direction: column;
-  box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  visibility: hidden;
-  transform: translate(0, 100%);
-  transition: transform 0.5s, opacity 0.5s, visibility 0.5s;
-}
-.user-menu__box.active{
-  transform: translate(0, 0);
-  opacity: 1;
-  visibility: visible;
-}
-.user-menu__box::after{
+.login .button_exit::before{
   content: '';
   position: absolute;
-  top: -15px;
-  right: 20px;
-  width: 0;
-  height: 0;
-  border-right: 15px solid transparent;
-  border-left: 15px solid transparent;
-  border-bottom: 15px solid #fff;
+  left: 20px;
+  top: 50%;
+  margin-top: -10px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(../img/icons/logout.png) no-repeat center / cover;
+  transition: filter 0.1s;
 }
-.user-menu a{
-  padding: 10px;
-}
-.user-menu a:hover{
-  background-color: #1D4282;
-  color: #fff;
+.login .button_exit:hover::before{
+  filter: brightness(10); /* Повышает яркость изображения, при больших значения делае любое изображение белым, а при нуле чёрным  */
 }
