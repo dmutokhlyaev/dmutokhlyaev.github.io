@@ -828,6 +828,78 @@ body{
   margin-right: 18px;
 }
 
+.page-section{
+ padding-top: 150px;
+ min-height: calc(100vh - 80px)
+}
+.page-section h1{
+  font-weight: bold;
+  font-size: 36px;
+  color: #1D4282;
+  margin-bottom: 20px;
+}
+.page-section p{
+  max-width: 700px
+}
+
+.price{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  margin-top: 50px;
+}
+.price__item{
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  border: 1px solid #F1F6F9;
+  text-align: center;
+  overflow: hidden;
+}
+.price__row{
+  padding: 10px 20px;
+  flex-grow: 1;
+}
+.price__row:first-child{
+  padding: 20px;
+}
+.price__row:nth-child(2n + 1){
+  background-color: #F0F5F8;
+}
+.price h3{
+  font-size: 20px;
+  color: #1D4282;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+.price__btn{
+  display: block;
+  background: #C31F1F;
+  color: #fff;
+}
+.price__btn:hover{
+  background: #8C1A1A;
+}
+.price__row_tick{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.price__row_tick::before{
+  content: '';
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: url(../img/icons/tick.png) no-repeat center / contain;
+  margin-right: 5px;
+}
+.price__row_red{
+  color: #DD3C3C;
+}
+.price__row_green{
+  color: #28C14A;
+}
+
 /* Медиазапросы */
 
 @media (max-width: 1200px) {
@@ -930,6 +1002,10 @@ body{
   .services__container{
     grid-auto-rows: auto;
   }
+
+  .price{
+    grid-auto-rows: auto;
+  }
 }
 @media (max-width: 768px) {
   .container{
@@ -1011,6 +1087,10 @@ body{
   .services__item{
     align-items: center;
     text-align: center;
+  }
+
+  .price{
+    grid-template-columns: 1fr;
   }
 }
 

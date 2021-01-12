@@ -2,7 +2,7 @@ $(function() {
 
   /* Плавный скролл до блока */
 
-  $('.main-menu a').click(function (e){
+  $('.main-menu a[href^="#"]').click(function (e){
     e.preventDefault();
 
     let $activeSection = $( $(this).attr("href") );
@@ -41,7 +41,7 @@ $(function() {
 
     let activeSectionId = '#' + sectionList.eq(activeSectionsNumber).attr('id');
     
-    $('.main-menu .active').removeClass('active');
+    $('.main-menu a[href^="#"].active').removeClass('active');
     $('.main-menu [href="' + activeSectionId + '"]').addClass('active');
   }
 
