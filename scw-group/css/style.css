@@ -988,19 +988,31 @@ body{
 }
 .domain__list{
   display: flex;
-  margin-bottom: 30px;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+  height: calc( 50px * 4 + 20px * 3);
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+.domain__item{
+  width: calc(100% / 5);
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+.domain__list .hidden{
+  display: none;
 }
 .domain__list label{
   position: relative;
   display: flex;
   justify-content: space-between;
-  width: 170px;
+  align-items: center;
+  height: 50px;
   padding: 15px 15px;
-  margin-bottom: 15px;
   background: #F1F6F9;
   border-radius: 5px;
   text-transform: uppercase;
-  margin-right: 30px;
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -1036,6 +1048,7 @@ body{
   font-size: 12px;
 }
 
+
 /* Медиазапросы */
 
 @media (max-width: 1200px) {
@@ -1052,6 +1065,7 @@ body{
     font-size: 14px;
   }
 }
+
 @media (max-width: 992px) {
   .container{
     max-width: 720px;
@@ -1142,6 +1156,9 @@ body{
   .price{
     grid-auto-rows: auto;
   }
+  .domain__item{
+    width: calc(100% / 4);
+  }
 }
 @media (max-width: 768px) {
   .container{
@@ -1177,6 +1194,10 @@ body{
   }
   .contacts__list{
     margin-top: 60px;
+  }
+
+  .domain__item{
+    width: calc(100% / 3);
   }
 }
 @media (max-width: 576px) {
@@ -1239,5 +1260,9 @@ body{
   .domain__search .button{
     margin-left: auto;
     margin-top: 30px;
+  }
+  .domain__item{
+    font-size: 14px;
+    width: calc(100% / 2);
   }
 }

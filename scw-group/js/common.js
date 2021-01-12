@@ -107,16 +107,20 @@ $(function() {
 
   /* Фильтрация для доменных зон */
 
-  $('#domain__list').isotope({
-    itemSelector: '.domain__item',
-    layoutMode: 'fitRows'
-  });
+  $('#domain__list .domain__item').addClass('hidden');
+  $('#domain__list').find('.popular').removeClass('hidden');
 
   $('#domain__filtr button').click(function(){
     var filterValue = $(this).attr('data-filter');
-    $('#domain__list').isotope({ filter: filterValue });
+
+    $('#domain__list .domain__item').addClass('hidden');
+    $('#domain__list').find(filterValue).removeClass('hidden');
 
     $('#domain__filtr .active').removeClass('active');
     $(this).addClass('active');
   });
-})
+
+  $('#domain__more').click(function() {
+    $('#domain__list').css('height', 'auto');
+  });
+});

@@ -107,12 +107,14 @@
           <input type="radio" name="domain-name" value="fm" id="standard__fm">
           <label for="standard__fm">.fm</label>
         </div>
+
         <div class="domain__filtr" id="domain__filtr">
-          <button class="active" type="button" data-filter="*">Все 764 зоны</button>
-          <button type="button" data-filter=".popular">Популярные</button>
+          <button class="active" type="button" data-filter=".popular">Популярные</button>
           <button type="button" data-filter=".discount">Со скидкой</button>
           <button type="button" data-filter=".thematic">Тематические</button>
+          <button type="button" data-filter=".popular, .discount, .thematic">Все 764 зоны</button>
         </div>
+
         <div class="domain__list" id="domain__list">
           <div class="domain__item popular">
             <input type="radio" name="domain-name" value="ru" id="domain__ru">
@@ -263,6 +265,8 @@
             <label for="domain__blog">.blog <span class="domain__price">1015</span><span class="domain__old-price">1497</span></label>
           </div>
         </div>
+
+        <button class="button button_gradient" type="button" id="domain__more">Показать ещё</button>
       </form>
     </div>
   </section>
