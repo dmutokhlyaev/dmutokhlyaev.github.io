@@ -828,6 +828,8 @@ body{
   margin-right: 18px;
 }
 
+/* Для других страниц */
+
 .page-section{
  padding-top: 150px;
  min-height: calc(100vh - 80px)
@@ -839,14 +841,19 @@ body{
   margin-bottom: 20px;
 }
 .page-section p{
-  max-width: 700px
+  max-width: 700px;
+  margin-bottom: 30px;
 }
+.page-section p:last-of-type{
+  margin-bottom: 50px;
+}
+
+/* Таблицы услуг */
 
 .price{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 30px;
-  margin-top: 50px;
 }
 .price__item{
   display: flex;
@@ -857,8 +864,11 @@ body{
   overflow: hidden;
 }
 .price__row{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 10px 20px;
-  flex-grow: 1;
 }
 .price__row:first-child{
   padding: 20px;
@@ -872,18 +882,18 @@ body{
   font-weight: 400;
   margin-bottom: 5px;
 }
-.price__btn{
-  display: block;
+.price .button{
   background: #C31F1F;
+  border: none;
   color: #fff;
+  margin: 10px 0;
 }
-.price__btn:hover{
+.price .button:hover{
   background: #8C1A1A;
 }
+/* Добавить галочку */
 .price__row_tick{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
 }
 .price__row_tick::before{
   content: '';
@@ -893,11 +903,137 @@ body{
   background: url(../img/icons/tick.png) no-repeat center / contain;
   margin-right: 5px;
 }
+/* Красный текст */
 .price__row_red{
   color: #DD3C3C;
 }
+/* Зелёный текст*/
 .price__row_green{
   color: #28C14A;
+}
+/* Пучтая ячейка. Не должна содержать текста, на мобильных устройствах скрывается */
+.price__row:empty::before{
+  content: '-';
+}
+
+/* Поиск домена */
+
+.domain{
+  margin-top: 50px;
+}
+.domain__search{
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.domain__search input{
+  flex-grow: 1;
+  height: 46px;
+  background: #F1F6F9 url('../img/icons/search.png') no-repeat center left 15px / 25px;
+  border: none;
+  border-radius: 8px;
+  padding: 0 60px;
+}
+.domain__search .button{
+  flex-shrink: 0;
+  margin-left: 30px;
+}
+.domain__standard{
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.domain__standard label{
+  display: inline-block;
+  padding: 7px 21px 7px 16px;
+  background: transparent;
+  border-radius: 5px;
+  text-transform: uppercase;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.domain__standard label:hover{
+  background: #F1F6F9;
+}
+.domain__standard input{
+  display: none;
+}
+.domain__standard input:checked + label {
+  background: linear-gradient(104.54deg, #1D4282 0%, #5AEFED 108.63%);
+  color: #fff;
+}
+.domain__filtr{
+  margin-bottom: 30px;
+}
+.domain__filtr button{
+  position: relative;
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 20px;
+}
+.domain__filtr button::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+}
+.domain__filtr .active::after{
+  background: linear-gradient(93.6deg, #1D4282 4.28%, #5AEFED 117.84%);
+}
+.domain__list{
+  display: flex;
+  margin-bottom: 30px;
+}
+.domain__list label{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 170px;
+  padding: 15px 15px;
+  margin-bottom: 15px;
+  background: #F1F6F9;
+  border-radius: 5px;
+  text-transform: uppercase;
+  margin-right: 30px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.domain__list label:hover{
+  background: #1D4282;
+  color: #fff;
+}
+.domain__list input{
+  display: none;
+}
+.domain__list input:checked + label {
+  background: #1D4282;
+  color: #fff;
+}
+.domain__price{
+  margin-left: 20px;
+}
+.domain__price::after,
+.domain__old-price::after{
+  content: '₽';
+}
+.discount .domain__price{
+  position: relative;
+  color: #DD3C3C;
+  font-weight: 700;
+}
+.discount .domain__old-price{
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
+  text-decoration: line-through;
+  opacity: 0.7;
+  font-size: 12px;
 }
 
 /* Медиазапросы */
@@ -1088,40 +1224,20 @@ body{
     align-items: center;
     text-align: center;
   }
-
   .price{
     grid-template-columns: 1fr;
   }
-}
-
-/*
-.login{
-  display: flex;
-  margin-left: auto;
-}
-.login .button{
-  padding: 10px 20px;
-  font-size: 14px;
-}
-.login .button:not(:last-child){
-  margin-right: 30px;
-}
-.login .button_exit{
-  position: relative;
-  padding-left: 50px;
-}
-.login .button_exit::before{
-  content: '';
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  margin-top: -10px;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background: url(../img/icons/logout.png) no-repeat center / cover;
-  transition: filter 0.1s;
-}
-.login .button_exit:hover::before{
-  filter: brightness(10); /* Повышает яркость изображения, при больших значения делае любое изображение белым, а при нуле чёрным  */
+  .price__row:empty{
+    display: none;
+  }
+  .price__row:empty::before{
+    content: '';
+  }
+  .domain__search input{
+    width: 100%;
+  }
+  .domain__search .button{
+    margin-left: auto;
+    margin-top: 30px;
+  }
 }
