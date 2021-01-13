@@ -1,8 +1,24 @@
 $(function() {
 
+  /* Фиксация шапки после загрузки скриптов */
+
+  if($(window).scrollTop() > 0){
+    $('#header').addClass('header_fixed');
+  }
+
+  /* Фиксация шапки при скроле */
+
+  $(window).scroll(function () {
+    if($(window).scrollTop() > 0){
+      $('#header').addClass('header_fixed');
+    } else {
+      $('#header').removeClass('header_fixed');
+    }
+  })
+
   /* Плавный скролл до блока */
 
-  $('.main-menu a[href^="#"]').click(function (e){
+  $('#main-menu a[href^="#"]').click(function (e){
     e.preventDefault();
 
     let $activeSection = $( $(this).attr("href") );
@@ -10,23 +26,14 @@ $(function() {
 
     $('html,body').animate({ scrollTop: sectionTop - 50 }, 1000);
 
-    $('.hamburger').removeClass('is-active');
-    $('.main-menu').removeClass('active');
+    $('#hamburger').removeClass('hamburger_active');
+    $('#main-menu').removeClass('main-menu_open');
+    $('#header .h-bottom').removeClass('h-bottom_open');
   })
 
-  /* Функции зависящие от скролла страницы. Вызывает при загрузке страницы и при скролле. */
+  /* Активный пунк меню */
 
-  let checkScroll = function() {
-
-    /* Фон для шапки */
-
-    if($(window).scrollTop() > 0){
-      $('.header').addClass('header_bg');
-    } else {
-      $('.header').removeClass('header_bg');
-    }
-
-    /* Активный пунк меню */
+  let activeMenuItem = function() {
 
     let activeSectionsNumber = 0;
     let sectionList = $('section[id]');
@@ -41,14 +48,25 @@ $(function() {
 
     let activeSectionId = '#' + sectionList.eq(activeSectionsNumber).attr('id');
     
-    $('.main-menu a[href^="#"].active').removeClass('active');
-    $('.main-menu [href="' + activeSectionId + '"]').addClass('active');
+    $('#main-menu a[href^="#"].active').removeClass('active');
+    $('#main-menu [href="' + activeSectionId + '"]').addClass('active');
   }
 
-  checkScroll();
+  activeMenuItem();
+
   $(window).scroll(function () {
-    checkScroll();
+    activeMenuItem();
   });
+
+  /* Hamburger */
+
+  $('#hamburger').click(function(){
+    $(this).toggleClass('hamburger_active');
+    $('#main-menu').toggleClass('main-menu_open');
+    $('#header .h-bottom').toggleClass('h-bottom_open');
+  })
+
+  /* Слайдер */
 
   $('.team__list').owlCarousel({
     items: 4,
@@ -76,10 +94,7 @@ $(function() {
     },
   })
 
-  $('.hamburger').click(function(){
-    $('.hamburger').toggleClass('is-active');
-    $('.main-menu').toggleClass('active');
-  })
+  /* Меню пользователя */
 
   $('.user-menu__btn').click(function() {
     $('.user-menu__box').toggleClass('active');
