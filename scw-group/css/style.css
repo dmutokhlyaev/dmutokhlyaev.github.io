@@ -453,7 +453,7 @@ body{
   background-color: #F0F5F8;
   background-image: url(../img/first-screen/bg.jpg);
   background-repeat: no-repeat;
-  background-position: top 100px left calc(50% + 350px);  /* Изображение расположенно по центру, затем сдвинуто на 450px вправо, чтобы не пересекалось с заголовком */
+  background-position: top 100px left calc(50% + 350px);
   background-size: 450px;
 }
 .offer{
@@ -547,7 +547,7 @@ body{
 }
 .portfolio__list{
   display: grid;
-  grid-template-columns: 7fr 5fr;  /* Создаёт три столбца, ширина определяется автоматически */
+  grid-template-columns: 7fr 5fr;      /* Создаёт 2 столбца в пропорции 7 к 5, ширина определяется автоматически */
   grid-auto-rows: 250px;               /* Создаёт строки по 250px */
   gap: 15px;                           /* Расстояние между ячейками */
   margin-bottom: 50px;
@@ -947,6 +947,7 @@ body{
   display: inline-block;
   padding: 7px 21px 7px 16px;
   background: transparent;
+  border: 1px solid #1D4282;
   border-radius: 5px;
   text-transform: uppercase;
   margin-right: 10px;
@@ -955,16 +956,19 @@ body{
   transition: background 0.3s;
 }
 .domain__standard label:hover{
-  background: #F1F6F9;
+  background: #1D4282;
+  color: #fff;
 }
 .domain__standard input{
   display: none;
 }
 .domain__standard input:checked + label {
-  background: linear-gradient(104.54deg, #1D4282 0%, #5AEFED 108.63%);
+  background: #1D4282;
   color: #fff;
 }
 .domain__filtr{
+  display: flex;
+  flex-wrap: wrap;
   margin-bottom: 30px;
 }
 .domain__filtr button{
@@ -986,24 +990,26 @@ body{
 .domain__filtr .active::after{
   background: linear-gradient(93.6deg, #1D4282 4.28%, #5AEFED 117.84%);
 }
-.domain__list{
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -10px;
-  margin-right: -10px;
+.domain-list{
   height: calc( 50px * 4 + 20px * 3);
   overflow: hidden;
   margin-bottom: 50px;
 }
-.domain__item{
+.domain-list__container{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.domain-list__item{
   width: calc(100% / 5);
   padding: 0 10px;
   margin-bottom: 20px;
 }
-.domain__list .hidden{
+.domain-list__item.hidden{
   display: none;
 }
-.domain__list label{
+.domain-list label{
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -1016,14 +1022,14 @@ body{
   cursor: pointer;
   transition: background 0.3s;
 }
-.domain__list label:hover{
+.domain-list label:hover{
   background: #1D4282;
   color: #fff;
 }
-.domain__list input{
+.domain-list input{
   display: none;
 }
-.domain__list input:checked + label {
+.domain-list input:checked + label {
   background: #1D4282;
   color: #fff;
 }
@@ -1047,6 +1053,115 @@ body{
   opacity: 0.7;
   font-size: 12px;
 }
+
+/* Личный кабинет */
+
+.user-data{
+  padding-top: 150px;
+}
+.user-data__container{
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  border-radius: 8px;
+  background: #FBFBFB;
+}
+.user-data__img{
+  width: 225px;
+  height: 225px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.user-data__img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: contain;
+}
+.user-data__name{
+  font-size: 30px;
+  font-weight: 700;
+  margin-left: 50px;
+}
+.user-data__profile{
+  margin-left: auto;
+  font-size: 18px;
+}
+.user-data__profile h3{
+  font-weight: 700;
+  margin-bottom: 15px;
+  padding-left: 30px;
+}
+.user-data__profile a{
+  display: block;
+  border-top: 1px solid #444;
+  padding: 8px 0 8px 30px;
+}
+.user-data__profile a:hover{
+  opacity: 0.8;
+}
+.user-data__profile a:active{
+  opacity: 0.5;
+}
+.user-data__icon{
+  position: relative;
+}
+.user-data__icon::before{
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -10px;
+}
+.user-data__icon_inf::before{
+  background: url(../img/icons/information.png) no-repeat center / contain;
+}
+.user-data__icon_set::before{
+  background: url(../img/icons/settings.png) no-repeat center / contain;
+}
+.user-data__icon_doc::before{
+  background: url(../img/icons/document.png) no-repeat center / contain;
+}
+.user-data__icon_sup::before{
+  background: url(../img/icons/support.png) no-repeat center / contain;
+}
+
+/* Таблица в личном кабинете */
+
+.order-table{
+  margin-bottom: 50px;
+  border: 2px solid #1D4282;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.order-table__row{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.order-table__col{
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  text-align: left;
+  border-bottom: 2px solid #1D4282;
+}
+.order-table__row:first-child .order-table__col{
+  background: #1D4282;
+  color: #fff;
+  font-weight: 700;
+}
+.order-table__row:last-child .order-table__col{
+  border-bottom: none;
+}
+.order-table__row_wide{
+  grid-template-columns: 1fr 3fr;
+}
+
+/* Анимация */
+
 
 
 /* Медиазапросы */
@@ -1150,8 +1265,17 @@ body{
   .price{
     grid-auto-rows: auto;
   }
-  .domain__item{
+  .domain-list__item{
     width: calc(100% / 4);
+  }
+
+  .user-data__container{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .user-data__profile{
+   margin-right: auto;
+   margin-top: 50px;
   }
 }
 @media (max-width: 768px) {
@@ -1159,7 +1283,7 @@ body{
     max-width: 540px;
   }
   .first-screen{
-    background-position: top 150px left calc(50% + 150px);  /* Изображение расположенно по центру, затем сдвинуто на 450px вправо, чтобы не пересекалось с заголовком */
+    background-position: top 150px left calc(50% + 150px);
     background-size: 350px;
   }
   .offer{
@@ -1170,6 +1294,10 @@ body{
   }
   .services__container{
     grid-template-columns: 1fr;
+  }
+  .services h3 {
+    max-width: 100%;
+    min-height: 0;
   }
   .portfolio__list{
     display: block;
@@ -1190,8 +1318,27 @@ body{
     margin-top: 60px;
   }
 
-  .domain__item{
+  .domain-list__item{
     width: calc(100% / 3);
+  }
+  .domain__filtr button {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 15px;
+    width: 50%;
+  }
+
+  .user-data__name{
+    font-size: 20px;
+  }
+  .order-table__col {
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+  .user-data__name{
+    margin-left: 0;
+    text-align: center;
+    margin-top: 30px;
   }
 }
 @media (max-width: 576px) {
@@ -1252,15 +1399,20 @@ body{
   .price__row:empty::before{
     content: '';
   }
-  .domain__search input{
-    width: 100%;
-  }
-  .domain__search .button{
-    margin-left: auto;
-    margin-top: 30px;
-  }
-  .domain__item{
+  .domain-list__item{
     font-size: 14px;
     width: calc(100% / 2);
   }
+
+  .order-table{
+    margin-left: -20px;
+    margin-right: -20px;
+    border-radius: 0;
+  }
+  .order-table__col{
+    width: auto;
+  }
+  .order-table__row:first-child .order-table__col{
+    font-weight: 400;
+}
 }

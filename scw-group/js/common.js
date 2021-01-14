@@ -122,20 +122,34 @@ $(function() {
 
   /* Фильтрация для доменных зон */
 
-  $('#domain__list .domain__item').addClass('hidden');
-  $('#domain__list').find('.popular').removeClass('hidden');
+  $('#domain-list .domain-list__item').addClass('hidden');
+  $('#domain-list').find('.popular').removeClass('hidden');
 
   $('#domain__filtr button').click(function(){
     var filterValue = $(this).attr('data-filter');
 
-    $('#domain__list .domain__item').addClass('hidden');
-    $('#domain__list').find(filterValue).removeClass('hidden');
+    $('#domain-list .domain-list__item').addClass('hidden');
+    $('#domain-list').find(filterValue).removeClass('hidden');
 
     $('#domain__filtr .active').removeClass('active');
     $(this).addClass('active');
-  });
+
+    $('#domain-list').removeAttr('style');
+    $('#domain__more').show();
+  })
+
+  /* Показать все зоны */
 
   $('#domain__more').click(function() {
-    $('#domain__list').css('height', 'auto');
-  });
-});
+    let listContainerHeight =  $('.domain-list__container').innerHeight();
+    $('#domain-list').innerHeight(listContainerHeight);
+
+    $('#domain__more').hide();
+  })
+
+  /* Аниация появления */
+
+  $('section').each(function(){
+    $(this).find('.animate').addClass('hidden');
+  })
+})
