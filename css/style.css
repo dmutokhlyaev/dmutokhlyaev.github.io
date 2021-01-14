@@ -1054,6 +1054,109 @@ body{
   font-size: 12px;
 }
 
+/* Личный кабинет */
+
+.user-data{
+  padding-top: 150px;
+}
+.user-data__container{
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  border-radius: 8px;
+  background: #FBFBFB;
+}
+.user-data__img{
+  width: 225px;
+  height: 225px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.user-data__img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: contain;
+}
+.user-data__name{
+  font-size: 30px;
+  font-weight: 700;
+  margin-left: 50px;
+}
+.user-data__profile{
+  margin-left: auto;
+  font-size: 18px;
+}
+.user-data__profile h3{
+  font-weight: 700;
+  margin-bottom: 15px;
+  padding-left: 30px;
+}
+.user-data__profile a{
+  display: block;
+  border-top: 1px solid #444;
+  padding: 8px 0 8px 30px;
+}
+.user-data__profile a:hover{
+  opacity: 0.8;
+}
+.user-data__profile a:active{
+  opacity: 0.5;
+}
+.user-data__icon{
+  position: relative;
+}
+.user-data__icon::before{
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -10px;
+}
+.user-data__icon_inf::before{
+  background: url(../img/icons/information.png) no-repeat center / contain;
+}
+.user-data__icon_set::before{
+  background: url(../img/icons/settings.png) no-repeat center / contain;
+}
+.user-data__icon_doc::before{
+  background: url(../img/icons/document.png) no-repeat center / contain;
+}
+.user-data__icon_sup::before{
+  background: url(../img/icons/support.png) no-repeat center / contain;
+}
+
+/* Таблица в личном кабинете */
+
+.order-table{
+  margin-bottom: 50px;
+  border: 2px solid #1D4282;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.order-table table{
+  width: 100%;
+}
+.order-table th{
+  background: #1D4282;
+  color: #fff;
+  font-weight: 700;
+  padding: 15px 30px;
+  text-align: left;
+}
+.order-table td{
+  padding: 15px 30px;
+  text-align: left;
+  border-bottom: 2px solid #1D4282;
+  width: 25%;
+}
+.order-table tr:last-child td{
+  border-bottom: none;
+}
+
 
 /* Медиазапросы */
 
