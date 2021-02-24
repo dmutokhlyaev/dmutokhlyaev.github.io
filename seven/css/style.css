@@ -100,6 +100,12 @@ textarea {
 .header__logo{
   margin-right: 20px;
 }
+.header__logo img{
+  max-width: 100px;
+  max-height: 35px;
+  object-fit: contain;
+  object-position: right center;
+}
 
 /* Главное меню в шапке */
 
@@ -257,13 +263,13 @@ textarea {
 .login-btn::before{
   content: '';
   display: block;
-  width: 17px;
-  height: 25px;
-  background: url(../img/login.png) no-repeat left / contain;
-  margin-right: 15px;
+  width: 0.8em;
+  height: 1.2em;
+  background: url(../img/login.png) no-repeat left center / contain;
+  margin-right: 0.7em;
 }
 .login-btn:hover{
-  opacity: 0.7;
+  text-decoration: underline;
 }
 .login-btn:active{
   opacity: 0.5;
@@ -403,6 +409,7 @@ textarea {
 }
 .footer__social{
   display: flex;
+  align-items: flex-start;
 }
 .footer__social a{
   transition: opacity 0.3s;
@@ -504,13 +511,16 @@ textarea {
   width: 50%;
   flex-grow: 1;
 }
+.main__section:not(:last-child){
+  margin-bottom: 25px;
+}
 .main__section h2{
   margin-bottom: 25px;
   padding: 10px 30px;
   background-color: #fff;
   border-radius: 15px;
   border: 1px solid #d0cfcf;
-  font-size: 25px;
+  font-size: 1.2em;
   line-height: 1;
   text-transform: uppercase;
 }
@@ -518,25 +528,18 @@ textarea {
   display: inline-block;
   color: inherit;
   text-decoration: none;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid #202226;
   transition: border-color 0.3s;
 }
 .main__section a:hover{
-  border-bottom-color: #202226;
+  border-bottom-color: transparent;
 }
 .main__section a:active{
   opacity: 0.5;
 }
 
 /* Карточки записей для архивов */
-
-.main__two-cols{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-rows: auto;
-  gap: 15px;
-}
 
 .post-card{
   display: flex;
@@ -546,6 +549,7 @@ textarea {
   border: 1px solid #d0cfcf;
   background-color: #fff;
   color: #fff;
+  text-decoration: none;
   overflow: hidden;
 }
 .post-card__thumb{
@@ -565,23 +569,77 @@ textarea {
   height: 100%;
   width: 100%;
   background: linear-gradient(to top, rgba(32,34,38,1) 0%, rgba(32,34,38,1) 40%,  rgba(32,34,38,0) 100%);
+  transition: opacity 0.3s;
+}
+.post-card:hover::after{
+  opacity: 0.8;
 }
 .post-card h3,
-.post-card p{
+.post-card p,
+.post-card__views{
   position: relative;
   z-index: 1;
 }
+.post-card h3{
+  text-decoration: underline;
+}
+.post-card__views{
+  align-self: flex-end;
+  margin-top: auto;
+}
+.post-card__views::after{
+  content: '';
+  display: inline-block;
+  height: 0.8em;
+  width: 1.5em;
+  background: url(../img/view.png) no-repeat center / contain;
+  margin-left: 10px;
+}
 
+.main__two-cols{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  gap: 15px;
+}
+.main__four-cols{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: auto;
+  gap: 10px;
+}
 .main__two-cols .post-card{
-  padding: 10px 35px;
+  padding: 10px 30px;
   padding-top: 170px;
 }
 .main__two-cols .post-card h3{
-  font-size: 30px;
-  line-height: 1;
+  font-size: 1.4em;
+  font-weight: 400;
+}
+.main__four-cols .post-card{
+  padding: 10px 15px;
+  padding-top: 140px;
+}
+.main__four-cols .post-card h3{
+  font-size: 1.1em;
   font-weight: 400;
 }
 
+@media (max-width: 1240px) {
+  .main__four-cols{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .main__two-cols{
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 576px) {
+  .main__four-cols{
+    grid-template-columns: 1fr;
+  }
+}
 
 /* Верхний сайдбар */
 
@@ -613,4 +671,10 @@ textarea {
   line-height: 1;
   text-transform: uppercase;
   text-align: center;
+}
+
+@media (max-width: 992px) {
+  .right-sidebar{
+    display: none;
+  }
 }
