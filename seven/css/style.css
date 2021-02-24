@@ -9,7 +9,7 @@ body{
   position: relative;
   font-family: 'Myriad Pro', sans-serif;
   overflow-y: scroll;
-  font-size: 20px;
+  font-size: 21px;
   line-height: 1.5;
   color: #202226;
   background-color: #f3f3f3;
@@ -38,11 +38,17 @@ textarea {
   height: 100%;
 }
 @media (max-width: 1240px) {
+  body{
+    font-size: 20px;
+  }
   .container{
     width: 960px;
   }
 }
 @media (max-width: 992px) {
+  body{
+    font-size: 18px;
+  }
   .container{
     width: 720px;
   }
@@ -63,22 +69,23 @@ textarea {
 /* Шапка */
 
 .header{
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 10;
   height: 80px;
   background-color: #202226;
-  font-size: 19px;
   color: #fff;
 }
 .header__container{
   display: flex;
   align-items: center;
 }
-.header__menu-wrap{
+.header__mob-wrap{
   flex-grow: 1;
   position: relative;
   height: 100%;
 }
-.header__menu-container{
+.header__mob-container{
   display: flex;
   align-items: center;
   height: 100%;
@@ -90,6 +97,10 @@ textarea {
 
 /* Главное меню в шапке */
 
+.main-menu{
+  font-size: 0.9em;
+  line-height: 1.2;
+}
 .main-menu ul{
   display: flex;
   list-style: none;
@@ -191,7 +202,6 @@ textarea {
   top: 80px;
   left: -93px;
   background-color: #2e323c;
-  font-size: 16px;
   transform: translateY(100%);
   visibility: hidden;
   opacity: 0;
@@ -235,13 +245,14 @@ textarea {
   outline: none;
   cursor: pointer;
   margin-left: auto;
+  font-size: 0.9em;
   transition: opacity 0.3s;
 }
 .login-btn::before{
   content: '';
   display: block;
   width: 17px;
-  height: 30px;
+  height: 25px;
   background: url(../img/login.png) no-repeat left / contain;
   margin-right: 15px;
 }
@@ -253,9 +264,6 @@ textarea {
 }
 
 @media (max-width: 1240px) {
-  .header{
-    font-size: 16px;
-  }
   .main-menu li{
     margin-right: 20px;
   }
@@ -277,7 +285,7 @@ textarea {
     margin-left: auto;
     margin-right: 0;
   }
-  .header__menu-wrap{
+  .header__mob-wrap{
     position: absolute;
     top: 60px;
     left: 0;
@@ -290,12 +298,12 @@ textarea {
     visibility: hidden;
     transition: transform 0.3s, visibility 0.3s, opacity 0.3s;
   }
-  .header_open .header__menu-wrap{
+  .header_open .header__mob-wrap{
     transform: translateX(0);
     opacity: 1;
     visibility: visible;
   }
-  .header__menu-container{
+  .header__mob-container{
     width: 720px;
     margin-left: auto;
     margin-right: auto;
@@ -339,12 +347,12 @@ textarea {
   }
 }
 @media (max-width: 768px) {
-  .header__menu-container{
+  .header__mob-container{
     width: 540px;
   }
 }
 @media (max-width: 576px) {
-  .header__menu-container{
+  .header__mob-container{
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;
